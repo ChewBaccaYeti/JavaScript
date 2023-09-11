@@ -1,2 +1,1 @@
-# Lebovski-business
-Yes, you, GET OUT!!!
+# Lebovski-javascript
