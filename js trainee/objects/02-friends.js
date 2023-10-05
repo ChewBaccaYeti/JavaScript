@@ -93,3 +93,30 @@ const getOfflineFriends = function (allFriends) {
 };
 
 console.log(getOfflineFriends(friends));
+
+/*
+ * Получаем статус друзей в одной функции в два массива
+ */
+const getFriendsByOnlineStatus = function (allFriends) {
+    const onlineStatus = {
+        online: [],
+        offline: [],
+    };
+
+    for (const friend of allFriends) {
+        if (friend.online) {
+            onlineStatus.online.push(friend.online);
+            continue;
+        }
+        // Вместо else {} использую continue
+        onlineStatus.offline.push(friend.online);
+
+        // !! НЕ самый лучший способ использования тернарного оператора, однако он работает в данном случае
+        // const key = friend.online ? 'online' : 'offline';
+        // onlineStatus[key].push(friend);
+    }
+
+    return onlineStatus;
+};
+
+console.log(getFriendsByOnlineStatus(friends));
