@@ -34,7 +34,7 @@ cart.add({ name: '🍓', price: 110 });
 
 // console.table(cart.getItems());
 
-cart.remove('🍎');
+// cart.remove('🍎');
 // console.table(cart.getItems());
 
 // cart.clear();
