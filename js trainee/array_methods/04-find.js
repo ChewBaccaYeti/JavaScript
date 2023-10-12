@@ -48,3 +48,8 @@ console.log(playerWithId);
 /*
  * Ищем игрока по имени
  */
+
+const playerNameToFind = 'Chelsy';
+
+const playerByName = players.find(({ name }) => name === playerNameToFind);
+console.log(playerByName);

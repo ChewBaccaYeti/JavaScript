@@ -1,6 +1,7 @@
 /*
  * Работа с коллекцией (массивом объектов)
  */
+
 const friends = [
     { name: 'Lebovski', online: false },
     { name: 'Isaac', online: true },
@@ -22,6 +23,7 @@ console.table(friends);
 /*
  * Ищем друга по имени
  */
+
 const findFriendByName = function (allFriends, friendName) {
     for (const friend of allFriends) {
         console.log(friend);
@@ -40,6 +42,7 @@ console.log(findFriendByName(friends, 'Aragorn'));
 /*
  * Получаем имена всех друзей
  */
+
 const getAllNames = function (allFriends) {
     const arrNames = [];
 
@@ -57,6 +60,7 @@ console.log(getAllNames(friends));
 /*
  * Получаем имена только друзей которые онлайн
  */
+
 const getOnlineFriends = function (allFriends) {
     const onlineFriends = [];
 
@@ -77,6 +81,7 @@ console.log(getOnlineFriends(friends));
 /*
  * Получаем имена только друзей которые оффлайн
  */
+
 const getOfflineFriends = function (allFriends) {
     const offlineFriends = [];
 
@@ -97,6 +102,7 @@ console.log(getOfflineFriends(friends));
 /*
  * Получаем статус друзей в одной функции в два массива
  */
+
 const getFriendsByOnlineStatus = function (allFriends) {
     const onlineStatus = {
         online: [],

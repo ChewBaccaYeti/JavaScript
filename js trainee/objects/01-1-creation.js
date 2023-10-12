@@ -4,6 +4,7 @@
  * - Свойства, ключи (имя) и значения
  * - Как отличить объект от области видимости
  */
+
 // Usecase 1
 const playList_1 = {
     name: 'playlist',
@@ -34,6 +35,7 @@ console.log(object());
  * - obj['key']
  * - Отсутствующие свойства
  */
+
 const playList_2 = {
     name: 'playList',
     rating: 5,
@@ -53,6 +55,7 @@ console.log(playList_2[propertyName]); // При использовании ли
 /*
  * Короткая запись свойств
  */
+
 const username = 'Mango';
 const email = 'mango@mail.com';
 
@@ -65,6 +68,7 @@ console.log(signupData);
 /*
  * Вычисляемые свойства
  */
+
 const inputName = 'color';
 const inputValue = 'tomato';
 
@@ -77,6 +81,7 @@ console.log(colorPickerData);
 /*
  * Ссылочный тип {} === {}
  */
+
 const a = { x: 1, y: 2 };
 const b = a;
 const c = b;
@@ -93,6 +98,7 @@ console.log(c);
 /*
  * Массивы и функции это объекты
  */
+
 const array = [1, 2, 3];
 
 array.greetings = ':)'; // Данный ключ будет добавлен в массив со своим свойством, так как массив это объект

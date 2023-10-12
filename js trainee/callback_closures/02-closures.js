@@ -113,7 +113,7 @@ const salaryManagerFactory = function (employeeName, baseSalary = 0) {
     return {
         raise(amount) {
             if (amount > 1000) {
-                return 'Ты опять выходишь связь, мудила?';
+                return 'Ты опять выходишь на связь, мудила?';
             }
             salary += amount;
         },

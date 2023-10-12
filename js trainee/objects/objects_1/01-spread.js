@@ -2,6 +2,7 @@
  * Операция spread (распыление) // !! Распыляются строки, массивы и объекты
  * - Array.prototype.concat() (добавление\сшивание двух и более массивов) и аналог через spread
  */
+
 const numbersConcat = [1, 2, 3].concat([4, 5, 6], [7, 8, 9]);
 
 console.log(numbersConcat);
@@ -24,6 +25,7 @@ console.log(numbersMegaSpread);
 /*
  * Поиск самой маленькой или большой температуры (числа)
  */
+
 const temps = [18, 14, 12, 21, 17, 29, 24];
 
 console.log(Math.min(...temps));
@@ -42,6 +44,7 @@ console.log(a === b); // false потому что два разных масс�
 /*
  * Сшиваем несколько массивов в один через concat() и spread
  */
+
 const lastWeekTemps = [1, 2, 3];
 const currentTemps = [4, 5, 6];
 const nextWeekTemps = [7, 8, 9];
@@ -56,6 +59,7 @@ console.log(allTempsSpread); // spread method
  * Распыление объектов
  * - Object.prototype.assign() и spread
  */
+
 const c = { x: 1, y: 2 };
 const d = { x: 0, z: 3 };
 

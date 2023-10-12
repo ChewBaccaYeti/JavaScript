@@ -3,6 +3,7 @@
  * - Значения по умолчанию
  * - Имя переменной отличное от имени свойства
  */
+
 const playlist = {
     title: 'Мой супер плейлист',
     rating: 5,
@@ -23,6 +24,7 @@ console.log(title, rating, tracks, numberOfTracks, author);
 /*
  * Глубокая деструктуризация
  */
+
 const profile = {
     name: 'Jacques Gluke',
     tag: 'jqluke',
@@ -48,6 +50,7 @@ const profile = {
 /*
  * Деструктуризация массивов
  */
+
 const rgb = [255, 100, , 80]; // Если надо пропустит свойство то просто ставится пробел
 
 const [red, green, , blue] = rgb;
@@ -86,6 +89,7 @@ for (const /*entry*/ [name, value] of entries) {
 /*
  * Операция rest (сбор)
  */
+
 const account = {
     name: 'Big `Dude` Lebovski',
     tag: 'bgLbvsk',
@@ -108,6 +112,7 @@ console.log(restProps); // !! avatar и stats записаны сюда, так 
  * - деструктуризация параметра-обьекта в подписи функции
  * - rest при деструктуризации в подписи
  */
+
 const showProfileInfo = function (userProfile) {
     const { name, tag, location, ...restProps } = userProfile;
 

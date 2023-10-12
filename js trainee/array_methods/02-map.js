@@ -14,7 +14,7 @@ const doubleNumbers = numbers.map((number) => {
 });
 
 console.log('numbers', numbers);
-console.log('doubleNumbers', doubleNumbers); // После метода данніе записываются в новый массив, а не изменяют старый
+console.log('doubleNumbers', doubleNumbers); // После метода данные записываются в новый массив, а не изменяют старый
 
 /*
  * Получаем массив имён всех игроков
