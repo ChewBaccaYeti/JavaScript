@@ -51,14 +51,14 @@ const players = [
 // ! ONLINE
 const onlinePlayers_0 = players.filter((player) => player.online);
 console.log(onlinePlayers_0);
-// ИЛИ
+//? ИЛИ
 const onlinePlayers_1 = players.filter(({ online }) => online);
 console.log(onlinePlayers_1);
 
 // ! OFFLINE
 const offlinePlayers_0 = players.filter((player) => !player.online);
 console.log(offlinePlayers_0);
-// ИЛИ
+//? ИЛИ
 const offlinePlayers_1 = players.filter(({ online }) => !online);
 console.log(offlinePlayers_1);
 
@@ -69,13 +69,13 @@ console.log(offlinePlayers_1);
 // HARDCORE
 const hardcorePlayers_0 = players.filter((player) => player.timePlayed > 250);
 console.log(hardcorePlayers_0);
-// ИЛИ
+//? ИЛИ
 const hardcorePlayers_1 = players.filter(({ timePlayed }) => timePlayed > 250);
 console.log(hardcorePlayers_1);
 
 // NOOBS
 const noobPplayers_0 = players.filter((player) => player.timePlayed < 250);
 console.log(noobPplayers_0);
-// ИЛИ
+//? ИЛИ
 const noobPplayers_1 = players.filter(({ timePlayed }) => timePlayed < 250);
 console.log(noobPplayers_1);

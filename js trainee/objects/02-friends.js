@@ -12,7 +12,7 @@ const friends = [
 console.table(friends);
 
 for (const friend of friends) {
-    // Массив сложных типов, то есть объектов, в цикле итерации forof я получаю ССЫЛКУ на объект
+    //* Массив сложных типов, то есть объектов, в цикле итерации forof я получаю ССЫЛКУ на объект
     console.log(friend);
 
     friend.newProp = 'This is added property'; // Добавление нового свойства
@@ -34,7 +34,7 @@ const findFriendByName = function (allFriends, friendName) {
         }
     }
 };
-// !! includes method работает только с коллекцией ПРИМИТИВОВ - числа, строки, були. В массиве он бесполезен
+//! includes method работает только с коллекцией ПРИМИТИВОВ - числа, строки, були. В массиве он бесполезен
 
 console.log(findFriendByName(friends, 'Arthur'));
 console.log(findFriendByName(friends, 'Aragorn'));
@@ -117,7 +117,7 @@ const getFriendsByOnlineStatus = function (allFriends) {
         // Вместо else {} использую continue
         onlineStatus.offline.push(friend.online);
 
-        // !! НЕ самый лучший способ использования тернарного оператора, однако он работает в данном случае
+        //! НЕ самый лучший способ использования тернарного оператора, однако он работает в данном случае
         // const key = friend.online ? 'online' : 'offline';
         // onlineStatus[key].push(friend);
     }

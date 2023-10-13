@@ -51,7 +51,7 @@ const profile = {
  * Деструктуризация массивов
  */
 
-const rgb = [255, 100, , 80]; // Если надо пропустит свойство то просто ставится пробел
+const rgb = [255, 100, , 80]; //* Если надо пропустит свойство то просто ставится пробел
 
 const [red, green, , blue] = rgb;
 
@@ -105,7 +105,7 @@ const account = {
 const { name, tag, location, ...restProps } = account;
 
 console.log(name, tag, location);
-console.log(restProps); // !! avatar и stats записаны сюда, так как этот метод собирает остаток от свойств объекта
+console.log(restProps); //! avatar и stats записаны сюда, так как этот метод собирает остаток от свойств объекта
 
 /*
  * Паттерн «Обьект настроек»

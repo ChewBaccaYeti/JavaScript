@@ -9,7 +9,7 @@ let total = 0;
 // 1 перебрать массив
 for (let i = 0; i < cart.length; i += 1) {
     // console.log(cart[i]);
-    // 3 каждый элемент приплюслвать к total
+    // 3 каждый элемент приплюсовать к total
     total += cart[i];
     // total = total + cart[i];
 }

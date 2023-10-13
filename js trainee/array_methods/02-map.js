@@ -14,7 +14,7 @@ const doubleNumbers = numbers.map((number) => {
 });
 
 console.log('numbers', numbers);
-console.log('doubleNumbers', doubleNumbers); // После метода данные записываются в новый массив, а не изменяют старый
+console.log('doubleNumbers', doubleNumbers); //* После метода данные записываются в новый массив, а не изменяют старый
 
 /*
  * Получаем массив имён всех игроков
@@ -47,7 +47,7 @@ const players = [
 ];
 console.table(players);
 
-const playersName = players.map((player) => player.name); // Возврат нового массива ТОЛЬКО из имён игроков  в одну строку благодаря НЕЯВНОМУ возврату
+const playersName = players.map((player) => player.name); //* Возврат нового массива ТОЛЬКО из имён игроков  в одну строку благодаря НЕЯВНОМУ возврату
 console.log('playersName', playersName);
 
 const playersID = players.map((player) => player.id);
@@ -65,7 +65,7 @@ const updatePoints = players.map((player) => ({
     points: player.points * 1.1,
 }));
 
-console.table(updatePoints); // С НЕЯВНЫМ возвратом
+console.table(updatePoints); //* С НЕЯВНЫМ возвратом
 
 /*
  * Увеличиваем кол-во часов игрока по id

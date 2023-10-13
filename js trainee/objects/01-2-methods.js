@@ -18,8 +18,8 @@ const playlist = {
         console.log('getName: ', a);
     },
     changeName(newName) {
-        console.log('this внутри функции changeName', this); // !! Используется ТОЛЬКО внутри метода объекта(в данном случае функции), а НЕ в свойстве
-        this.name = newName; // !! this есть только у функций
+        console.log('this внутри функции changeName', this); //! Используется ТОЛЬКО внутри метода объекта(в данном случае функции), а НЕ в свойстве
+        this.name = newName; //! this есть только у функций
     },
     addTrack(track) {
         // И эту функцию можно также записать как неявную

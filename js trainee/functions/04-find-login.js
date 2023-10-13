@@ -15,7 +15,7 @@ const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
 // for (const login of allLogins) {
 // if (login === loginToFind) {
 // message = `Пользователь ${loginToFind} найден.`;
-// return `Пользователь ${loginToFind} найден.`; // !! Выход из функции при первом совпадении, прерывается цикл
+// return `Пользователь ${loginToFind} найден.`; //! Выход из функции при первом совпадении, прерывается цикл
 // }
 // }
 // return message;

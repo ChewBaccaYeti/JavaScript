@@ -16,7 +16,7 @@ console.log(playList_1);
 
 // Usecase 2
 const fn = function (myObject) {
-    // !! Функция с параметром myObject, при вызове принимает ОДИН аргумент в виде объекта с двумя свойствами
+    //! Функция с параметром myObject, при вызове принимает ОДИН аргумент в виде объекта с двумя свойствами
     // Грубо говоря - myObject = {a: 1, b: 2}
     console.log(myObject);
 };
@@ -25,7 +25,7 @@ fn({ a: 1, b: 2 });
 
 // Usecase 3
 const object = function () {
-    return { c: 3 }; // !! Возврат - это тоже самое присвоение, когда я возвращаю что-то из функции то возврат работает как и присвоение
+    return { c: 3 }; //! Возврат - это тоже самое присвоение, когда я возвращаю что-то из функции то возврат работает как и присвоение
 };
 console.log(object());
 
@@ -48,9 +48,9 @@ console.log(playList_2.rating);
 console.log(playList_2.tracks);
 console.log(playList_2.trackCount);
 
-const propertyName = 'tracks'; // !! ключи в объектах это всегда строка - type: 'string'
+const propertyName = 'tracks'; //! ключи в объектах это всегда строка - type: 'string'
 
-console.log(playList_2[propertyName]); // При использовании литерала [] массив при вызове свойства из объекта я получу все 'tracks'
+console.log(playList_2[propertyName]); //* При использовании литерала [] массив при вызове свойства из объекта я получу все 'tracks'
 
 /*
  * Короткая запись свойств
@@ -61,7 +61,7 @@ const email = 'mango@mail.com';
 
 const signupData = {
     username: username,
-    email, // Чтобы избежать повторения имени ключа и свойства, можно записывть сразу свойства объекта, если их названия совпадают
+    email, //* Чтобы избежать повторения имени ключа и свойства, можно записывть сразу свойства объекта, если их названия совпадают
 };
 console.log(signupData);
 

@@ -19,11 +19,11 @@ const totalExplicit = numbersExplicit.reduce((accumulator, number) => {
 const totalImplicit = numbersImplicit.reduce((acc, number) => acc + number, 1);
 console.log(totalImplicit);
 
-// accumulator = 0 -> number = 5 -> return 0 + 5
-// accumulator = 5 -> number = 10 -> return 5 + 10
-// accumulator = 15 -> number = 15 -> return 15 + 15
-// accumulator = 30 -> number = 20 -> return 30 + 20
-// accumulator = 50 -> number = 25 -> return 50 + 25
+//? accumulator = 0 -> number = 5 -> return 0 + 5
+//* accumulator = 5 -> number = 10 -> return 5 + 10
+//* accumulator = 15 -> number = 15 -> return 15 + 15
+//* accumulator = 30 -> number = 20 -> return 30 + 20
+//? accumulator = 50 -> number = 25 -> return 50 + 25
 
 /*
  * Считаем общую зарплату
@@ -109,17 +109,17 @@ const tweets = [
 ];
 
 const allTagsMutable = tweets.reduce((allTags, tweet) => {
-    allTags.push(...tweet.tags); // Если писать без ...spread то просто запушатся в новый массив другие массивы с тегами из tweets
+    allTags.push(...tweet.tags); //* Если писать без ...spread то просто запушатся в новый массив другие массивы с тегами из tweets
 
     return allTags;
 }, []);
-// Минус данного способа в том что он мутирует объект массива tweets и linter будет выдавать ошибку
+//* Минус данного способа в том что он мутирует объект массива tweets и linter будет выдавать ошибку
 console.table(allTagsMutable);
 
 const allTagsImmutable = tweets.reduce((acc, tweet) => {
     return [...acc, ...tweet.tags];
 }, []);
-// Данный способ не изменяет оригинал, а распыляет объекты в новый массив и после этого изменяет их
+//* Данный способ не изменяет оригинал, а распыляет объекты в новый массив и после этого изменяет их
 console.table(allTagsImmutable);
 
 // acc = [], tweet.tags = ['js', 'nodejs'] return [...[], ...['js', 'nodejs']]
@@ -129,7 +129,7 @@ console.table(allTagsImmutable);
 
 const allTagsFlatMap = tweets.flatMap((tweet) => tweet.tags);
 console.table(allTagsFlatMap);
-// Используя flatMap, мы получаем массив тегов, и он автоматически "выравнивает" результат, чтобы получить одномерный массив, как и ранее с оператором ...spread.
+//* Используя flatMap, мы получаем массив тегов, и он автоматически "выравнивает" результат, чтобы получить одномерный массив, как и ранее с оператором ...spread.
 
 /*
  * Ведём статистику тегов
@@ -143,5 +143,5 @@ const tagsStats = allTags.reduce((acc, tag) => {
 }, {});
 // console.log(tagsStats);
 
-// если свойство с ключом tag есть. увеличить его значение на 1
-// если свойствоства нет с таким ключом что в tag, сделать и записать 1
+//* если свойство с ключом tag есть. увеличить его значение на 1
+//* если свойствоства нет с таким ключом что в tag, сделать и записать 1

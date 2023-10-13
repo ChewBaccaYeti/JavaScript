@@ -19,7 +19,7 @@ const fnB = function (number) {
     console.log('Это лог при вызове fnB', number);
 };
 
-fnA('Lebovski', fnB); // Вызов функции fnA и передача ее аргументов в параметры(среди которых функция fnB и вызов ее же внутри функции fnA)
+fnA('Lebovski', fnB); //* Вызов функции fnA и передача ее аргументов в параметры(среди которых функция fnB и вызов ее же внутри функции fnA)
 
 //!!<!--!>Пример<!--!>!!//
 const doMath = function (a, b, callback) {

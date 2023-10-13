@@ -33,7 +33,7 @@ for (const login of logins) {
     if (login === loginToFind) {
         message = `Пользователь ${loginToFind} найден.`;
         break;
-    } // Здесь else не нужен по логике, так как будет просто бесполезен.
+    } //* Здесь else не нужен по логике, так как будет просто бесполезен.
 }
 
 //     if (login !== loginToFind) {
@@ -47,6 +47,8 @@ const messageInclude = logins.includes(loginToFind)
     : `Пользователь ${loginToFind} не найден.`;
 console.log(messageInclude);
 console.log(logins.includes(loginToFind));
-// Выше приведен декларативный код с *абстракцией* то есть с includes
-// Циклы forof & for можно использовать вместе и параллельно.
-// Декларативный метод с includes более краток и чище, если речь идет конкретно о подобных заданиях.
+
+/* Выше приведен декларативный код с *абстракцией* то есть с includes
+ * Циклы forof & for можно использовать вместе и параллельно.
+ * Декларативный метод с includes более краток и чище, если речь идет конкретно о подобных заданиях.
+ */

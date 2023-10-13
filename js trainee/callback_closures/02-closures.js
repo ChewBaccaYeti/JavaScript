@@ -28,7 +28,7 @@ console.log(fnB);
 /*
  * Поварёнок
  */
-// !! Тут повторяются вызовы функции и имена поваров
+//! Тут повторяются вызовы функции и имена поваров
 // const makeDish = function (sheffName, dish) {
 //     console.log(`${sheffName} готовит ${dish}`);
 // };
@@ -41,7 +41,7 @@ console.log(fnB);
 // makeDish('Poly', 'супик');
 // makeDish('Poly', 'кофе');
 
-// !! Чтобы работать с одним и тем же именем и разными блюдами я написал функцию которая замыкается
+//! Чтобы работать с одним и тем же именем и разными блюдами я написал функцию которая замыкается
 const makeChief = function (name) {
     const innerVar = { Jeez: 'Oh my god!!!', number: 555 };
     const message = 'Yo!';
