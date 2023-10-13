@@ -1,1 +1,1 @@
-# Lebovski-javascript
+# Lebowski & Wazowski
