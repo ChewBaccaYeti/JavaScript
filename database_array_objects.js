@@ -5,7 +5,7 @@ const agentsDatabase = [
         position: 'Specialist',
         corp: 'Wyman LLC',
         phone: 433 - 945 - 2534,
-        idNumber: 156007069,
+        id: 156007069,
     },
     {
         name: 'Sibyl Damore',
@@ -13,7 +13,7 @@ const agentsDatabase = [
         position: 'Officer',
         corp: 'Lindgren - Kulas',
         phone: 949 - 981 - 7666,
-        idNumber: 133276718,
+        id: 133276718,
     },
     {
         name: 'Kasey Hudson',
@@ -21,7 +21,7 @@ const agentsDatabase = [
         position: 'Manager',
         corp: 'Swaniawski and Sons',
         phone: 977 - 606 - 1586,
-        idNumber: 428927415,
+        id: 428927415,
     },
     {
         name: 'Derick Stokes',
@@ -29,7 +29,7 @@ const agentsDatabase = [
         position: 'Liaison',
         corp: 'Adams, Smith and Berge',
         phone: 651 - 991 - 9633,
-        idNumber: 674594398,
+        id: 674594398,
     },
     {
         name: 'Iliana Wuckert',
@@ -37,7 +37,7 @@ const agentsDatabase = [
         position: 'Manager',
         corp: 'Hamill Inc',
         phone: 575 - 381 - 9592,
-        idNumber: 693037721,
+        id: 693037721,
     },
     {
         name: 'Faustino MacGyver',
@@ -45,7 +45,7 @@ const agentsDatabase = [
         position: 'Representative',
         corp: 'Abshire - Weissnat',
         phone: 455 - 433 - 6117,
-        idNumber: 502091911,
+        id: 502091911,
     },
     {
         name: 'Edwin Waters',
@@ -53,7 +53,7 @@ const agentsDatabase = [
         position: 'Orchestrator',
         corp: 'Satterfield, Stoltenberg and Ernser',
         phone: 780 - 744 - 2496,
-        idNumber: 302069216,
+        id: 302069216,
     },
     {
         name: 'Alvah Marks',
@@ -61,7 +61,7 @@ const agentsDatabase = [
         position: 'Supervisor',
         corp: 'Reynolds - Smith',
         phone: 241 - 215 - 3044,
-        idNumber: 214393857,
+        id: 214393857,
     },
     {
         name: 'Josefina Von',
@@ -69,7 +69,7 @@ const agentsDatabase = [
         position: 'Analyst',
         corp: 'Nader - Schamberger',
         phone: 894 - 909 - 6031,
-        idNumber: 349993827,
+        id: 349993827,
     },
     {
         name: 'Colby Ruecker',
@@ -77,7 +77,7 @@ const agentsDatabase = [
         position: 'Consultant',
         corp: 'Wintheiser and Sons',
         phone: 618 - 684 - 9131,
-        idNumber: 917907132,
+        id: 917907132,
     },
     {
         name: 'Judy West',
@@ -85,7 +85,17 @@ const agentsDatabase = [
         position: 'Developer',
         corp: 'Morissette, Ryan and Thompson',
         phone: 244 - 900 - 7401,
-        idNumber: 100052233,
+        id: 100052233,
+    },
+    {
+        id: '91714cf6-8bc3-4c37-8184-fb3714fade41',
+        tag: 'Green Eye',
+        status: 'active',
+        firstName: 'Mike',
+        lastName: 'Wazowski',
+        department: 'Infilration',
+        corp: 'Monsters Intelligence',
+        role: 'thief',
     },
     {
         name: 'Chandler Schamberger',
@@ -93,7 +103,7 @@ const agentsDatabase = [
         position: 'Planner',
         corp: 'Cummerata, Schamberger and Smitham',
         phone: 513 - 376 - 8507,
-        idNumber: 932228091,
+        id: 932228091,
     },
     {
         name: 'Maud Simonis',
@@ -101,7 +111,7 @@ const agentsDatabase = [
         position: 'Liaison',
         corp: 'Monahan - Swift',
         phone: 950 - 577 - 5353,
-        idNumber: 984316754,
+        id: 984316754,
     },
     {
         name: 'Ora Considine',
@@ -109,7 +119,7 @@ const agentsDatabase = [
         position: 'Producer',
         corp: 'Yundt, Thiel and Aufderhar',
         phone: 729 - 787 - 3096,
-        idNumber: 395726604,
+        id: 395726604,
     },
     {
         name: 'Amparo Prohaska',
@@ -117,7 +127,7 @@ const agentsDatabase = [
         position: 'Supervisor',
         corp: 'Hegmann - Funk',
         phone: 637 - 448 - 7141,
-        idNumber: 572949967,
+        id: 572949967,
     },
     {
         name: 'Haven Hudson',
@@ -125,7 +135,7 @@ const agentsDatabase = [
         position: 'Orchestrator',
         corp: 'Kemmer, Wiegand and Boehm',
         phone: 515 - 678 - 9601,
-        idNumber: 840930698,
+        id: 840930698,
     },
     {
         name: 'Dale Raynor',
@@ -133,7 +143,7 @@ const agentsDatabase = [
         position: 'Strategist',
         corp: 'Reichel, Collins and Flatley',
         phone: 952 - 955 - 5347,
-        idNumber: 728234489,
+        id: 728234489,
     },
     {
         name: 'Deron Cruickshank',
@@ -141,6 +151,95 @@ const agentsDatabase = [
         position: 'Designer',
         corp: 'Fadel - Jacobi',
         phone: 861 - 204 - 7767,
-        idNumber: 209321312,
+        id: 209321312,
     },
 ];
+
+console.dir(agentsDatabase);
+console.table(agentsDatabase);
+
+function manipulateAgentsArray(agentsDatabase, tag) {
+    const isAgentPresent = agentsDatabase.some(
+        (agent) => agent.tag === 'Green Eye'
+    );
+    console.log(isAgentPresent);
+
+    if (isAgentPresent) {
+        const agentUnderCover = agentsDatabase.find(
+            (agent) => agent.tag === 'Green Eye'
+        );
+
+        console.log('Agent is here:', agentUnderCover.lastName);
+
+        let indexCover = agentsDatabase.indexOf(agentUnderCover);
+        let sliceCover = agentsDatabase.slice(indexCover);
+
+        console.log(indexCover);
+        console.log(sliceCover);
+    } else {
+        const copiedArray = [...agentsDatabase];
+        copiedArray.push(...sliceCover);
+
+        console.log('Copied Array:', copiedArray);
+
+        for (let i = copiedArray.length - 1; i >= 0; i--) {
+            //! Этот цикл начинается с последнего индекса массива и продолжается до первого индекса.
+            const j = Math.floor(Math.random() * (i + 1));
+            //! Здесь переменная j получает случайное целое число от 0 до i (включительно).
+            //! Это позволяет случайным образом выбирать индекс элемента для обмена.
+            [copiedArray[i], copiedArray[j]] = [copiedArray[j], copiedArray[i]];
+            //! С помощью деструктуризации массива элементы с индексами i и j меняются местами.
+            //! Это позволяет переставить элементы в случайном порядке в пределах массива.
+            console.log('Shuffled Array:', copiedArray);
+            console.log('Agent compromised');
+        }
+    }
+}
+manipulateAgentsArray(agentsDatabase, 'Green Eye');
+
+const AgentRole = function () {
+    this.stealData = 'Identify and take data from enemy server.';
+    this.meetingPoint = meetingPoint;
+    this.agentsArray = agentsDatabase;
+
+    this.getData = function () {
+        return this.stealData;
+    };
+
+    this.setData = function (newData) {
+        this.stealData = newData;
+    };
+
+    this.completeMission = function (targetLocation) {
+        if (targetLocation) {
+            this.setData('Data target has been completed');
+        } else {
+            console.log(this.returnToMeetingPoint());
+            this.removeAgent();
+        }
+
+        this.returnToMeetingPoint = function () {
+            return `Returning to meeting point: ${this.meetingPoint}.`;
+        };
+
+        this.removeAgent = function () {
+            const index = this.agentsArray.indexOf(this);
+            if (index !== -1) {
+                this.agentsArray.splice(index, 1);
+            }
+            console.log('Agent has been removed from the agents array.');
+        };
+
+        return `Mission completed. Extracted sensitive data from the enemy's server at location: ${targetLocation}.`;
+    };
+};
+
+const agentsArray = [];
+const meetingPoint = 'Secret meeting location';
+const agent = new AgentRole(); //! Вызов конструктора с помощью new (при создании экземпляра)
+
+const missionLocation = '123 Lenin Street, Enemy Headquarters';
+console.log(agent.completeMission(missionLocation));
+
+const missionSuccess = true; // замени на false для симуляции неудачи миссии
+agent.completeMission(missionSuccess ? missionLocation : null);
