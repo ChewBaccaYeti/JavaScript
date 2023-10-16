@@ -43,12 +43,41 @@ function getCounter() {
     };
 }
 let count = getCounter();
+
+/* getCounterLexicalEnvironment = {
+    environmentRecord: {
+        counter: 0,
+        <anonymous function> : < reference to function>
+    }
+    outer: <globalLexicalEnvironment>
+}
+
+countLexicalEnvironment = {
+    environmentRecord: {
+
+    }
+    outer: <getCountLexicalEnvironment>
+}
+*/
+
 console.log(count()); // 0
 console.log(count()); // 1
 console.log(count()); // 2
 console.log(count()); // 3
 console.log(count()); // 4
 console.log(count()); // 5
+
+/*
+* В результате лексическое окружение функции getCounter() после первого вызова функции count() будет выглядеть так:
+
+getCounterLexicalEnvironment = {
+    environmentRecord: {
+        counter: 1, 2, 3, 4, 5 и т.д.
+            <anonymous function> : < reference to function>
+    }
+    outer: <globalLexicalEnvironment>
+}
+*/
 
 /*
  * Для того чтобы понять замыкания, нам нужно разобраться с двумя важнейшими концепциями JavaScript.
