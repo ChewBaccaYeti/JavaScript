@@ -25,23 +25,40 @@ class Character {
         console.log(`${this.name} получает ${amount} опыта.`);
         this.xp += amount;
     }
+    attack() {
+        console.log(`${this.name} атакует используя ${this.weapon}`);
+    }
+    rage() {
+        console.log('rage: ', this.warcry);
+    }
+    castSpell() {
+        console.log(`${this.name} кастует заклинания ${this.spells}`);
+    }
 }
-
-const Stranger = new Character({ name: 'Brut', story: 'Prisoner', xp: 1000 });
-
-console.log('New Character: Stranger', Stranger);
-Stranger.gainXp(1000);
-
 class Warrior extends Character {
     constructor(config) {
         super(config);
     }
-
-    attack() {
-        console.log(`${this.name} атакует используя ${this.weapon}`);
+}
+class Berserk extends Warrior {
+    constructor({ warcry, ...restProps } = {}) {
+        super(restProps);
+        this.warcry = warcry;
+    }
+}
+class Mage extends Character {
+    constructor({ spells = [], ...restProps } = {}) {
+        super(restProps);
+        this.spells = spells;
+    }
+}
+class BattleMage extends Mage {
+    constructor({ ...restProps } = {}) {
+        super(restProps);
     }
 }
 
+const Stranger = new Character({ name: 'Brut', story: 'Prisoner', xp: 1000 });
 const Knight = new Warrior({
     name: 'Dante',
     story: 'Crusader',
@@ -50,30 +67,15 @@ const Knight = new Warrior({
     weapon: 'Long Sword',
     armor: 'Silver Shell',
 });
-
-console.log('New Character: Knight', Knight);
-Knight.attack();
-Knight.gainXp(2500);
-
-console.log(
-    'Warrior.prototype:',
-    Warrior.prototype,
-    Warrior.prototype.__proto__ === Character.prototype,
-    Knight.__proto__ === Warrior.prototype
-);
-
-class Mage extends Character {
-    constructor({ spells = [], ...restProps } = {}) {
-        super(restProps);
-
-        this.spells = spells;
-    }
-
-    castSpell() {
-        console.log(`${this.name} кастует заклинания ${this.spells}`);
-    }
-}
-
+const Demolisher = new Berserk({
+    name: 'Grunter',
+    story: 'Barbarian',
+    xp: 3700,
+    skills: ['Thunder Axr, Blood Rain'],
+    warcry: 'Blood!!!',
+    weapon: 'Bloody Axe',
+    armor: 'Helmet of Depths',
+});
 const Cleric = new Mage({
     name: 'Duncan',
     story: 'Warden',
@@ -82,17 +84,6 @@ const Cleric = new Mage({
     weapon: 'Mace',
     armor: 'Ring of Barriers',
 });
-
-console.log('New Character: Cleric', Cleric);
-Cleric.castSpell();
-Cleric.gainXp(1800);
-
-class BattleMage extends Mage {
-    constructor({ ...restProps } = {}) {
-        super(restProps);
-    }
-}
-
 const Destroyer = new BattleMage({
     name: 'Gorgon',
     story: 'Undead',
@@ -102,6 +93,29 @@ const Destroyer = new BattleMage({
     armor: 'Magic Stones',
 });
 
+console.log('New Character: Stranger', Stranger);
+Stranger.gainXp(1000);
+
+console.log('New Character: Knight', Knight);
+Knight.attack();
+Knight.gainXp(2500);
+
+console.log('New Character: Demolisher', Demolisher);
+Demolisher.rage();
+Demolisher.attack();
+Demolisher.gainXp(3700);
+
+console.log('New Character: Cleric', Cleric);
+Cleric.castSpell();
+Cleric.gainXp(1800);
+
 console.log('New Character: Destroyer', Destroyer);
 Destroyer.castSpell();
 Destroyer.gainXp(3600);
+
+console.log(
+    'Warrior.prototype:',
+    Warrior.prototype,
+    Warrior.prototype.__proto__ === Character.prototype,
+    Knight.__proto__ === Warrior.prototype
+);
