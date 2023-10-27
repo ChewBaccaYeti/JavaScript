@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="stylesheet" type="css" href="./index.css" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
@@ -11,7 +12,8 @@
         <!-- <script defer src="./OOP.js" type="module"></script> -->
         <!-- <script defer src="./stuff.js" type="module"></script> -->
         <!-- <script defer src="./DOM-prop-attributes.js" type="module"></script> -->
-        <script defer src="./fCC.js" type="module"></script>
+        <script defer src="./events.js" type="module"></script>
+        <!-- <script defer src="./fCC.js" type="module"></script> -->
 
         <section>
             <div value="">
@@ -86,6 +88,33 @@
             <article class="article_replace">
                 <h2>Article title</h2>
             </article>
+
+            <div>
+                <button id="single" class="btn">SINGLE CALLBACK</button>
+                <hr />
+                <button id="multiple" class="btn">MULTIPLE CALLBACKS</button>
+            </div>
+
+            <div>
+                <button class="btn js-add">Add Listener</button>
+                <button class="btn js-remove">Remove Listener</button>
+                <hr />
+                <button class="btn target-btn">Click me</button>
+                <button class="btn js-btn">Mango</button>
+                <button class="event-button">This is event button</button>
+            </div>
+
+            <div>
+                <form class="register-form" autocomplete="off">
+                    <input type="text" name="username" placeholder="Username" />
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                    />
+                    <button type="submit">Register</button>
+                </form>
+            </div>
         </section>
     </body>
 </html>
