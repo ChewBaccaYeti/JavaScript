@@ -10,38 +10,22 @@
  */
 
 const targetBtn = document.querySelector('.js-target-btn');
-const addListenerButton = document.querySelector('.js-add-listener');
+const addListenerBtn = document.querySelector('.js-add-listener');
+const removeListenerBtn = document.querySelector('.js-remove-listener');
 
-/*
-targetBtn.addEventListener('click', () => {
-    console.log(
-        'targetBtn clicked',
-        'Click!'
-        // handleTargetButtonClick(),
-        // targetButtonClickHandler(),
-        // onTargetButtonClick(),
-        // logMessage()
-    );
-});
-*/
-
-addListenerButton.addEventListener('click', () => {
+addListenerBtn.addEventListener('click', (event) => {
+    console.log(event);
     console.log('Вешаю слушателя событий на целевую кнопку');
 
-    targetBtn.addEventListener('click', () => {
-        console.log('Click!');
-    });
+    targetBtn.addEventListener('click', onTargetBtnClick);
 });
 
-function handleTargetButtonClick() {
-    console.log('handleTargetButtonClick', 'Click');
-}
-function targetButtonClickHandler() {
-    console.log('targetButtonClickHandler', 'Click');
-}
-function onTargetButtonClick() {
-    console.log('onTargetButtonClick', 'Click');
-}
-function logMessage() {
-    console.log('logMessage', 'Click on target button');
+removeListenerBtn.addEventListener('click', () => {
+    console.log('Снимаю слушателя событий с целевой кнопки');
+
+    targetBtn.removeEventListener('click', onTargetBtnClick);
+});
+
+function onTargetBtnClick() {
+    console.log('Клик по целевой кнопке');
 }
