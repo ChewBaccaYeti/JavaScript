@@ -42,9 +42,24 @@ function createColorCardsMarkup(colors) {
 }
 
 function onPaletteContainerClick() {
-  console.log(event.target);
+  const swatchEl = event.target;
+  const isColorSwatchEl = swatchEl.classList.contains('color-swatch');
+  const parentColorCard = swatchEl.closest('.color-card');
+  const currentActiveColor = document.querySelector('.color-card.is-active');
+  const backgroundHex = swatchEl.dataset.hex;
 
-  if (!event.target.classList.contains('color-swatch')) {
+  if (!isColorSwatchEl) {
     return;
   }
+
+  parentColorCard.classList.add('is-active');
+
+  if (currentActiveColor) {
+    currentActiveColor.classList.remove('is-active');
+  }
+
+  document.body.style.background = backgroundHex;
+
+  console.log(isColorSwatchEl);
+  console.log(parentColorCard);
 }
