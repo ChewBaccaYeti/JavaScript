@@ -18,7 +18,7 @@ const paletteContainer = document.querySelector('.js-palette');
 const cardsMarkup = createColorCardsMarkup(colors);
 
 paletteContainer.insertAdjacentHTML('beforeend', cardsMarkup);
-paletteContainer.addEventListener('click', onPaletteContainerClick);
+paletteContainer.addEventListener('click', optimazedPalette);
 
 function createColorCardsMarkup(colors) {
   return colors
@@ -41,25 +41,56 @@ function createColorCardsMarkup(colors) {
     .join('');
 }
 
-function onPaletteContainerClick() {
-  const swatchEl = event.target;
-  const isColorSwatchEl = swatchEl.classList.contains('color-swatch');
-  const parentColorCard = swatchEl.closest('.color-card');
-  const currentActiveColor = document.querySelector('.color-card.is-active');
-  const backgroundHex = swatchEl.dataset.hex;
+// function onPaletteContainerClick() {
+//   const swatchEl = event.target;
+//   const isColorSwatchEl = swatchEl.classList.contains('color-swatch');
+//   const parentColorCard = swatchEl.closest('.color-card');
+//   const currentActiveColor = document.querySelector('.color-card.is-active');
+//   const backgroundHex = swatchEl.dataset.hex;
+
+//   if (!isColorSwatchEl) {
+//     return;
+//   }
+
+//   parentColorCard.classList.add('is-active');
+
+//   if (currentActiveColor) {
+//     currentActiveColor.classList.remove('is-active');
+//   }
+
+//   document.body.style.background = backgroundHex;
+
+//   console.log(isColorSwatchEl);
+//   console.log(parentColorCard);
+// }
+
+function optimazedPalette() {
+  const isColorSwatchEl = event.target.classList.contains('color-swatch');
 
   if (!isColorSwatchEl) {
     return;
   }
 
-  parentColorCard.classList.add('is-active');
+  const swatchEl = event.target;
+  const parentColorCard = swatchEl.closest('.color-card');
+
+  setBodyBgColor(swatchEl.dataset.hex);
+  removeActiveColorClass();
+  addACtiveColorClass(parentColorCard);
+}
+
+function setBodyBgColor(color) {
+  document.body.style.background = color;
+}
+
+function removeActiveColorClass() {
+  const currentActiveColor = document.querySelector('.color-card.is-active');
 
   if (currentActiveColor) {
     currentActiveColor.classList.remove('is-active');
   }
+}
 
-  document.body.style.background = backgroundHex;
-
-  console.log(isColorSwatchEl);
-  console.log(parentColorCard);
+function addACtiveColorClass(card) {
+  card.classList.add('is-active');
 }
