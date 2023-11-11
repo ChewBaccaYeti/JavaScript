@@ -25,12 +25,12 @@ function createColorCardsMarkup(colors) {
     .map(({ hex, rgb }) => {
       return `
       <div class="color-card">
-       <div><div><div> <div
-       class="color-swatch"
-       data-hex="${hex}"
-       data-rgb="${rgb}"
-       style="background-color: ${hex}"
-     ></div></div></div></div>
+        <div><div><div> <div
+        class="color-swatch"
+        data-hex="${hex}"
+        data-rgb="${rgb}"
+        style="background-color: ${hex}"
+      ></div></div></div></div>
         <div class="color-meta">
           <p>HEX: ${hex}</p>
           <p>RGB: ${rgb}</p>
@@ -41,28 +41,28 @@ function createColorCardsMarkup(colors) {
     .join('');
 }
 
-// function onPaletteContainerClick() {
-//   const swatchEl = event.target;
-//   const isColorSwatchEl = swatchEl.classList.contains('color-swatch');
-//   const parentColorCard = swatchEl.closest('.color-card');
-//   const currentActiveColor = document.querySelector('.color-card.is-active');
-//   const backgroundHex = swatchEl.dataset.hex;
+function onPaletteContainerClick() {
+  const swatchEl = event.target;
+  const isColorSwatchEl = swatchEl.classList.contains('color-swatch');
+  const parentColorCard = swatchEl.closest('.color-card');
+  const currentActiveColor = document.querySelector('.color-card.is-active');
+  const backgroundHex = swatchEl.dataset.hex;
 
-//   if (!isColorSwatchEl) {
-//     return;
-//   }
+  if (!isColorSwatchEl) {
+    return;
+  }
 
-//   parentColorCard.classList.add('is-active');
+  parentColorCard.classList.add('is-active');
 
-//   if (currentActiveColor) {
-//     currentActiveColor.classList.remove('is-active');
-//   }
+  if (currentActiveColor) {
+    currentActiveColor.classList.remove('is-active');
+  }
 
-//   document.body.style.background = backgroundHex;
+  document.body.style.background = backgroundHex;
 
-//   console.log(isColorSwatchEl);
-//   console.log(parentColorCard);
-// }
+  console.log(isColorSwatchEl);
+  console.log(parentColorCard);
+}
 
 function optimazedPalette() {
   const isColorSwatchEl = event.target.classList.contains('color-swatch');
