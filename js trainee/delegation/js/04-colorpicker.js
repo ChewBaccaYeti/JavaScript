@@ -41,7 +41,7 @@ function createColorCardsMarkup(colors) {
     .join('');
 }
 
-function onPaletteContainerClick() {
+function onPaletteContainerClick(event) {
   const swatchEl = event.target;
   const isColorSwatchEl = swatchEl.classList.contains('color-swatch');
   const parentColorCard = swatchEl.closest('.color-card');
@@ -64,7 +64,7 @@ function onPaletteContainerClick() {
   console.log(parentColorCard);
 }
 
-function optimazedPalette() {
+function optimazedPalette(event) {
   const isColorSwatchEl = event.target.classList.contains('color-swatch');
 
   if (!isColorSwatchEl) {
