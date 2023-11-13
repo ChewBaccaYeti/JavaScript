@@ -8,10 +8,10 @@
  */
 
 const refs = {
-    input: document.querySelector('.js-input'),
-    nameLabel: document.querySelector('.js-button > span'),
-    licenseCheckbox: document.querySelector('.js-license'),
-    btn: document.querySelector('.js-button'),
+  input: document.querySelector('.js-input'),
+  nameLabel: document.querySelector('.js-button > span'),
+  licenseCheckbox: document.querySelector('.js-license'),
+  btn: document.querySelector('.js-button'),
 };
 
 // const input = document.querySelector('.js-input');
@@ -27,22 +27,22 @@ refs.input.addEventListener('input', onInput);
 refs.licenseCheckbox.addEventListener('change', onLicenseChange);
 
 function onInputFocus() {
-    console.log('Input will focus, focus event');
+  console.log('Input will focus, focus event');
 }
 
 function onInputBlur() {
-    console.log('Input will blur, blur event');
+  console.log('Input will blur, blur event');
 }
 
-function onInputChange() {
-    console.log('Input will change', event.currentTarget.value);
+function onInputChange(event) {
+  console.log('Input will change', event.currentTarget.value);
 }
 
-function onInput() {
-    console.log('Input', event.currentTarget.value);
-    refs.nameLabel.textContent = event.currentTarget.value;
+function onInput(event) {
+  console.log('Input', event.currentTarget.value);
+  refs.nameLabel.textContent = event.currentTarget.value;
 }
 
 function onLicenseChange(event) {
-    refs.btn.disabled = !event.currentTarget.checked;
+  refs.btn.disabled = !event.currentTarget.checked;
 }
