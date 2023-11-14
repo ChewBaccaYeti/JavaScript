@@ -1,4 +1,9 @@
 import { galleryItems } from './gallery-items.js';
+console.log(galleryItems);
+
+for (const item of galleryItems) {
+  console.log(item);
+}
 
 const gallery = document.querySelector('.gallery');
 
