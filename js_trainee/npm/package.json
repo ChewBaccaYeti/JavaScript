@@ -1,0 +1,31 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "npm init",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "SuS": "Веня лох!!!!",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChewBaccaYeti/University-JS.git"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "Venedykt Mitishov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChewBaccaYeti/University-JS/issues"
+  },
+  "homepage": "https://github.com/ChewBaccaYeti/University-JS#readme",
+  "dependencies": {
+    "joi": "^17.11.0",
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
