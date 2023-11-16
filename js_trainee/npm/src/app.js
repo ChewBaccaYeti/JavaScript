@@ -1,8 +1,8 @@
-const sum = (a, b) => a + b;
+export const sum = (a, b) => a + b;
 
 sum(4, 7);
 
-class Hero {
+export class Hero {
   constructor(name) {
     this._name = name;
   }
@@ -16,7 +16,7 @@ class Hero {
   }
 }
 
-const hero = new Hero('Wazowski');
+export const hero = new Hero('Wazowski');
 
-console.log(Hero);
+console.dir(Hero);
 console.log(hero);
