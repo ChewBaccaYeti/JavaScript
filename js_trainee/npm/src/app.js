@@ -1,6 +1,22 @@
-const Joi = require('joi');
-const shortid = require('shortid');
+const sum = (a, b) => a + b;
 
-const passwordValidator = Joi.string().min(4).max(16).alphanum();
+sum(4, 7);
 
-console.log(passwordValidator.validate(shortid.generate()));
+class Hero {
+  constructor(name) {
+    this._name = name;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(newName) {
+    this._name = newName;
+  }
+}
+
+const hero = new Hero('Wazowski');
+
+console.log(Hero);
+console.log(hero);
