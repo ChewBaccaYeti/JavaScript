@@ -4,16 +4,9 @@
   "description": "npm init",
   "main": "index.js",
   "scripts": {
-    "prestart": "jest",
+    "dev": "parcel index.html",
     "start": "node app.js",
-    "poststart": "echo \"This is poststart command\"",
-
-    "build": "babel src -d lib",
-
-    "predev": "",
-    "dev": "",
-    "postdev": "",
-    
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
