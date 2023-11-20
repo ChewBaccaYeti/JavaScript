@@ -1,11 +1,30 @@
 {
   "name": "localstorage",
   "version": "1.0.0",
-  "description": "",
+  "description": "localStorage usage",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel src/*.html --open",
+    "test": "jest"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChewBaccaYeti/JavaScript.git"
+  },
+  "keywords": [
+    "localStorage"
+  ],
+  "author": "https://github.com/ChewBaccaYeti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChewBaccaYeti/JavaScript/issues"
+  },
+  "homepage": "https://github.com/ChewBaccaYeti/JavaScript#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-handlebars-precompile": "^1.0.2"
+  },
+  "dependencies": {
+    "lodash.throttle": "^4.1.1"
+  }
 }
