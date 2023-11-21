@@ -10,11 +10,11 @@
     <p><b>Население:</b> {{population}} человек</p>
 
     {{#if infected}}
-      <p style="color: red;">Всё пропало!!!</p>
+      <p style="color: red;">Инфекция: активированы меры сдерживания.</p>
     {{/if}}
 
     {{#unless infected}}
-      <p style="color: green;">Фух, пронесло</p>
+      <p style="color: green;">Нарушение каратнтина не обнаружено.</p>
     {{/unless}}
   </li>
 {{/each}}

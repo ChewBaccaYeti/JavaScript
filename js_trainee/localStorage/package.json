@@ -5,7 +5,25 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/*.html --open",
+    "build": "parcel build src/*.html --public-url /JavaScript",
     "test": "jest"
+  },
+  "customDistStructure": {
+    "config": {
+      ".js": "js",
+      ".css": "css",
+      ".html": "html",
+      ".map": "map",
+      "images": [
+        ".jpg",
+        ".png"
+      ],
+      ".fileExtension": "folder/in/dist",
+      "folder/in/dist": [ ".file", ".extensions" ]
+    },
+    "options": {
+      "development": true
+    }
   },
   "repository": {
     "type": "git",
@@ -21,7 +39,9 @@
   },
   "homepage": "https://github.com/ChewBaccaYeti/JavaScript#readme",
   "devDependencies": {
+    "jest": "^29.7.0",
     "parcel-bundler": "^1.12.5",
+    "parcel-plugin-custom-dist-structure": "^1.1.20",
     "parcel-plugin-handlebars-precompile": "^1.0.2"
   },
   "dependencies": {
