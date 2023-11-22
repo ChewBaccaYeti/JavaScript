@@ -4,7 +4,7 @@
   "description": "npm init",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html",
+    "dev": "parcel index.html --open",
     "start": "node app.js",
     "build": "parcel build index.html",
     "test": "jest"
