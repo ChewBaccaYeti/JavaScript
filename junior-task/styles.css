@@ -1,0 +1,168 @@
+body {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    position: absolute;
+    left: 400px;
+}
+
+p {
+    position: absolute;
+    top: 100px;
+    padding: 5px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    margin: 20px;
+}
+
+.cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 20px;
+    padding: 10px;
+    list-style-type: none;
+}
+
+.list-item {
+    position: relative;
+}
+
+.card-background {
+    width: 520px;
+    height: 333px;
+
+    background-color: #fff;
+
+    box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.71);
+    -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.71);
+    -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.71);
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    padding: 12px;
+    
+    transform: skewY(2deg);
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 30px;
+        height: 130px;
+        background-color: #fff; 
+    }
+
+    &::before {
+        top: -62px;
+        left: 0;
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+        transform: rotate(130deg);
+    }
+
+    &::after {
+        top: 257px;
+        right: 16px;
+        height: 100px;
+        clip-path: polygon(0 0, 0 100%, 100% 100%);
+        transform: rotate(-40deg);
+    }
+}
+
+.card-button {
+    position: absolute;
+    top: 280px;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.card-position1 {
+    position: absolute;
+    z-index: 2;
+    top: -45vh;
+    right: 40vw;
+}
+
+.card-position2 {
+    position: absolute;
+    z-index: 2;
+    top: -25vh;
+    right: 13vw;
+}
+
+.card1 {
+background-color: #f9ebd7;
+}
+.card2 {
+background-color: #609ea0;
+}
+.card3 {
+background-color: #e6e6fa;
+}
+.card4 {    
+background-color: #ffe4b4;
+}
+.card5 {
+background-color: #f9ebd7;
+}
+.card6 {
+background-color: #609ea0;
+}
+.card7 {
+background-color: #e6e6fa;
+}
+.card8 {
+background-color: #ffe4b4;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-position1,
+    .card-position2 {
+        position: static;
+        top: auto;
+        right: auto;
+        z-index: auto;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1500px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1501px) {
+    .cards-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
