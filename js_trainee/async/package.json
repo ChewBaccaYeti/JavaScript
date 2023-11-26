@@ -1,0 +1,22 @@
+{
+  "name": "async",
+  "version": "1.0.0",
+  "description": "asynchronous-date-time",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChewBaccaYeti/JavaScript.git"
+  },
+  "keywords": [
+    "async/date"
+  ],
+  "author": "Venedykt Mitishov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChewBaccaYeti/JavaScript/issues"
+  },
+  "homepage": "https://github.com/ChewBaccaYeti/JavaScript#readme"
+}
