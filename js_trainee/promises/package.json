@@ -1,0 +1,32 @@
+{
+  "name": "promises",
+  "version": "1.0.0",
+  "description": "promises",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/*.html --open",
+    "build": "parcel build src/*.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChewBaccaYeti/JavaScript.git"
+  },
+  "keywords": [
+    "promises"
+  ],
+  "author": "Venedykt Mitishov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChewBaccaYeti/JavaScript/issues"
+  },
+  "homepage": "https://github.com/ChewBaccaYeti/JavaScript#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-nuke-dist": "^1.0.1"
+  },
+  "dependencies": {
+    "bootstrap.native": "^5.0.11",
+    "lodash.throttle": "^4.1.1"
+  }
+}
