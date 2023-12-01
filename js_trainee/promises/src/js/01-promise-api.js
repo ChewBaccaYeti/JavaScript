@@ -20,12 +20,54 @@ const promise = new Promise((resolve, reject) => {
 
 promise.then(
   result => {
-    console.log(result); // value
+    console.log(`✅ ${result}`); // value
   },
   error => {
-    console.log(error); // reason
+    console.log(`❌ ${error}`); // reason
   },
 );
+
+// OR
+
+promise.then(onFulfilled, onRejected);
+function onFulfilled(result) {
+  console.log(`✅ ${result}`);
+}
+function onRejected(error) {
+  console.log(`❌ ${error}`);
+}
+
+/*
+ * Цепочки промисов (chaining)
+ * Promise.prototype.catch(error)
+ * Promise.prototype.finally()
+ */
+
+promise
+  .then(resolve => {
+    console.log(resolve);
+
+    return 5;
+  })
+  .then(result => {
+    console.log(result);
+
+    return 10;
+  })
+  .then(success => {
+    console.log(success);
+
+    return 15;
+  })
+  .then(value => {
+    console.log(value);
+  })
+  .catch(error => console.log(error))
+  .finally(() => {
+    console.log('I will be completed in any case.');
+  });
+
+//! <--!-!-->
 
 // Change value of isSuccess variable to call resolve or reject
 const isSuccess = true;
@@ -109,3 +151,51 @@ const fetchUserFromServer = username => {
 fetchUserFromServer('Mango')
   .then(user => console.log(user))
   .catch(error => console.error(error));
+
+//! Static methods
+
+// Promise.all()
+
+const promiseAll = (text, delay) => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(text), delay);
+  });
+};
+
+const promise_A = promiseAll('promise_A value', 1000);
+const promise_B = promiseAll('promise_B value', 3000);
+
+Promise.all([promise_A, promise_B])
+  .then(value => console.log(value)) //["promise_A value", "promise_B value"]
+  .catch(error => console.log(error));
+
+// Promise.race()
+
+const promiseRace = (text, delay) => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(text), delay);
+  });
+};
+
+const promise_1 = promiseRace('promise_1 value', 1000);
+const promise_2 = promiseRace('promise_2 value', 3000);
+
+Promise.race([promise_1, promise_2])
+  .then(value => console.log(value)) // "promise_1 value"
+  .catch(error => console.log(error));
+
+//? Promise.resolve() & Promise.reject()
+
+// Fulfilled promise
+new Promise(resolve => resolve('success value')).then(value =>
+  console.log(value),
+);
+
+Promise.resolve('success value').then(value => console.log(value));
+
+// Rejected promise
+new Promise((resolve, reject) => reject('error')).catch(error =>
+  console.error(error),
+);
+
+Promise.reject('error').catch(error => console.error(error));
