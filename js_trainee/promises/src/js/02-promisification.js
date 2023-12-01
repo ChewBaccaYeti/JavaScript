@@ -59,18 +59,43 @@ function onmakeQuickOrderError(error) {
 /*
  * Покемоны с https://pokeapi.co/
  */
+
 const fetchPokemonByID = id => {
-  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+  return fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .then(result => result.json())
-    .then(pokemon => {
-      console.log(pokemon);
-    })
-    .catch(error => {
-      console.log(error);
-    })
     .finally(() => console.log('Picka-Picka!'));
 };
 
-fetchPokemonByID(1);
-fetchPokemonByID(2);
-fetchPokemonByID(3);
+fetchPokemonByID(1).then(onFetchSuccess).catch(onFetchError);
+fetchPokemonByID(2).then(onFetchSuccess).catch(onFetchError);
+fetchPokemonByID(3).then(onFetchSuccess).catch(onFetchError);
+
+function onFetchSuccess(pokemon) {
+  console.log('onFetchSuccess ->', onFetchSuccess);
+  console.log(pokemon);
+}
+
+function onFetchError(error) {
+  console.log('onFetchError ->', onFetchError);
+  console.log(error);
+}
+
+//! <!--!!--!>
+
+const makePromise = () => {
+  return new Promise((resolve, reject) => {
+    const passed = Math.random() > 0.5;
+
+    setTimeout(() => {
+      if (passed) {
+        resolve('✅ Кчау!');
+      }
+
+      reject('❌ Bruuuh');
+    }, 2000);
+  });
+};
+
+makePromise()
+  .then(result => console.log(result))
+  .catch(error => console.log(error));
