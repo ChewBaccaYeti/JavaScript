@@ -8,6 +8,56 @@ const horses = [
   'Seabiscuit',
 ];
 
+let raceCounter = 0;
+const refs = {
+  startBtn: document.querySelector('.js-start-race'),
+  winnerField: document.querySelector('.js-winner'),
+  progressField: document.querySelector('.js-progress'),
+  tableBody: document.querySelector('.js-results-table > tbody'),
+};
+
+refs.winnerField.style.color = 'skyblue';
+refs.progressField.style.color = 'green';
+
+refs.startBtn.addEventListener('click', onStart);
+
+function onStart() {
+  raceCounter += 1;
+  const promises = horses.map(run);
+
+  updateWinnerField('');
+  updateProgressField('🤖 Заезд начался, ставки не принимаются!');
+  determinateWinner(promises);
+  waitForAll(promises);
+}
+
+function waitForAll(horses) {
+  Promise.all(horses).then(() => {
+    updateProgressField('📝 Заезд окончен, принимаются ставки.');
+  });
+}
+
+function determinateWinner(horses) {
+  Promise.race(horses).then(({ horse, time }) => {
+    updateWinnerField(`🎉 Победил ${horse}, финишировав за ${time} 
+    времени`);
+    updateResultsTable({ horse, time, raceCounter });
+  });
+}
+
+function updateResultsTable({ horse, time, raceCounter }) {
+  const tr = `<tr><td>${raceCounter}</td><td>${horse}</td><td>${time}</td></tr>`;
+  refs.tableBody.insertAdjacentHTML('beforeend', tr);
+}
+
+function updateProgressField(message) {
+  refs.progressField.textContent = message;
+}
+
+function updateWinnerField(message) {
+  refs.winnerField.textContent = message;
+}
+
 function run(horse) {
   return new Promise(resolve => {
     const time = getRandomTime(2000, 3500);
@@ -18,41 +68,6 @@ function run(horse) {
   });
 }
 
-const promises = horses.map(run);
-console.log(promises);
-
-run(promises)
-  .then(race => console.log(race))
-  .catch(error => console.log(error));
-
 function getRandomTime(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-/*
- * Promise.race([]) для ожидания первого выполнившегося промиса
- */
-
-console.log(
-  '%c🤖 Заезд начался, ставки не принимаются!',
-  'color: red; font-size: 14px;',
-);
-
-Promise.race(promises).then(({ horse, time }) => {
-  console.log(
-    `%c🎉 Победил ${horse}, финишировав за ${time}
-    времени`,
-    'color: skyblue; font-size: 14px;',
-  );
-});
-
-/*
- * Promise.all([]) для ожидания всех промисов
- */
-
-Promise.all(promises).then(() => {
-  console.log(
-    '%c📝 Заезд окончен, принимаются ставки.',
-    'color: yellow; font-size: 14px;',
-  );
-});
