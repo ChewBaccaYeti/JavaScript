@@ -43,3 +43,8 @@ img {
   text-transform: uppercase;
   cursor: pointer;
 }
+
+.timer {
+  display: flex;
+  gap: 10px;
+}
