@@ -1,17 +1,25 @@
 <div class="card">
   <div class="card-img-top">
     <img src="{{sprites.front_default}}" alt="{{name}}">
+    <img src="{{sprites.back_default}}" alt="{{name}}">
   </div>
   <div class="card-body">
     <h2 class="card-title">Имя: {{name}}</h2>
-    <p class="card-text">Вес: {{weight}}</p>
+    <p class="card-text">Идентификатор: {{id}}</p>
     <p class="card-text">Рост: {{height}}</p>
+    <p class="card-text">Вес: {{weight}}</p>
 
     <p class="card-text"><b>Умения</b></p>
     <ul class="list-group"></ul>
-    {{#each abilities}}
+        {{#each abilities}}
       <li class="list-group-item">{{ability.name}}</li>
-    {{/each}}
+        {{/each}}
+    </ul>
+    <p class="card-text"><b>Тип урона</b></p>
+    <ul class="list-group__stats"></ul>
+        {{#each types}}
+      <li class="list-stats-item">{{type.name}}</li>
+        {{/each}}
     </ul>
   </div>
 </div>
