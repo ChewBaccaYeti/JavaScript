@@ -25,16 +25,14 @@ refs.loadMoreBtn.addEventListener('click', onLoadMore);
 
 const newsApiServices = new NewsApiServices();
 
-let searchQuery = '';
-
 function onSearch(e) {
   e.preventDefault();
 
-  searchQuery = e.currentTarget.elements.query.value;
+  newsApiServices.query = e.currentTarget.elements.query.value;
   // in index.html this input has attribute 'name=query'
-  newsApiServices.fetchArticles(searchQuery);
+  newsApiServices.fetchArticles();
 }
 
 function onLoadMore() {
-  newsApiServices.fetchArticles(searchQuery);
+  newsApiServices.fetchArticles();
 }
