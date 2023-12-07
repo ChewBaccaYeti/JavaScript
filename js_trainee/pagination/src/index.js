@@ -12,14 +12,6 @@
  * http://newsapi.org/v2/everything?q=cat&language=en&pageSize=5&page=1
  */
 
-// query: 'q=cosmos',
-// language: 'language=en',
-// pageSize: 10,
-// page: 1,
-
-// fetchNewsAPI();
-// function fetchNewsAPI() {}
-
 import './css/common.css';
 
 const refs = {
