@@ -1,30 +1,45 @@
 import './css/common.css';
 import NewsApiServices from './js/news-service';
 import articlesTmp from './templates/articles.hbs';
+import LoadMoreBtn from './js/components/load-more-btn';
 
 const refs = {
   searchForm: document.querySelector('.js-search-form'),
   articlesContainer: document.querySelector('.js-articles-container'),
-  loadMoreBtn: document.querySelector('[data-action="load-more"]'),
 };
-refs.searchForm.addEventListener('submit', onSearch);
-refs.loadMoreBtn.addEventListener('click', onLoadMore);
 
 const newsApiServices = new NewsApiServices();
+const loadMoreBtn = new LoadMoreBtn({
+  selector: '[data-action="load-more"]',
+  hidden: true,
+});
+
+refs.searchForm.addEventListener('submit', onSearch);
+loadMoreBtn.refs.button.addEventListener('click', fetchArticles);
 
 function onSearch(e) {
   e.preventDefault();
 
-  newsApiServices.query = e.currentTarget.elements.query.value; //index.html / input / 'name=query'
+  newsApiServices.query = e.currentTarget.elements.query.value;
+
+  if (newsApiServices.query === '') {
+    return alert('Write something...');
+  }
+
+  loadMoreBtn.show();
   newsApiServices.resetPage();
   newsApiServices.fetchArticles().then(articles => {
     clearArticlesContainer();
-    appendArticlesMarkup(articles);
   });
+  fetchArticles();
 }
 
-function onLoadMore() {
-  newsApiServices.fetchArticles().then(appendArticlesMarkup);
+function fetchArticles() {
+  loadMoreBtn.disable();
+  newsApiServices.fetchArticles().then(articles => {
+    appendArticlesMarkup(articles);
+    loadMoreBtn.enable();
+  });
 }
 
 function appendArticlesMarkup(articles) {
