@@ -1,12 +1,4 @@
 const BASE_URL = 'http://localhost:3001/books';
-
-// const newBook = {
-//     title: 'Тестовая книга',
-//     author: 'Я',
-//     genres: ['JS'],
-//     rating: 10
-// };
-
 function addBook(book) {
     const options = {
         method: 'POST',
@@ -14,28 +6,25 @@ function addBook(book) {
             'Content-Type': 'application/json',
             "Accept": "application/json",
         },
-        body: JSON.stringify(book), // newBook
+        body: JSON.stringify(book),
     };
 
-    return fetch(BASE_URL, options)
-        .then(response => response.json()).then(data => console.log(data));
+    return fetch(BASE_URL, options).then(response => response.json());
 }
 
-// addBook(newBook);
+// addBook({
+//     title: 'То, что портит жизнь всем вокруг.',
+//     author: 'Я',
+//     genres: ['React'],
+//     rating: 7
+// }).then(renderBook);
 
-addBook({
-    title: 'Новая книга',
-    author: 'Тоже Я',
-    genres: ['Node'],
-    rating: 8
-}).then(renderBook);
-
-addBook({
-    title: 'Снова Новая книга',
-    author: 'И опять Я',
-    genres: ['CSS'],
-    rating: 8
-}).then(renderBook);
+// addBook({
+//     title: 'Маленькая книга о великих технологиях',
+//     author: 'И опять Я',
+//     genres: ['JS', 'Node'],
+//     rating: 9
+// }).then(renderBook);
 
 function renderBook() {
     console.log("Пришел ответ от бекенда, можно отрисовывать книгу");
