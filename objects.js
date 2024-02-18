@@ -109,3 +109,30 @@ delete ice_cube.title; // Это будет проигнорировано
 ice_cube.unfreezable.car = 'Volvo' // Будет записано новое свойство car: 'Volvo'
 
 console.log(ice_cube);
+
+const person = {
+    name: ["Bob", "Smith"],
+    age: 32,
+    gender: "male",
+    interests: ["music", "skiing"],
+    bio: function () {
+        alert(
+            this.name[0] +
+            " " +
+            this.name[1] +
+            " is " +
+            this.age +
+            " years old. He likes " +
+            this.interests[0] +
+            " and " +
+            this.interests[1] +
+            ".",
+        );
+    },
+    greeting: function () {
+        alert("Hi! I'm " + this.name[0] + ".");
+    },
+};
+console.log(person);
+// Bob Smith is 32 years old. He likes music and skiing.
+console.log(person.name[0] + " " + person.name[1] + " is " + person.age + " years old. He likes " + person.interests[0] + " and " + person.interests[1] + ".",);
