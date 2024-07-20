@@ -10,6 +10,7 @@
 //! Методы работы с прототипами:
 // Object.create(): Создает новый объект с указанным прототипом и опциональными свойствами.
 // Object.setPrototypeOf(): Устанавливает прототип (т.е. внутреннее свойство [[Prototype]]) указанного объекта на другой объект или null.
+// метод constructor используется в классах для создания и инициализации объектов при создании экземпляра класса.
 
 //! Методы клонирования и слияния объектов:
 // Object.assign(): Копирует значения всех перечисляемых свойств из одного или нескольких исходных объектов в целевой объект.
@@ -75,7 +76,6 @@ const ice_cube = {
     'link': 'https://lawful-toilet.biz',
     'id': '1',
     unfreezable: {
-
         'createdAt': '2024-02-15T17:35:36.224Z',
         'name': 'Carol Cummerata',
         'avatar': 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/902.jpg',
@@ -91,7 +91,6 @@ const ice_cube = {
         'Override': 'CSV',
         'Address': 'Janesville',
         'id': '5'
-
     }
 }
 Object.freeze(ice_cube);
@@ -136,3 +135,41 @@ const person = {
 console.log(person);
 // Bob Smith is 32 years old. He likes music and skiing.
 console.log(person.name[0] + " " + person.name[1] + " is " + person.age + " years old. He likes " + person.interests[0] + " and " + person.interests[1] + ".",);
+
+/**
+ * В JavaScript все объекты имеют свойство constructor, которое ссылается на функцию, создавшую этот объект. 
+ *  В случае объекта, созданного через литерал (как person), его constructor будет Object, потому что он создан стандартным конструктором Object
+ */
+const person_constructor = person.constructor;
+console.log(person_constructor);
+
+console.log('     !<=========>!     ');
+
+class Person {
+    constructor(name, age, gender, interests) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+    }
+    bio() {
+        console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.He likes ${this.interests[0]} and ${this.interests[1]}.`);
+    }
+    greeting() {
+        console.log(`Hi! I'm ${this.name[0]}.`);
+    }
+}
+
+// Создаем экземпляр класса Person
+const Bob = new Person(["Bob", "Smith"], 32, "male", ["music", "skiing"]);
+console.log(Bob);
+
+// Выводим информацию о Bob Smith
+Bob.bio(); // Будет показывать alert с биографией
+
+// Приветствие
+Bob.greeting(); // Будет показывать alert с приветствием
+
+// Демонстрация использования constructor
+const Bob_constructor = Bob.constructor;
+console.log(Bob_constructor); // Выведет саму функцию конструктора Bob
