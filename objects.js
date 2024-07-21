@@ -10,13 +10,17 @@
 //! Методы работы с прототипами:
 // Object.create(): Создает новый объект с указанным прототипом и опциональными свойствами.
 // Object.setPrototypeOf(): Устанавливает прототип (т.е. внутреннее свойство [[Prototype]]) указанного объекта на другой объект или null.
-// метод constructor используется в классах для создания и инициализации объектов при создании экземпляра класса.
+// метод constructor: используется в классах для создания и инициализации объектов при создании экземпляра класса.
+// Object.defineProperties(): позволяет добавлять и изменять свойства объекта, изменять свойства метаданных и добавить геттеры и сеттеры
+// Object.defineProperty(): делает все тоже самое, но с одним свойством (смотри строку 25)
 
 //! Методы клонирования и слияния объектов:
 // Object.assign(): Копирует значения всех перечисляемых свойств из одного или нескольких исходных объектов в целевой объект.
 // При помощи spread оператора ... также можно клонировать объекты: const clonedObj = { ...originalObj }.
+// Object.create(): создает объект из уже существующего объекта
 
 //! Другие методы:
+// Object.entries (): возвращает массив пар ключ/значение объекта на котором был вызван и не изменяет оригинал
 // Object.freeze(): Замораживает объект, предотвращая добавление, удаление или изменение его свойств.
 // Object.seal(): Запечатывает объект, предотвращая добавление или удаление свойств из объекта, но позволяет изменять существующие свойства.
 // Object.defineProperty(): Определяет новое свойство непосредственно на объекте или изменяет существующее свойство, и возвращает объект, который был изменен.
@@ -172,4 +176,46 @@ Bob.greeting(); // Будет показывать alert с приветстви
 
 // Демонстрация использования constructor
 const Bob_constructor = Bob.constructor;
-console.log(Bob_constructor); // Выведет саму функцию конструктора Bob
+console.log(Bob_constructor); // Выведет саму функцию конструктора Bob [class Person]
+
+// Create an Object:
+function createObject() {
+    const person = {
+        firstName: "John",
+        lastName: "Doe",
+        status: "YES"
+    };
+
+    // Create new Object
+    const man = Object.create(person);
+    man.firstName = "Peter";
+
+    // Add Properties
+    Object.defineProperties(person, {
+        language: { value: "en", enumerable: true }, // Делаем свойство перечисляемым с enumerable,
+        // так как по дефолту стоит false, а значит не будет видимым для логов и циклов, а также при работе с JSON,
+        year: { value: "Hello", enumerable: true, configurable: true } // Добавлено свойство configurable(дефолту стоит false)
+        // для возможности изменять или переопределять в дальнейшем
+    });
+
+    // Add a new Property
+    Object.defineProperty(person, "year", { value: "2008" })
+
+    // Change a property
+    Object.defineProperty(person, "status", { value: "NO" })
+
+    console.log(person);
+};
+createObject();
+
+// Object.entries() makes it simpler to use objects in loops:
+function entriesObject() {
+    const fruits = { Bananas: 300, Oranges: 200, Apples: 500 };
+
+    let bucket = "";
+    for (let [fruit, value] of Object.entries(fruits)) {
+        bucket += fruit + ": " + value + " <br> ";
+    };
+    console.log(bucket);
+};
+entriesObject();
