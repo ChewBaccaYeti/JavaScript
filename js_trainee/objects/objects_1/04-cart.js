@@ -62,8 +62,8 @@ const cart = {
 
         return total;
     },
-    increaseQuantity(productName) {},
-    decreaseQuantity(productName) {},
+    increaseQuantity(productName) { },
+    decreaseQuantity(productName) { },
 };
 
 console.table(cart.getItems());

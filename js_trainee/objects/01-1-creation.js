@@ -61,7 +61,7 @@ const email = 'mango@mail.com';
 
 const signupData = {
     username: username,
-    email, //* Чтобы избежать повторения имени ключа и свойства, можно записывть сразу свойства объекта, если их названия совпадают
+    email, //* Чтобы избежать повторения имени ключа и свойства, можно записывать сразу свойства объекта, если их названия совпадают
 };
 console.log(signupData);
 
@@ -105,9 +105,11 @@ array.greetings = ':)'; // Данный ключ будет добавлен в 
 
 console.log(array);
 
-const func = function () {
-    console.log('Hey!');
-};
+class func {
+    constructor() {
+        console.log('Hey!');
+    }
+}
 func.Hey = ':)';
 
 console.dir(func.Hey);

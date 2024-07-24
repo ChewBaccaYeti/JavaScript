@@ -32,42 +32,45 @@ console.log('r2:', r2);
 const r3 = add_2(46, 82);
 console.log('r3:', r3);
 
-const fn = function () {
-    console.log(1);
-
-    console.log(2);
-
-    console.log(3);
-
-    return;
-};
-console.log(fn());
-
 const fnA = function () {
     console.log(fnA);
-    fnB();
+    fnB(); // Еще не объявлена
 };
-// fnA();
+// fnA(); // Тут начнется выполнение бесконечного стека вызовов функций
 
 const fnB = function () {
     console.log(fnB);
-    fnC();
+    fnC(); // Еще не объявлена
 };
 // fnB();
 
 const fnC = function () {
     console.log(fnC);
+    fnA();
 };
-// fnC();
+// fnC(); // Достаточно вызвать последнюю функцию чтобы начать каскад вызовов (смотри последовательность вложенности вызовов в функциях)
+
+const fn = function () {
+    console.log(Math.random() * 10);
+    console.log(1, ':', Math.floor(Math.random() * 10) + 1); // Вернет целое число от 10 до 10 включительно
+    console.log(2, ':', Math.random() * 100);
+    console.log(3, ':', Math.random() * 1000);
+
+    console.log(fnA);
+    console.log(fnB);
+    console.log(fnC);
+    return;
+};
+fn();
 
 // console.log('Лог перед вызовом функции A');
-fnA();
+// console.log(fnA());
 // console.log('Лог после вызова функции A');
 // console.log('Лог перед вызовом функции B');
-// fnB();
+// console.log(fnB());
 // console.log('Лог после вызова функции B');
 // console.log('Лог перед вызовом функции C');
-// fnC();
+// console.log(fnC());
 // console.log('Лог после вызова функции C');
 
 //! Данные действия - демонстрация Стека вызова функции. В зависимости от написания его поведение может иметь несколько видов.

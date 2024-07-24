@@ -15,10 +15,10 @@ const profile = {
 
 const makeProfileMarkup = function (userProfile) {
     const {
-        avatar = 'https://i.pravatar.cc/400?img=6',
         name,
         tag,
         location = 'Planet Earth',
+        avatar = 'https://i.pravatar.cc/400?img=6',
         stats: { followers, views, likes },
     } = userProfile;
 

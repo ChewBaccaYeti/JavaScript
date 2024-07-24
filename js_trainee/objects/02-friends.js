@@ -3,16 +3,16 @@
  */
 
 const friends = [
-    { name: 'Lebovski', online: false },
-    { name: 'Isaac', online: true },
-    { name: 'Aragorn', online: false },
     { name: 'Arthur', online: false },
+    { name: 'Lebowski', online: false },
+    { name: 'Isaac', online: true },
+    { name: 'Aragorn', online: false }
 ];
 
 console.table(friends);
 
 for (const friend of friends) {
-    //* Массив сложных типов, то есть объектов, в цикле итерации forof я получаю ССЫЛКУ на объект
+    //* Массив сложных типов, то есть объектов, в цикле итерации for...of я получаю ССЫЛКУ на объект
     console.log(friend);
 
     friend.newProp = 'This is added property'; // Добавление нового свойства
