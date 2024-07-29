@@ -1,0 +1,25 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "JS practice repo",
+  "main": "Arrays.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChewBaccaYeti/JavaScript.git"
+  },
+  "keywords": [
+    "JS"
+  ],
+  "author": "Venedykt Mitishov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChewBaccaYeti/JavaScript/issues"
+  },
+  "homepage": "https://github.com/ChewBaccaYeti/JavaScript#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

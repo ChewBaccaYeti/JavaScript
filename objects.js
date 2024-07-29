@@ -25,54 +25,63 @@
 // Object.seal(): Запечатывает объект, предотвращая добавление или удаление свойств из объекта, но позволяет изменять существующие свойства.
 // Object.defineProperty(): Определяет новое свойство непосредственно на объекте или изменяет существующее свойство, и возвращает объект, который был изменен.
 // Object.getOwnPropertyNames(): Возвращает массив имен всех собственных (не унаследованных) свойств объекта.
+// Object.getOwnPropertyDescriptor() method returns the property descriptors of an object / method does not change the original object.
 // Object.getOwnPropertyDescriptors(): Возвращает все свойства объекта, включая их атрибуты.
+// Object.getOwnPropertyNames() method returns an array with the properties of an object / method does not change the original object.
+// Object.groupBy() method groups elements of an object according to string values returned from a callback function / method does not change the original object.
 
-const obj = {
-    speak() {
-        console.log(`${this.name} is barking!`);
-    },
-    'createdAt': '2024-02-15T14:13:49.569Z',
-    'name': 'Michael Ledner',
-    'avatar': 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/296.jpg',
-    'job': 'Lead Interactions Associate',
-    'year': '1956-08-23T05:57:51.705Z',
-    'id': '1',
-}
-
-const job = 'job' in obj;
-for (const key in obj) {
-    console.log(`Ключ: ${key}, Значение: ${obj[key]}`);
-}
-
-console.log(Object.keys(obj)); // [ 'createdAt', 'name', 'avatar', 'job', 'year', 'id' ]
-console.log(Object.values(obj)); // ['2024-02-15T14:13:49.569Z','Michael Ledner','https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/296.jpg','Lead Interactions Associate','1956-08-23T05:57:51.705Z','1']
-console.log(Object.entries(obj)); // [key, value], [key, value], [key, value], ...etc
-console.log(obj.hasOwnProperty('name')); // true
-console.log(job); // true
-
-const proto_user = Object.create(obj);
-proto_user.code = 'Wazowski';
-console.log(proto_user); // { code: 'Wazowski' }
-
-const proto_animal = Object.create(obj);
-proto_animal.name = 'Dog';
-proto_animal.speak(); // Dog makes a sound.
-const animal = {
-    speak() {
-        console.log(`${this.name} meowing on walk.`);
+function proto() {
+    const obj = {
+        speak() {
+            console.log(`${this.name} is barking!`);
+        },
+        'createdAt': '2024-02-15T14:13:49.569Z',
+        'name': 'Michael Ledner',
+        'avatar': 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/296.jpg',
+        'job': 'Lead Interactions Associate',
+        'year': '1956-08-23T05:57:51.705Z',
+        'id': '1',
     }
+
+    const job = 'job' in obj;
+    for (const key in obj) {
+        console.log(`Ключ: ${key}, Значение: ${obj[key]}`);
+    }
+
+    console.log(Object.keys(obj)); // [ 'createdAt', 'name', 'avatar', 'job', 'year', 'id' ]
+    console.log(Object.values(obj)); // ['2024-02-15T14:13:49.569Z','Michael Ledner','https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/296.jpg','Lead Interactions Associate','1956-08-23T05:57:51.705Z','1']
+    console.log(Object.entries(obj)); // [key, value], [key, value], [key, value], ...etc
+    console.log(obj.hasOwnProperty('name')); // true
+    console.log(job); // true
+
+    const proto_user = Object.create(obj);
+    proto_user.code = 'Wazowski';
+    console.log(proto_user); // { code: 'Wazowski' }
+
+    const proto_animal = Object.create(obj);
+    proto_animal.name = 'Dog';
+    proto_animal.speak(); // Dog makes a sound.
+    const animal = {
+        speak() {
+            console.log(`${this.name} meowing on walk.`);
+        }
+    };
+    animal.name = 'Cat';
+    Object.setPrototypeOf(proto_animal, animal); // Меняет прототип с obj на animal у proto_animal
+    animal.speak(); // Cat meowing on walk.
 };
-animal.name = 'Cat';
-Object.setPrototypeOf(proto_animal, animal); // Меняет прототип с obj на animal у proto_animal
-animal.speak(); // Cat meowing on walk.
+proto();
 
-const target = { a: 1, b: 2 };
-const source = { b: 4, c: 5 };
-const result = Object.assign(target, source);
-console.log(result); // { a: 1, b: 4, c: 5 }
+function spread() {
+    const target = { a: 1, b: 2 };
+    const source = { b: 4, c: 5 };
+    const result = Object.assign(target, source);
+    console.log(result); // { a: 1, b: 4, c: 5 }
 
-const cloned_result = { ...result };
-console.log(cloned_result); // { a: 1, b: 4, c: 5 }
+    const cloned_result = { ...result };
+    console.log(cloned_result); // { a: 1, b: 4, c: 5 }
+};
+spread();
 
 const ice_cube = {
     'createdAt': '2024-02-15T13:53:37.529Z',
@@ -220,26 +229,90 @@ function entriesObject() {
 };
 entriesObject();
 
-const fruits = [
-    ["apples", 300],
-    ["pears", 900],
-    ["bananas", 500]
-];
+function fromEntries() {
+    const fruits = [
+        ["apples", 300],
+        ["pears", 900],
+        ["bananas", 500]
+    ];
 
-const myObjFruits = Object.fromEntries(fruits);
+    const myObjFruits = Object.fromEntries(fruits);
 
-console.log(myObjFruits);
+    console.log(myObjFruits);
 
-const vegetables = {
-    potato: 200,
-    tomato: 600,
-    cucumber: 800
+    const vegetables = {
+        potato: 200,
+        tomato: 600,
+        cucumber: 800
+    };
+
+    // Преобразуем объект vegetables в массив пар [ключ, значение]
+    const vegetableEntries = Object.entries(vegetables);
+
+    // Теперь создаем новый объект из массива пар с помощью Object.fromEntries
+    const myObjVegetables = Object.fromEntries(vegetableEntries);
+
+    console.log(myObjVegetables);
+};
+fromEntries();
+
+function getOwnPropertyDescriptor() {
+    const person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue"
+    };
+
+    let descriptor = Object.getOwnPropertyDescriptor(person, 'age');
+    console.log(descriptor);
+};
+getOwnPropertyDescriptor();
+
+function getOwnPropertyNames() {
+    const person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue"
+    };
+
+    let props = Object.getOwnPropertyNames(person);
+    console.log(props);
+};
+getOwnPropertyNames();
+
+function groupByCustomFunction(array, callback) {
+    return array.reduce((acc, item) => {
+        // Получаем ключ группировки из коллбэк-функции
+        const key = callback(item);
+
+        // Инициализируем пустой массив, если ключ еще не существует
+        if (!acc[key]) {
+            acc[key] = [];
+        }
+
+        // Добавляем элемент в соответствующую группу
+        acc[key].push(item);
+
+        return acc;
+    }, {});
 };
 
-// Преобразуем объект vegetables в массив пар [ключ, значение]
-const vegetableEntries = Object.entries(vegetables);
+function groupBy() {
+    const fruits = [
+        { name: "apples", quantity: 300 },
+        { name: "bananas", quantity: 500 },
+        { name: "oranges", quantity: 200 },
+        { name: "kiwi", quantity: 150 }
+    ];
 
-// Теперь создаем новый объект из массива пар с помощью Object.fromEntries
-const myObjVegetables = Object.fromEntries(vegetableEntries);
+    function myCallback({ quantity }) {
+        return quantity > 200 ? "ok" : "low";
+    }
 
-console.log(myObjVegetables);
+    const fruits_bucket = Object.groupBy(fruits, myCallback);
+    console.log(fruits_bucket);
+};
+groupBy();
+

@@ -7,6 +7,7 @@ function logger(req, res, next) {
 // применение middleware к приложению Express
 const express = require('express');
 const app = express();
+const port = 6001
 
 // использование middleware для всех запросов
 app.use(logger);
@@ -16,8 +17,8 @@ app.get('/', (req, res) => {
     res.send('Привет, мир!');
 });
 
-app.listen(3000, () => {
-    console.log('Сервер запущен на порте 3000');
+app.listen(port, () => {
+    console.log('Сервер запущен на порте 6001');
 });
 
 //* middleware функция для аутентификации
