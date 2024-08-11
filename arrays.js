@@ -96,3 +96,87 @@ function reduce() {
     console.log(maxScore); // Выведет: 86
 };
 reduce();
+
+function length() {
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits[fruits.length] = "Kiwi"; // easy way to append a new element to an array
+    let size = fruits.length;
+    console.log(size);
+
+}
+length();
+
+function toString() {
+    const fruits_toString = ["Banana", "Orange", "Apple", "Mango"];
+    let stringify_fruits = fruits_toString.toString();
+    console.log(stringify_fruits);
+}
+toString();
+
+function at() {
+    const units = ["Elven warriors", "Dwarf guard", "Dragon slayers", "Grey warden"];
+    let unit = units.at(2);
+    // let unit = units[2]; // тоже рабочий метод
+    console.log(unit);
+}
+at();
+
+function join() {
+    const tanks = ["AC-130", "LoL", "God Daaamn"];
+    let join = tanks.join(" * ");
+    console.log(join);
+}
+join();
+
+function pop() {
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let mango = fruits.pop();
+    console.log(mango); // Mango
+}
+pop();
+
+function push() {
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let length = fruits.push("Kiwi");
+    console.log(length); // Помещает новый объект в массив и возвращает длину 
+}
+push();
+
+function shift() {
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.shift();
+    let fruit = fruits.shift();
+    console.log(fruit) // Orange
+}
+shift();
+
+function unshift() {
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.unshift("Lemon");
+    console.log(fruits);
+}
+unshift();
+
+function deletion() {
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    delete fruits[1];
+    console.log(fruits);
+}
+deletion();
+
+function concat() {
+    const dooms = ["Yeeeha!", "Howdy!", "Damn, boy!"];
+    const booms = ["Type shi", "Wazzup", "Bruh"];
+
+    const millennials = dooms.concat(booms);
+    const newWave = ["This ", "is ", "my ", "starfish ", "punk"].concat(millennials);
+    console.log(newWave); // Сшиваю 3 массива, один из которых представлен ad destructo
+}
+concat();
+
+function copyWithin() {
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    console.log(fruits.copyWithin(2, 0)); // "Banana", "Orange", (to Apple from Banana)
+    console.log(fruits);
+}
+copyWithin();
