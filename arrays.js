@@ -2,7 +2,7 @@ const arr = [];
 function numbers() {
     for (let i = 0; i < 60; i++) {
         arr.push(i);
-    }
+    } return arr;
 };
 console.log(numbers());
 console.log(Array.isArray(arr)); // true
@@ -38,6 +38,7 @@ console.log(arr.lastIndexOf(12)); // 11
 console.log(arr.lastIndexOf(46, 59)); // 46
 console.log(arr.fill('Wazowski'));
 console.log(arr.toString());
+console.log(arr.includes('Wazowski')); // true
 
 const result = arr.join(' - ');
 console.log(result);
@@ -133,12 +134,12 @@ function pop() {
     let mango = fruits.pop();
     console.log(mango); // Mango
 }
-pop();
+pop(); // Удаляет элемент в конце массива
 
 function push() {
     const fruits = ["Banana", "Orange", "Apple", "Mango"];
     let length = fruits.push("Kiwi");
-    console.log(length); // Помещает новый объект в массив и возвращает длину 
+    console.log(length); // Помещает новый объект в конец массива и возвращает длину 
 }
 push();
 
@@ -148,14 +149,17 @@ function shift() {
     let fruit = fruits.shift();
     console.log(fruit) // Orange
 }
-shift();
+shift(); // Метод shift удаляет первый элемент из массива и возвращает его. 
+// После удаления элемента длина массива уменьшается на единицу. 
+// Удалит именно первый элемент, а не последний (для этого используется метод pop()).
 
 function unshift() {
     const fruits = ["Banana", "Orange", "Apple", "Mango"];
     fruits.unshift("Lemon");
     console.log(fruits);
 }
-unshift();
+unshift(); // Метод unshift добавляет один или несколько элементов в начало массива и возвращает новую длину массива.
+// Добавляет новые элементы именно в начало, а не в конец массива (для этого используется метод push).
 
 function deletion() {
     const fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -180,3 +184,69 @@ function copyWithin() {
     console.log(fruits);
 }
 copyWithin();
+
+function flat() {
+    const myArr = [
+        [1, 2],
+        [3, 4],
+        [5, 6]
+    ];
+    const newArr = myArr.flat();
+    console.log(newArr);
+}
+flat();
+// Flattening is useful when you want to convert a multi-dimensional array into a one-dimensional array.
+
+function flatMap() {
+    const myArr = [1, 2, 3, 4, 5, 6];
+    const newArr = myArr.flatMap(x => [x, x * 10]);
+    console.log(newArr);
+}
+flatMap();
+
+function splice() {
+    const fruits_add = ["Banana", "Orange", "Apple", "Mango"];
+    fruits_add.splice(2, 0, "Lemon", "Kiwi");
+    console.log(fruits_add);
+    // The first parameter (2) defines the position where new elements should be added (spliced in).
+    // The second parameter (0) defines how many elements should be removed.
+    // The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.
+
+    const fruits_remove = ["Banana", "Orange", "Apple", "Mango"];
+    fruits_remove.splice(2, 2, "Lemon", "Kiwi");
+    console.log(fruits_remove); // added - "Lemon", "Kiwi" / deleted - "Apple", "Mango"
+    // The splice() method returns an array with the deleted items:
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.splice(0, 1);
+    console.log(fruits); // deleted - "Orange"
+    // The first parameter (0) defines the position where new elements should be added (spliced in).
+    // The second parameter (1) defines how many elements should be removed.
+}
+splice();
+
+// new toSpliced() method creates a new array, keeping the original array unchanged, while the old method altered the original array.
+function toSpliced() {
+    const months = ["Jan", "Feb", "Mar", "Apr"];
+    const spliced = months.toSpliced(0, 1);
+    console.log(spliced); // deleted - "Jan"
+}
+toSpliced();
+
+function slice() {
+    const _fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+    const banana = _fruits.slice(1);
+    console.log(banana) // new array without "Banana"
+    // Slice out a part of an array starting from array element 3 ("Apple")
+
+    const fruits_ = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+    const citrus = fruits_.slice(3); // "Apple", "Mango"
+    console.log(citrus);
+    // The slice() method creates a new array.
+    // The slice() method does not remove any elements from the source array.
+
+    const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+    const _citrus = fruits.slice(1, 3);
+    console.log(_citrus); // "Orange", "Lemon",
+}
+slice();
