@@ -1,9 +1,9 @@
-// Определяем функцию, которая принимает два числа и callback функцию
+// Parent - Определяем функцию, которая принимает два числа и callback функцию
 function calculate(a, b, callback) {
     return callback(a, b);
 }
 
-// Определяем несколько callback функций
+//* Child - Определяем несколько callback функций
 function add(x, y) {
     return x + y;
 }
@@ -23,6 +23,7 @@ function divide(x, y) {
         return 'Ошибка: деление на ноль';
     }
 }
+//* <--__-->
 
 // Используем функцию calculate с различными callback функциями
 let result1 = calculate(10, 5, add); // 15
@@ -77,7 +78,7 @@ function displayData(error, data) {
     console.log(`Возраст: ${data.age}`);
 }
 
-// Вызов цепочки функций с использованием callback'ов
+//? Вызов цепочки функций с использованием callback'ов
 fetchData((error, data) => {
     if (error) {
         console.error('Ошибка при получении данных:', error);
