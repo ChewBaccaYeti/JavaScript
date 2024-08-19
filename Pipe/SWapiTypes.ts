@@ -45,6 +45,24 @@ export interface Starship {
     edited: string;
 }
 
+export interface Specie {
+    name: string;
+    classification: string;
+    designation: string;
+    average_height: string;
+    average_lifespan: string;
+    eye_colors: string;
+    hair_colors: string;
+    skin_colors: string;
+    language: string;
+    homeworld: string;
+    people: string[];
+    films: string[];
+    url: string;
+    created: string;
+    edited: string;
+}
+
 export interface ApiResponse_Character {
     count: number;
     next: string | null;
@@ -57,4 +75,11 @@ export interface ApiResponse_Starships {
     next: string | null;
     previous: string | null;
     results: Starship[];
+}
+
+export interface ApiResponse_Species {
+    count: number;
+    next: string | null;
+    previous: string | null;
+    results: Specie[];
 }
