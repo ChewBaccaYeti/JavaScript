@@ -43,12 +43,16 @@
 </head>
     <body>
         <script src="https://cdn.jsdelivr.net/npm/json-formatter-js@latest/dist/json-formatter.umd.js"></script>
-        <script defer src="./Pipeline.js"></script>
+        <script defer type="module" src="./Pipeline.js"></script>
 
         <span id="demo"></span>
         <div id="json"></div>
 
         <div class="grid-container">
+            <form id="searchForm">
+                <input type="text" id="searchInput" placeholder="Roll the dice"/>
+                <button type="submit">Search</button>
+            </form>
             <div>
                 <h1><strong>People</strong></h1>
                 <div id="characters"></div>
@@ -65,6 +69,22 @@
 
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
+                    const searchForm = document.getElementById('searchForm');
+                    searchForm.addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        const query = document.getElementById('searchInput').value.trim();
+
+                        if(query) {
+                            fetch(`/search?q=${query}`)
+                            .then(response => response.json())
+                            .then(results => {
+                                renderCharacters({results: results.characters});
+                                renderStarships({results: results.starships});
+                                renderSpecies({results: results.species});
+                            }).catch(error => console.error('Error during search: ', error))
+                        }
+                    });
+
                     function renderCharacters(characters) {
                         const demoElement = document.getElementById('demo'); // Здесь я принимаю необработанные данные
                         demoElement.textContent = JSON.stringify(characters, null, 2); // Выводим полученные данные в элемент с id "demo"
