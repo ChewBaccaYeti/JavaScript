@@ -36,9 +36,6 @@
         .character h2, .starships h2, .species h2 {
             margin-top: 0;
         }
-        .grid-item {
-            list-style: none;
-        }
     </style>
 </head>
     <body>
@@ -48,11 +45,12 @@
         <span id="demo"></span>
         <div id="json"></div>
 
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Roll the dice"/>
+            <button type="submit">Search</button>
+        </form>
+
         <div class="grid-container">
-            <form id="searchForm">
-                <input type="text" id="searchInput" placeholder="Roll the dice"/>
-                <button type="submit">Search</button>
-            </form>
             <div>
                 <h1><strong>People</strong></h1>
                 <div id="characters"></div>
