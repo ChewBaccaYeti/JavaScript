@@ -3,7 +3,7 @@ function numbers() {
     for (let i = 0; i < 60; i++) {
         arr.push(i);
     } return arr;
-};
+}
 console.log(numbers());
 console.log(Array.isArray(arr)); // true
 
@@ -95,7 +95,7 @@ function reduce() {
         return current > max ? current : max;
     }, scores[0]); // Начальное значение — первый элемент массива
     console.log(maxScore); // Выведет: 86
-};
+}
 reduce();
 
 function length() {
@@ -250,3 +250,22 @@ function slice() {
     console.log(_citrus); // "Orange", "Lemon",
 }
 slice();
+
+arr.reduce();
+arr.length();
+arr.toString();
+arr.at();
+arr.join();
+arr.pop();
+arr.push();
+arr.shift();
+arr.unshift();
+arr.delete(arr[1]);
+arr.concat();
+arr.copyWithin();
+arr.map();
+arr.flat();
+arr.flatMap();
+arr.splice()
+arr.toSpliced();
+arr.slice();

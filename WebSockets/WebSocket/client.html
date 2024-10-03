@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebSockets</title>
+</head>
+<script>
+    window.onload = () => {
+        const ws = new WebSocket('ws://localhost:8080');
+        ws.onmessage = e => {
+            console.log(`Message from the server: ${e.data}`);
+        };
+
+        document.getElementById('sendBtn').onclick = () => {
+            const message = document.getElementById('message').value;
+            ws.send(message);
+        }
+    };
+</script>
+<body>
+    <h1>WebSocket client</h1>
+    <label for="message">Message</label>
+    <input type="text" id="message" placeholder="Put your message">
+    <button id="sendBtn">Send</button>
+</body>
+</html>

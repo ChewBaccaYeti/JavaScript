@@ -74,8 +74,8 @@ const hardcorePlayers_1 = players.filter(({ timePlayed }) => timePlayed > 250);
 console.log(hardcorePlayers_1);
 
 // NOOBS
-const noobPplayers_0 = players.filter((player) => player.timePlayed < 250);
-console.log(noobPplayers_0);
+const noobPlayers_0 = players.filter((player) => player.timePlayed < 250);
+console.log(noobPlayers_0);
 //? ИЛИ
-const noobPplayers_1 = players.filter(({ timePlayed }) => timePlayed < 250);
-console.log(noobPplayers_1);
+const noobPlayers_1 = players.filter(({ timePlayed }) => timePlayed < 250);
+console.log(noobPlayers_1);

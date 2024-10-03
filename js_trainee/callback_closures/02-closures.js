@@ -29,17 +29,17 @@ console.log(fnB);
  * Поварёнок
  */
 //! Тут повторяются вызовы функции и имена поваров
-// const makeDish = function (sheffName, dish) {
-//     console.log(`${sheffName} готовит ${dish}`);
-// };
+const makeDish = function (sheffName, dish) {
+    console.log(`${sheffName} готовит ${dish}`);
+};
 
-// makeDish('Mango', 'пирожок');
-// makeDish('Mango', 'омлет');
-// makeDish('Mango', 'чай');
+makeDish('Mango', 'пирожок');
+makeDish('Mango', 'омлет');
+makeDish('Mango', 'чай');
 
-// makeDish('Poly', 'котлеты');
-// makeDish('Poly', 'супик');
-// makeDish('Poly', 'кофе');
+makeDish('Poly', 'котлеты');
+makeDish('Poly', 'супик');
+makeDish('Poly', 'кофе');
 
 //! Чтобы работать с одним и тем же именем и разными блюдами я написал функцию которая замыкается
 const makeChief = function (name) {
@@ -71,21 +71,21 @@ poly('кофе');
 /*
  * Округлятор 🤷‍♂️
  */
-// !! Данная функция использует округление в зависимости от того какое число и что именно нужно сделать, использует повторение
-// const floatingPoint = 3.456789;
-// const someInt = Math.round(floatingPoint); // 3
-// const withDecimals = Number(floatingPoint.toFixed(2)); // 3.46
+//! Данная функция использует округление в зависимости от того какое число и что именно нужно сделать, использует повторение
+const floatingPoint = 3.456789;
+const someInt = Math.round(floatingPoint); // 3
+const withDecimals = Number(floatingPoint.toFixed(2)); // 3.46
 
-// const rounder1 = function (number, places) {
-//     return Number(number.toFixed(places));
-// };
+const rounder1 = function (number, places) {
+    return Number(number.toFixed(places));
+};
 
-// console.log(rounder1(3.4567, 2)); // Есть второй параметр в виде 2 после запятой
-// console.log(rounder1(3.4567, 3));
-// console.log(rounder1(5.1234, 2));
-// console.log(rounder1(3.4567, 3)); // Тоже самое, с 3
+console.log(rounder1(3.4567, 2)); // Есть второй параметр в виде 2 после запятой
+console.log(rounder1(3.4567, 3));
+console.log(rounder1(5.1234, 2));
+console.log(rounder1(3.4567, 3)); // Тоже самое, с 3
 
-// !! Это второй вариант который использует замыкание и без повторения того сколько чисел должно стоять после запятой
+//! Это второй вариант который использует замыкание и без повторения того сколько чисел должно стоять после запятой
 const rounder2 = function (places) {
     return function (number) {
         return Number(number.toFixed(places));
