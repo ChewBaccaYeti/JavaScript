@@ -1,5 +1,5 @@
 {
-    "watch": ["Pipe/", "nodemailer/, mock/, Scripts/"],
+    "watch": ["Ishimura/, mock/, nodemailer/, Pipe/, Scripts/"],
     "ext": "js,json,html",
     "ignore": ["node_modules/"],
     "exec": "node ./mock/mock.js"

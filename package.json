@@ -4,9 +4,10 @@
   "description": "JS practice repo",
   "main": "index.html",
   "scripts": {
-    "pipe": "nodemon Pipe/Pipeline.ts",
-    "transporter": "nodemon nodemailer/transporter.js",
+    "RIG": "nodemon CEC/Ishimura.js",
     "mock": "nodemon mock/mock.ts",
+    "transporter": "nodemon nodemailer/transporter.js",
+    "pipe": "nodemon Pipe/Pipeline.ts",
     "test": "jest"
   },
   "repository": {

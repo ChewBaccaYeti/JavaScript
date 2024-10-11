@@ -7,17 +7,41 @@
 */
 require('dotenv').config({ path: './.env.local' });
 
+const express = require('express');
+const app = express();
+const cors = require('cors');
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const username = process.env.MONGO_AEGIS_ADMIN;
 const password = process.env.MONGO_AEGIS_PASS;
 const database = process.env.MONGO_AEGIS_DB;
 
+app.use(cors({ origin: '*' }));
+
+app.get('/', (req: any, res: any) => {
+    res.send('Hello, World! You must looking for Mining Deck. Go to the `/miners` endpoint.')
+})
+app.get('/miners', async (req: any, res: any) => {
+    try {
+        if (!mongoose.connection.readyState) {
+            return res.status(503).send('MongoDB not connected');
+        }
+        const minersData = await Miner.find()
+        res.json(minersData)
+    } catch (error) {
+        res.status(500).send('Error acquired during miners data fetching override.')
+        console.error(error)
+    }
+})
+
 mongoose.connect(
     `mongodb+srv://${username}:${password}@${database}.fm1e1.mongodb.net/${database}?retryWrites=true&w=majority&appName=${database}`
 ).then(() => {
     fetchMiners()
     console.log('Connection successful.')
+    app.listen(3000, () => {
+        console.log(`Server running at http://localhost:3000`)
+    })
 }).catch((error: Error) => {
     if(error instanceof Error) {
         throw error
@@ -179,7 +203,8 @@ const fetchMiners = async () => {
         minersArray.forEach(miner => miner.RIG_data());
     } catch(error) {
         console.error(error);
-    } finally {
-        mongoose.connection.close();
-    }
+    } 
+    // finally {
+    //     mongoose.connection.close(); // while this command switched on - you will not be able to see data
+    // }
 };
