@@ -41,8 +41,8 @@ function fetchWithCache(url) {
 }
 ;
 // Middleware to fetch ALL data for designated endpoints below
-function fetchAllData(url_1) {
-    return __awaiter(this, arguments, void 0, function* (url, limit = 20) {
+function fetchAllData(url, limit) {
+    return __awaiter(this, void 0, void 0, function* () {
         let results = [];
         let nextUrl = url;
         while (nextUrl && results.length < limit) {

@@ -1,6 +1,6 @@
 {
-    "watch": ["Pipe/", "nodemailer/"],
+    "watch": ["Pipe/", "nodemailer/, mock/, Scripts/"],
     "ext": "js,json,html",
     "ignore": ["node_modules/"],
-    "exec": "node ./Pipe/Pipeline.js & node ./nodemailer/transporter.js"
+    "exec": "node ./mock/mock.js"
 }

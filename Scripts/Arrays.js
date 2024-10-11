@@ -32,18 +32,20 @@ for (const value of obj) {
     console.log(value);
 }
 
-console.log(arr.indexOf(11)); // 10
+console.log(arr.indexOf(11)); // 11
 console.log(arr.indexOf(25, 13)); // 25
-console.log(arr.lastIndexOf(12)); // 11
+console.log(arr.lastIndexOf(12)); // 12
 console.log(arr.lastIndexOf(46, 59)); // 46
-console.log(arr.fill('Wazowski'));
+console.log(arr.fill('Wazowski && Lebowski'));
 console.log(arr.toString());
-console.log(arr.includes('Wazowski')); // true
+const wazowski = 'Wazowski';
+console.log(arr.includes(`${wazowski} && Lebowski`)); // true
 
 const result = arr.join(' - ');
 console.log(result);
 
-const reverse = arr.reverse();
+let int = ['}',1,2,3,4,5,6,7,8,9,10,'reverse = {'];
+const reverse = int.reverse();
 console.log(reverse);
 
 // Array.reduce() method executes a reducer function for array element / method returns a single value: the function's accumulated result 
@@ -61,42 +63,42 @@ console.log(reverse);
 * array — обрабатываемый массив.
 */
 
-function reduce() {
-    const _numbers = [175, 50, 25];
-    document.getElementById("demo").innerHTML = _numbers.reduce(myFunc);
-    function myFunc(total, num) {
-        return total - num;
-    }
+// function reduce() {
+//     const _numbers = [175, 50, 25];
+//     document.getElementById("demo").innerHTML = _numbers.reduce(myFunc);
+//     function myFunc(total, num) {
+//         return total - num;
+//     }
 
-    const numbers_ = [15.5, 2.3, 1.1, 4.7];
-    document.getElementById("demo").innerHTML = numbers_.reduce(getSum, 0);
-    function getSum(total, num) {
-        return total + Math.round(num);
-    }
+//     const numbers_ = [15.5, 2.3, 1.1, 4.7];
+//     document.getElementById("demo").innerHTML = numbers_.reduce(getSum, 0);
+//     function getSum(total, num) {
+//         return total + Math.round(num);
+//     }
 
-    const users = [
-        { name: "Alice", group: "admin" },
-        { name: "Bob", group: "editor" },
-        { name: "Charlie", group: "admin" }
-    ];
-    const groupedByGroup = users.reduce((accumulator, user) => {
-        // Инициализируем пустой массив для новой группы
-        if (!accumulator[user.group]) {
-            accumulator[user.group] = [];
-        }
-        // Добавляем пользователя в соответствующую группу
-        accumulator[user.group].push(user);
-        return accumulator;
-    }, {}); // Начальное значение — пустой объект
-    console.log(groupedByGroup);
+//     const users = [
+//         { name: "Alice", group: "admin" },
+//         { name: "Bob", group: "editor" },
+//         { name: "Charlie", group: "admin" }
+//     ];
+//     const groupedByGroup = users.reduce((accumulator, user) => {
+//         // Инициализируем пустой массив для новой группы
+//         if (!accumulator[user.group]) {
+//             accumulator[user.group] = [];
+//         }
+//         // Добавляем пользователя в соответствующую группу
+//         accumulator[user.group].push(user);
+//         return accumulator;
+//     }, {}); // Начальное значение — пустой объект
+//     console.log(groupedByGroup);
 
-    const scores = [65, 42, 12, 9, 86, 53];
-    const maxScore = scores.reduce((max, current) => {
-        return current > max ? current : max;
-    }, scores[0]); // Начальное значение — первый элемент массива
-    console.log(maxScore); // Выведет: 86
-}
-reduce();
+//     const scores = [65, 42, 12, 9, 86, 53];
+//     const maxScore = scores.reduce((max, current) => {
+//         return current > max ? current : max;
+//     }, scores[0]); // Начальное значение — первый элемент массива
+//     console.log(maxScore); // Выведет: 86
+// }
+// reduce();
 
 function length() {
     const fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -226,12 +228,13 @@ function splice() {
 splice();
 
 // new toSpliced() method creates a new array, keeping the original array unchanged, while the old method altered the original array.
-function toSpliced() {
-    const months = ["Jan", "Feb", "Mar", "Apr"];
-    const spliced = months.toSpliced(0, 1);
-    console.log(spliced); // deleted - "Jan"
-}
-toSpliced();
+// function toSpliced() {
+//     const months = ["Jan", "Feb", "Mar", "Apr"];
+//     const spliced = months.toSpliced(0, 1);
+//     console.log(spliced); // deleted - "Jan"
+//     return spliced
+// }
+// toSpliced();
 
 function slice() {
     const _fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
@@ -251,21 +254,22 @@ function slice() {
 }
 slice();
 
-arr.reduce();
-arr.length();
-arr.toString();
-arr.at();
-arr.join();
-arr.pop();
-arr.push();
-arr.shift();
-arr.unshift();
-arr.delete(arr[1]);
-arr.concat();
-arr.copyWithin();
-arr.map();
-arr.flat();
-arr.flatMap();
-arr.splice()
-arr.toSpliced();
-arr.slice();
+// arr.reduce();
+// arr.length();
+// arr.toString();
+// arr.at();
+// arr.join();
+// arr.pop();
+// arr.push();
+// arr.peek();
+// arr.shift();
+// arr.unshift();
+// arr.delete(arr[1]);
+// arr.concat();
+// arr.copyWithin();
+// arr.map();
+// arr.flat();
+// arr.flatMap();
+// arr.splice()
+// arr.toSpliced();
+// arr.slice();

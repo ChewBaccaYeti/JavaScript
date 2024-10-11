@@ -1,0 +1,262 @@
+[
+    {
+        "name": "Blanche Kiehn",
+        "role": {
+            "name": "radian",
+            "symbol": "rad"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/5.jpg",
+        "species": "bus",
+        "citizenship": "Luxembourg",
+        "rank": 31847,
+        "directive": "GET",
+        "id": "1"
+    },
+    {
+        "name": "Andrew Hoppe",
+        "role": {
+            "name": "tesla",
+            "symbol": "T"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/104.jpg",
+        "species": "bus",
+        "citizenship": "Tanzania",
+        "rank": 5381,
+        "directive": "POST",
+        "id": "2"
+    },
+    {
+        "name": "Gustavo Mayer",
+        "role": {
+            "name": "tesla",
+            "symbol": "T"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1105.jpg",
+        "species": "card",
+        "citizenship": "Marshall Islands",
+        "rank": 25273,
+        "directive": "POST",
+        "id": "3"
+    },
+    {
+        "name": "April Franey",
+        "role": {
+            "name": "sievert",
+            "symbol": "Sv"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/338.jpg",
+        "species": "pixel",
+        "citizenship": "Monaco",
+        "rank": 38228,
+        "directive": "DELETE",
+        "id": "4"
+    },
+    {
+        "name": "Mrs. Keith Pollich MD",
+        "role": {
+            "name": "henry",
+            "symbol": "H"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1161.jpg",
+        "species": "capacitor",
+        "citizenship": "Niue",
+        "rank": 40620,
+        "directive": "POST",
+        "id": "5"
+    },
+    {
+        "name": "Rebecca Stracke PhD",
+        "role": {
+            "name": "hertz",
+            "symbol": "Hz"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/632.jpg",
+        "species": "panel",
+        "citizenship": "Bahrain",
+        "rank": 78636,
+        "directive": "POST",
+        "id": "6"
+    },
+    {
+        "name": "Earnest Barrows",
+        "role": {
+            "name": "becquerel",
+            "symbol": "Bq"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/691.jpg",
+        "species": "program",
+        "citizenship": "Palestinian Territory",
+        "rank": 68743,
+        "directive": "PATCH",
+        "id": "7"
+    },
+    {
+        "name": "Fannie Parker",
+        "role": {
+            "name": "tesla",
+            "symbol": "T"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/581.jpg",
+        "species": "interface",
+        "citizenship": "Israel",
+        "rank": 23312,
+        "directive": "PATCH",
+        "id": "8"
+    },
+    {
+        "name": "Norma Johnston IV",
+        "role": {
+            "name": "radian",
+            "symbol": "rad"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/482.jpg",
+        "species": "pixel",
+        "citizenship": "Slovenia",
+        "rank": 31300,
+        "directive": "GET",
+        "id": "9"
+    },
+    {
+        "name": "Leigh Prosacco III",
+        "role": {
+            "name": "lux",
+            "symbol": "lx"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/787.jpg",
+        "species": "system",
+        "citizenship": "Lesotho",
+        "rank": 75162,
+        "directive": "PUT",
+        "id": "10"
+    },
+    {
+        "name": "Mr. Darin Blick",
+        "role": {
+            "name": "lux",
+            "symbol": "lx"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/695.jpg",
+        "species": "protocol",
+        "citizenship": "Gibraltar",
+        "rank": 9961,
+        "directive": "GET",
+        "id": "11"
+    },
+    {
+        "name": "Boyd Mitchell Sr.",
+        "role": {
+            "name": "radian",
+            "symbol": "rad"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/456.jpg",
+        "species": "transmitter",
+        "citizenship": "Vietnam",
+        "rank": 96228,
+        "directive": "DELETE",
+        "id": "12"
+    },
+    {
+        "name": "Garrett Moore",
+        "role": {
+            "name": "ohm",
+            "symbol": "Ω"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/882.jpg",
+        "species": "application",
+        "citizenship": "Togo",
+        "rank": 15541,
+        "directive": "POST",
+        "id": "13"
+    },
+    {
+        "name": "Jill Sporer",
+        "role": {
+            "name": "weber",
+            "symbol": "Wb"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/147.jpg",
+        "species": "matrix",
+        "citizenship": "Spain",
+        "rank": 66324,
+        "directive": "PUT",
+        "id": "14"
+    },
+    {
+        "name": "Kellie Corwin",
+        "role": {
+            "name": "tesla",
+            "symbol": "T"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/446.jpg",
+        "species": "microchip",
+        "citizenship": "Mongolia",
+        "rank": 75554,
+        "directive": "GET",
+        "id": "15"
+    },
+    {
+        "name": "Jeannie Altenwerth",
+        "role": {
+            "name": "ohm",
+            "symbol": "Ω"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/794.jpg",
+        "species": "hard drive",
+        "citizenship": "Namibia",
+        "rank": 76061,
+        "directive": "DELETE",
+        "id": "16"
+    },
+    {
+        "name": "Santos Raynor",
+        "role": {
+            "name": "pascal",
+            "symbol": "Pa"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/116.jpg",
+        "species": "interface",
+        "citizenship": "Saint Martin",
+        "rank": 12853,
+        "directive": "GET",
+        "id": "17"
+    },
+    {
+        "name": "Francis Mitchell",
+        "role": {
+            "name": "kelvin",
+            "symbol": "K"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1075.jpg",
+        "species": "program",
+        "citizenship": "Maldives",
+        "rank": 71733,
+        "directive": "GET",
+        "id": "18"
+    },
+    {
+        "name": "Margie West III",
+        "role": {
+            "name": "lumen",
+            "symbol": "lm"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1043.jpg",
+        "species": "alarm",
+        "citizenship": "Panama",
+        "rank": 13286,
+        "directive": "PUT",
+        "id": "19"
+    },
+    {
+        "name": "Elisa Daniel",
+        "role": {
+            "name": "lumen",
+            "symbol": "lm"
+        },
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/266.jpg",
+        "species": "monitor",
+        "citizenship": "Isle of Man",
+        "rank": 26931,
+        "directive": "GET",
+        "id": "20"
+    }
+]

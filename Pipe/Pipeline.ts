@@ -37,7 +37,7 @@ async function fetchWithCache<T>(url: string): Promise<T> {
 };
 
 // Middleware to fetch ALL data for designated endpoints below
-async function fetchAllData<T>(url: string, limit: number = 20): Promise<T[]> {
+async function fetchAllData<T>(url: string, limit: number): Promise<T[]> {
     let results: T[] = [];
     let nextUrl: string | null = url;
 
