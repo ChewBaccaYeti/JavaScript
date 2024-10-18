@@ -20,7 +20,7 @@ const override = (0, cors_1.default)();
 const dock = 3842;
 const source = 'https://64f77a149d77540849539f7e.mockapi.io/random';
 app.use((0, cors_1.default)({
-    origin: '*',
+    origin: '*', // Разрешает запросы с любых доменов
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));

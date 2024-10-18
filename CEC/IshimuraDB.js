@@ -124,4 +124,7 @@ const fetchMiners = () => __awaiter(void 0, void 0, void 0, function* () {
     catch (error) {
         console.error(error);
     }
+    // finally {
+    //     mongoose.connection.close(); // while this command switched on - you will not be able to see data
+    // }
 });

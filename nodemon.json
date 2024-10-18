@@ -1,6 +1,9 @@
 {
-    "watch": ["Ishimura/, mock/, nodemailer/, Pipe/, Scripts/"],
-    "ext": "js,json,html",
-    "ignore": ["node_modules/"],
-    "exec": "node ./mock/mock.js"
+    "watch": ["Ishimura/", "mock/", "nodemailer/", "Pipe/", "Scripts/"],
+    "ext": "js,ts,json",
+    "ignore": ["node_modules/", ".git/", "index.html"],
+    "execMap": {
+        "js": "node",
+        "ts": "ts-node"
+    }
 }
