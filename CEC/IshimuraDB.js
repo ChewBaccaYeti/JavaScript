@@ -26,7 +26,7 @@ const password = process.env.MONGO_AEGIS_PASS;
 const database = process.env.MONGO_AEGIS_DB;
 app.use(cors({ origin: '*' }));
 app.get('/', (req, res) => {
-    res.send('Hello, World! You must looking for Mining Deck. Go to the `/miners` endpoint.');
+    res.send('Hello, World! You must looking for Mining Deck. Go to the `/miners` endpoint. If you are looking for Engineer Deck - go to the `/engineers` endpoint.');
 });
 app.get('/miners', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -41,8 +41,22 @@ app.get('/miners', (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         console.error(error);
     }
 }));
+app.get('/engineers', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        if (!mongoose.connection.readyState) {
+            return res.status(503).send('MongoDB not connected');
+        }
+        const engineersData = yield Engineer.find();
+        res.json(engineersData);
+    }
+    catch (error) {
+        res.status(500).send('Error acquired during engineers data fetching override.');
+        console.error(error);
+    }
+}));
 mongoose.connect(`mongodb+srv://${username}:${password}@${database}.fm1e1.mongodb.net/${database}?retryWrites=true&w=majority&appName=${database}`).then(() => {
     fetchMiners();
+    fetchEngineers();
     console.log('Connection successful.');
     app.listen(3000, () => {
         console.log(`Server running at http://localhost:3000`);
@@ -89,6 +103,7 @@ const CEC_schema = new Schema({
     lastMission: [lastMissionSchema]
 });
 const Miner = mongoose.model('Miner', CEC_schema, 'Miners');
+const Engineer = mongoose.model('Engineer', CEC_schema, 'Engineers');
 ;
 class Prototype {
     constructor(name, role, avatar, species, citizenship, rank, directive, id, birthdate, experience, certifications, equipment, activeStatus, lastMission) {
@@ -127,4 +142,17 @@ const fetchMiners = () => __awaiter(void 0, void 0, void 0, function* () {
     // finally {
     //     mongoose.connection.close(); // while this command switched on - you will not be able to see data
     // }
+});
+const fetchEngineers = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const engineersData = yield Engineer.find();
+        console.log('Engineers: ', engineersData);
+        const engineersArray = engineersData.map((engineer) => {
+            return new Prototype(engineer.name, engineer.role, engineer.avatar, engineer.species, engineer.citizenship, engineer.rank, engineer.directive, engineer.id, engineer.birthdate, engineer.experience, engineer.certifications, engineer.equipment, engineer.activeStatus, engineer.lastMission);
+        });
+        engineersArray.forEach(engineer => engineer.RIG_data());
+    }
+    catch (error) {
+        console.error(error);
+    }
 });

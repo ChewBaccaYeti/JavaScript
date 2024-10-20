@@ -2,9 +2,8 @@
   "name": "javascript",
   "version": "1.0.0",
   "description": "JS practice repo",
-  "main": "index.html",
   "scripts": {
-    "RIG": "nodemon CEC/Ishimura.js",
+    "RIG": "nodemon CEC/IshimuraDB.js",
     "mock": "nodemon mock/mock.js",
     "transporter": "nodemon nodemailer/transporter.js",
     "pipe": "nodemon Pipe/Pipeline.js",
