@@ -5,37 +5,136 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Concord Data Center</title>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background-color: black;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #f0f0f0;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .raw_res {
+            position: fixed;
+            top: 0;
+            left: -600px;
+            z-index: 1000;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: left 0.5s ease;
+            overflow-y: auto;
+
+            width: 500px;
+            height: 100%;
+            margin: 20px;
+            padding: 20px;
+
+            background-color: #f0f0f0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .raw_res.open {
+            left: 0;
+        }
+
+        .crew {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 26px;
+            color: #f0f0f0;
+            background-color: black;
+        }
+
+        .miner, .engineer, .scientist {
+            margin: 16px 0px;
+            padding: 12px;
+            border-radius: 4px;
+            box-shadow: 10px 5px 5px 0px gainsboro;
+            -webkit-box-shadow: 10px 5px 5px 0px gainsboro;
+            -moz-box-shadow: 10px 5px 5px 0px gainsboro;
+            color: black;
+            background-color: #f0f0f0;
+        }
+
         .miner {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 3px solid red;
+            border: 6px solid red;
         }
 
         .engineer {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 3px solid blue;
+            border: 6px solid blue;
+        }
+
+        .scientist {
+            border: 6px solid green;
+        }
+
+        h1, h2 {
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <script src='https://cdn.jsdelivr.net/npm/json-formatter-js@latest/dist/json-formatter.umd.js'></script>
 
-    <span id='demo'></span>
-    <div id='json'></div>
-
-    <div>
-        <h1><strong>Miners</strong></h1>
-        <div id='miners'></div>
+    <div class='btn-container'>
+        <button class='toggle-btn'>Toggle Data</button>
     </div>
-
-    <div>
-        <h1><strong>Engineers</strong></h1>
-        <div id='engineers'></div>
+    
+    <div class='raw_res' id='rawRes'>
+        <span id='demo'></span>
+        <div id='json'></div>
+    </div>
+    
+    <div class='crew'>
+        <div>
+            <h1><strong>Miners ⚒</strong></h1>
+            <div id='miners'></div>
+        </div>
+    
+        <div>
+            <h1><strong>Engineers ⚙️</strong></h1>
+            <div id='engineers'></div>
+        </div>
+    
+        <div>
+            <h1><strong>Scientists 🔬</strong></h1>
+            <div id='scientists'></div>
+        </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.querySelector('.toggle-btn');
+            toggleButton.addEventListener('click', toggleSidebar);
+            
+            function toggleSidebar() {
+                const rawRes = document.getElementById('rawRes');
+                rawRes.classList.toggle('open');
+            }
+
             function renderCertifications(certifications) {
                 return certifications.map(cert => `
                     <li>
@@ -80,7 +179,7 @@
                             <p><strong>Equipment:</strong></p>
                             <ul>${renderEquipment(miner.equipment)}</ul>
                         `;
-                        minersDiv.appendChild(minerDiv); // Добавляем в DOM
+                        minersDiv.appendChild(minerDiv); 
                     });
                 }
                 console.log('Miners data:', miners);
@@ -120,17 +219,54 @@
                 console.log('Engineers data:', engineers);
             }
 
+            function fetchScientists(scientists) {
+                const demoElement = document.getElementById('demo');
+                demoElement.textContent = JSON.stringify(scientists, null, 2);
+
+                const jsonContainer = document.getElementById('json');
+                const formatter = new JSONFormatter(scientists, 2);
+                jsonContainer.appendChild(formatter.render());
+
+                const scientistsDiv = document.getElementById('scientists');
+                scientistsDiv.innerHTML = '';
+                if (scientists && Array.isArray(scientists)) {
+                    scientists.forEach(scientist => {
+                        const scientistDiv = document.createElement('div');
+                        scientistDiv.classList.add('scientist');
+                        scientistDiv.innerHTML = `
+                            <h2>${scientist.name}</h2>
+                            <p><strong>Role:</strong> ${scientist.role.name} (${scientist.role.symbol})</p>
+                            <p><strong>Species:</strong> ${scientist.species}</p>
+                            <p><strong>Citizenship:</strong> ${scientist.citizenship}</p>
+                            <p><strong>Rank:</strong> ${scientist.rank}</p>
+                            <p><strong>Directive:</strong> ${scientist.directive}</p>
+                            <p><strong>Experience:</strong> ${scientist.experience.years} years</p>
+                            <p><strong>Skills:</strong> ${scientist.experience.skills.join(', ')}</p>
+                            <p><strong>Certifications:</strong></p>
+                            <ul>${renderCertifications(scientist.certifications)}</ul>
+                            <p><strong>Equipment:</strong></p>
+                            <ul>${renderEquipment(scientist.equipment)}</ul>
+                        `;
+                        scientistsDiv.appendChild(scientistDiv);
+                    });
+                }
+                console.log('Scientists data:', scientists);
+            }
+
             fetch('http://localhost:3000/miners')
-                .then(response => response.json())
-                .then(miners => {
-                    fetchMiners(miners)
-                }).catch(error => console.error('Error fetching miners: ', error))
+                .then(res => res.json())
+                .then(miners => fetchMiners(miners))
+                .catch(err => console.log(err));
 
             fetch('http://localhost:3000/engineers')
-                .then(response => response.json())
-                .then(engineers => {
-                    fetchEngineers(engineers)
-                }).catch(error => console.error('Error fetching engineers: ', error))
+                .then(res => res.json())
+                .then(engineers => fetchEngineers(engineers))
+                .catch(err => console.log(err));
+
+            fetch('http://localhost:3000/scientists')
+                .then(res => res.json())
+                .then(scientists => fetchScientists(scientists))
+                .catch(err => console.log(err));
         });
     </script>
 </body>

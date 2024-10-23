@@ -20,7 +20,7 @@ app.use(cors({ origin: '*' }));
 
 app.get('/', (req: any, res: any) => {
     res.send(
-        'Hello, World! You must looking for Mining Deck. Go to the `/miners` endpoint. If you are looking for Engineer Deck - go to the `/engineers` endpoint.'
+        'Hello, World! You must looking for Mining Deck. Go to the `/miners` endpoint. If you are looking for Engineer Deck - go to the `/engineers` endpoint. If you need Medical Bay - go to /scientists endpoint.'
     )
 })
 app.get('/miners', async (req: any, res: any) => {
@@ -49,11 +49,25 @@ app.get('/engineers', async (req: any, res: any) => {
     }
 })
 
+app.get('/scientists', async (req: any, res: any) => {
+    try {
+        if (!mongoose.connection.readyState) {
+            return res.status(503).send('MongoDB not connected')
+        }
+        const scientistsData = await Scientist.find()
+        res.json(scientistsData)
+    } catch(error) {
+        res.status(500).send('Error acquired during scientists data fetching override.') 
+        console.error(error)
+    }
+})
+
 mongoose.connect(
     `mongodb+srv://${username}:${password}@${database}.fm1e1.mongodb.net/${database}?retryWrites=true&w=majority&appName=${database}`
 ).then(() => {
     fetchMiners()
     fetchEngineers()
+    fetchScientists()
     console.log('Connection successful.')
     app.listen(3000, () => {
         console.log(`Server running at http://localhost:3000`)
@@ -106,6 +120,7 @@ const CEC_schema = new Schema({
 
 const Miner = mongoose.model('Miner', CEC_schema, 'Miners');
 const Engineer = mongoose.model('Engineer', CEC_schema, 'Engineers');
+const Scientist = mongoose.model('Scientist', CEC_schema, 'Scientists');
 
 interface CEC_Type {
     name: string;
@@ -219,7 +234,7 @@ const fetchMiners = async () => {
 
         minersArray.forEach(miner => miner.RIG_data())
     } catch(error) {
-        console.error(error);
+        console.error(error)
     } 
     // finally {
     //     mongoose.connection.close(); // while this command switched on - you will not be able to see data
@@ -251,6 +266,35 @@ const fetchEngineers = async () => {
         })
         engineersArray.forEach(engineer => engineer.RIG_data())
     } catch(error) {
-        console.error(error);
+        console.error(error)
+    }
+};
+
+const fetchScientists = async () => {
+    try {
+        const scientistsData: CEC_Type[] = await Scientist.find() as CEC_Type[]
+        console.log('Scientist: ', scientistsData)
+
+        const scientistsArray = scientistsData.map((scientist: CEC_Type) => {
+            return new Prototype(
+                scientist.name,
+                scientist.role,
+                scientist.avatar,
+                scientist.species,
+                scientist.citizenship,
+                scientist.rank,
+                scientist.directive,
+                scientist.id,
+                scientist.birthdate,
+                scientist.experience,
+                scientist.certifications,
+                scientist.equipment,
+                scientist.activeStatus,
+                scientist.lastMission
+            )
+        })
+        scientistsArray.forEach(scientist => scientist.RIG_data())
+    } catch(error) {
+        console.error(error)
     }
 };
