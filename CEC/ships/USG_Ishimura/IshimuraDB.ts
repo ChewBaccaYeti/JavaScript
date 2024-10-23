@@ -20,7 +20,10 @@ app.use(cors({ origin: '*' }));
 
 app.get('/', (req: any, res: any) => {
     res.send(
-        'Hello, World! You must looking for Mining Deck. Go to the `/miners` endpoint. If you are looking for Engineer Deck - go to the `/engineers` endpoint. If you need Medical Bay - go to /scientists endpoint.'
+        'Hello, World!' +
+        'You must looking for Mining Deck. Go to the `/miners` endpoint.' +
+        'If you are looking for Engineer Deck - go to the `/engineers` endpoint.' +
+        'If you need Medical Bay - go to /scientists endpoint.'
     )
 })
 app.get('/miners', async (req: any, res: any) => {
@@ -202,7 +205,6 @@ class Prototype {
             this.activeStatus = activeStatus
             this.lastMission = lastMission
     }
-
     RIG_data() {
         console.log(this)
     }
@@ -212,7 +214,6 @@ const fetchMiners = async () => {
     try {
         const minersData: CEC_Type[] = await Miner.find() as CEC_Type[]
         console.log('Miners: ', minersData)
-
         const minersArray = minersData.map((miner: CEC_Type) => {
             return new Prototype(
                 miner.name,
@@ -231,21 +232,16 @@ const fetchMiners = async () => {
                 miner.lastMission
             )
         })
-
         minersArray.forEach(miner => miner.RIG_data())
     } catch(error) {
         console.error(error)
     } 
-    // finally {
-    //     mongoose.connection.close(); // while this command switched on - you will not be able to see data
-    // }
 };
 
 const fetchEngineers = async () => {
     try {
         const engineersData: CEC_Type[] = await Engineer.find() as CEC_Type[]
         console.log('Engineers: ', engineersData)
-
         const engineersArray = engineersData.map((engineer: CEC_Type) => {
             return new Prototype(
                 engineer.name,
@@ -274,7 +270,6 @@ const fetchScientists = async () => {
     try {
         const scientistsData: CEC_Type[] = await Scientist.find() as CEC_Type[]
         console.log('Scientist: ', scientistsData)
-
         const scientistsArray = scientistsData.map((scientist: CEC_Type) => {
             return new Prototype(
                 scientist.name,

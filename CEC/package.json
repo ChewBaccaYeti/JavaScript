@@ -4,7 +4,7 @@
   "description": "CEC_AEGIS_ISHIMURA",
   "main": "IshimuraDB.js",
   "scripts": {
-    "RIG": "nodemon IshimuraDB.js",
+    "RIG": "nodemon ships/USG_Ishimura/IshimuraDB.js",
     "test": "jest"
   },
   "repository": {
