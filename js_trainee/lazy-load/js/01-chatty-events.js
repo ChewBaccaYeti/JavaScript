@@ -12,9 +12,9 @@ let mouseMoveCounter = 0;
 window.addEventListener('mousemove', _.throttle(onMouseMove, 300));
 
 function onMouseMove(event) {
-  mouseMoveCounter += 1;
+    mouseMoveCounter += 1;
 
-  coordsOutputRefs.textContent = `
+    coordsOutputRefs.textContent = `
   Кол-во вызовов onMouseMove: ${mouseMoveCounter},
   X: ${event.clientX},
   Y: ${event.clientY}
@@ -31,9 +31,9 @@ let inputCbInvocationCounter = 0;
 inputRef.addEventListener('input', _.debounce(onInputChange, 300));
 
 function onInputChange(event) {
-  inputCbInvocationCounter += 1;
+    inputCbInvocationCounter += 1;
 
-  outputRef.textContent = `
+    outputRef.textContent = `
     Кол-во вызовов onInputChange: ${inputCbInvocationCounter},
     Значение: ${event.target.value}
   `;

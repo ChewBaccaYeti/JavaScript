@@ -1,7 +1,7 @@
 import transactionHistory from './data/transactions.js';
 console.log(transactionHistory);
 
-const makeTransactionTableRowMarkup = (transaction) => {
+const makeTransactionTableRowMarkup = transaction => {
     const { id, amount, date, business, type, name, account } = transaction;
 
     return `

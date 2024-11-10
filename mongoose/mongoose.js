@@ -31,7 +31,7 @@ const cats = new Schema({
         birthday: Date,
     },
 });
-cats.index({ nickname: 1 }) // Второй метод присваивания индекса
+cats.index({ nickname: 1 }); // Второй метод присваивания индекса
 
 const Cat = mongoose.model('cat', cats);
 
@@ -56,7 +56,7 @@ const users = new Schema({
 });
 
 users.methods.fullName = function () {
-    return `${this.firstname} ${this.lastname}`
+    return `${this.firstname} ${this.lastname}`;
 };
 
 // CRUD методы

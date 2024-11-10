@@ -23,5 +23,5 @@ titleEl.insertAdjacentHTML('beforeend', '<p>Это Wazowski</p>');
 
 titleEl.insertAdjacentHTML(
     'afterend',
-    '<a href="" class="title__link">Это ссылка</a>'
+    '<a href="" class="title__link">Это ссылка</a>',
 );

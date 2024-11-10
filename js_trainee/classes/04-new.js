@@ -1,4 +1,4 @@
-const readline = require("readline");
+const readline = require('readline');
 
 class User {
     constructor(name, rank) {
@@ -12,7 +12,7 @@ console.log(user);
 
 //! <->
 
-let _user = new function () {
+let _user = new (function () {
     this.name = 'Lebowski';
     this.rank = 92;
 
@@ -43,7 +43,7 @@ let _user = new function () {
     console.log(good);
     console.log(bad);
     console.log(evil);
-}
+})();
 console.log(_user.name, _user.rank);
 console.log(_user);
 
@@ -65,11 +65,11 @@ let task = {};
 
 function A() {
     return task;
-};
+}
 
 function B() {
     return task;
-};
+}
 
 let a = new A();
 let b = new B();
@@ -86,16 +86,16 @@ class Calculator {
 
             const rl = readline.createInterface({
                 input: process.stdin,
-                output: process.stdout
+                output: process.stdout,
             });
 
-            rl.question('a? ', (inputA) => {
+            rl.question('a? ', inputA => {
                 this.a = +inputA;
 
-                rl.question('b? ', (inputB) => {
+                rl.question('b? ', inputB => {
                     this.b = +inputB;
                     rl.close();
-                })
+                });
 
                 console.log('Sum=' + this.sum());
                 console.log('Mul=' + this.mul());
@@ -110,7 +110,7 @@ class Calculator {
     mul() {
         return this.a * this.b;
     }
-};
+}
 
 let calculator = new Calculator();
 calculator.read();
@@ -118,4 +118,4 @@ calculator.read();
 console.log('Sum=' + calculator.sum());
 console.log('Mul=' + calculator.mul());
 
-//! <-> 
+//! <->

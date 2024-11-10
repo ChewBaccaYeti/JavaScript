@@ -11,7 +11,7 @@ const john = {
 console.dir(john);
 console.log(john.sales); // 10
 john.sell('Apple'); // Manager John sold Apple
-john.sell('Pomegrade'); // Manager John sold Pomegrade
+john.sell('Pomegranate'); // Manager John sold Pomegranate
 console.log(john.sales); // 12
 
 const mary = {
@@ -54,7 +54,7 @@ const marry = manager('Mary', 120);
 
 console.log(johnny.sales, marry.sales); // 10 120
 johnny.sell('Apple'); // Manager John sold Apple
-marry.sell('Pomegrade'); // Manager Mary sold Pomegrade
+marry.sell('Pomegranate'); // Manager Mary sold Pomegranate
 console.log(johnny.sales, marry.sales); // 11 121
 
 //! Функция-конструктор
@@ -102,7 +102,7 @@ const Bob = new Boss('Bob', 120);
 
 console.log(Jay.sales, Bob.sales); // 10 120
 Jay.sell('Apple'); // Manager John sold Apple
-Bob.sell('Pomegrade'); // Manager Mary sold Pomegrade
+Bob.sell('Pomegranate'); // Manager Mary sold Pomegranate
 console.log(Jay.sales, Bob.sales); // 11 121
 
 //* Когда вы используете какой-либо метод массивов,

@@ -39,13 +39,13 @@ const totalSalaryExplicit = Object.values(salary).reduce(
     (accumulatorTotal, value) => {
         return accumulatorTotal + value;
     },
-    0
+    0,
 );
 console.log(totalSalaryExplicit);
 
 const totalSalaryImplicit = Object.values(salary).reduce(
     (total, values) => total + values,
-    1
+    1,
 );
 console.log(totalSalaryImplicit);
 
@@ -65,13 +65,13 @@ const totalTimeExplicit = Object.values(players).reduce(
     (accumulatorTime, value) => {
         return accumulatorTime + value.timePlayed;
     },
-    0
+    0,
 );
 console.log(totalTimeExplicit);
 
 const totalTimeImplicit = players.reduce(
     (acc, player) => acc + player.timePlayed,
-    1
+    1,
 );
 console.log(totalTimeImplicit);
 
@@ -92,7 +92,7 @@ console.log(totalAmountExplicit);
 
 const totalAmountImplicit = cart.reduce(
     (total, { price, quantity }) => total + price * quantity,
-    1
+    1,
 );
 console.log(totalAmountImplicit);
 
@@ -127,7 +127,7 @@ console.table(allTagsImmutable);
 // return  [...['js', 'nodejs'], ...['html', 'css']]
 //  ['js', 'nodejs', 'html', 'css']
 
-const allTagsFlatMap = tweets.flatMap((tweet) => tweet.tags);
+const allTagsFlatMap = tweets.flatMap(tweet => tweet.tags);
 console.table(allTagsFlatMap);
 //* Используя flatMap, мы получаем массив тегов, и он автоматически "выравнивает" результат, чтобы получить одномерный массив, как и ранее с оператором ...spread.
 

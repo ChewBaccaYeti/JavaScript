@@ -35,13 +35,13 @@ function proto() {
         speak() {
             console.log(`${this.name} is barking!`);
         },
-        'createdAt': '2024-02-15T14:13:49.569Z',
-        'name': 'Michael Ledner',
-        'avatar': 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/296.jpg',
-        'job': 'Lead Interactions Associate',
-        'year': '1956-08-23T05:57:51.705Z',
-        'id': '1',
-    }
+        createdAt: '2024-02-15T14:13:49.569Z',
+        name: 'Michael Ledner',
+        avatar: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/296.jpg',
+        job: 'Lead Interactions Associate',
+        year: '1956-08-23T05:57:51.705Z',
+        id: '1',
+    };
 
     const job = 'job' in obj;
     for (const key in obj) {
@@ -64,12 +64,12 @@ function proto() {
     const animal = {
         speak() {
             console.log(`${this.name} meowing on walk.`);
-        }
+        },
     };
     animal.name = 'Cat';
     Object.setPrototypeOf(proto_animal, animal); // Меняет прототип с obj на animal у proto_animal
     animal.speak(); // Cat meowing on walk.
-};
+}
 proto();
 
 function spread() {
@@ -80,32 +80,32 @@ function spread() {
 
     const cloned_result = { ...result };
     console.log(cloned_result); // { a: 1, b: 4, c: 5 }
-};
+}
 spread();
 
 const ice_cube = {
-    'createdAt': '2024-02-15T13:53:37.529Z',
-    'title': 'Tempora deleniti fugiat ex nesciunt.',
-    'link': 'https://lawful-toilet.biz',
-    'id': '1',
+    createdAt: '2024-02-15T13:53:37.529Z',
+    title: 'Tempora deleniti fugiat ex nesciunt.',
+    link: 'https://lawful-toilet.biz',
+    id: '1',
     unfreezable: {
-        'createdAt': '2024-02-15T17:35:36.224Z',
-        'name': 'Carol Cummerata',
-        'avatar': 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/902.jpg',
-        'Job': 'Direct Response Designer',
-        'Company': 'Senger - Armstrong',
-        'Section': 'Infrastructure',
-        'Degree': {
-            'name': 'second',
-            'symbol': 's'
+        createdAt: '2024-02-15T17:35:36.224Z',
+        name: 'Carol Cummerata',
+        avatar: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/902.jpg',
+        Job: 'Direct Response Designer',
+        Company: 'Senger - Armstrong',
+        Section: 'Infrastructure',
+        Degree: {
+            name: 'second',
+            symbol: 's',
         },
-        'Role': 'Human',
-        'Bank': '11052455',
-        'Override': 'CSV',
-        'Address': 'Janesville',
-        'id': '5'
-    }
-}
+        Role: 'Human',
+        Bank: '11052455',
+        Override: 'CSV',
+        Address: 'Janesville',
+        id: '5',
+    },
+};
 Object.freeze(ice_cube);
 
 // Попытка добавить новое свойство
@@ -118,39 +118,50 @@ ice_cube.id = 2; // Это будет проигнорировано
 delete ice_cube.title; // Это будет проигнорировано
 
 // Попытка добавить новое свойство в ключ unfreezable который является вложенным объектом
-ice_cube.unfreezable.car = 'Volvo' // Будет записано новое свойство car: 'Volvo'
+ice_cube.unfreezable.car = 'Volvo'; // Будет записано новое свойство car: 'Volvo'
 
 console.log(ice_cube);
 
 const person = {
-    name: ["Bob", "Smith"],
+    name: ['Bob', 'Smith'],
     age: 32,
-    gender: "male",
-    interests: ["music", "skiing"],
+    gender: 'male',
+    interests: ['music', 'skiing'],
     bio: function () {
         alert(
             this.name[0] +
-            " " +
-            this.name[1] +
-            " is " +
-            this.age +
-            " years old. He likes " +
-            this.interests[0] +
-            " and " +
-            this.interests[1] +
-            ".",
+                ' ' +
+                this.name[1] +
+                ' is ' +
+                this.age +
+                ' years old. He likes ' +
+                this.interests[0] +
+                ' and ' +
+                this.interests[1] +
+                '.',
         );
     },
     greeting: function () {
-        alert("Hi! I'm " + this.name[0] + ".");
+        alert("Hi! I'm " + this.name[0] + '.');
     },
 };
 console.log(person);
 // Bob Smith is 32 years old. He likes music and skiing.
-console.log(person.name[0] + " " + person.name[1] + " is " + person.age + " years old. He likes " + person.interests[0] + " and " + person.interests[1] + ".",);
+console.log(
+    person.name[0] +
+        ' ' +
+        person.name[1] +
+        ' is ' +
+        person.age +
+        ' years old. He likes ' +
+        person.interests[0] +
+        ' and ' +
+        person.interests[1] +
+        '.',
+);
 
 /**
- * В JavaScript все объекты имеют свойство constructor, которое ссылается на функцию, создавшую этот объект. 
+ * В JavaScript все объекты имеют свойство constructor, которое ссылается на функцию, создавшую этот объект.
  *  В случае объекта, созданного через литерал (как person), его constructor будет Object, потому что он создан стандартным конструктором Object
  */
 const person_constructor = person.constructor;
@@ -166,7 +177,9 @@ class Person {
         this.interests = interests;
     }
     bio() {
-        console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.He likes ${this.interests[0]} and ${this.interests[1]}.`);
+        console.log(
+            `${this.name[0]} ${this.name[1]} is ${this.age} years old.He likes ${this.interests[0]} and ${this.interests[1]}.`,
+        );
     }
     greeting() {
         console.log(`Hi! I'm ${this.name[0]}.`);
@@ -174,7 +187,7 @@ class Person {
 }
 
 // Создаем экземпляр класса Person
-const Bob = new Person(["Bob", "Smith"], 32, "male", ["music", "skiing"]);
+const Bob = new Person(['Bob', 'Smith'], 32, 'male', ['music', 'skiing']);
 console.log(Bob);
 
 // Выводим информацию о Bob Smith
@@ -190,50 +203,50 @@ console.log(Bob_constructor); // Выведет саму функцию конс
 // Create an Object:
 function createObject() {
     const person = {
-        firstName: "John",
-        lastName: "Doe",
-        status: "YES"
+        firstName: 'John',
+        lastName: 'Doe',
+        status: 'YES',
     };
 
     // Create new Object
     const man = Object.create(person);
-    man.firstName = "Peter";
+    man.firstName = 'Peter';
 
     // Add Properties
     Object.defineProperties(person, {
-        language: { value: "en", enumerable: true }, // Делаем свойство перечисляемым с enumerable,
+        language: { value: 'en', enumerable: true }, // Делаем свойство перечисляемым с enumerable,
         // так как по дефолту стоит false, а значит не будет видимым для логов и циклов, а также при работе с JSON,
-        year: { value: "Hello", enumerable: true, configurable: true } // Добавлено свойство configurable(дефолту стоит false)
+        year: { value: 'Hello', enumerable: true, configurable: true }, // Добавлено свойство configurable(дефолту стоит false)
         // для возможности изменять или переопределять в дальнейшем
     });
 
     // Add a new Property
-    Object.defineProperty(person, "year", { value: "2008" })
+    Object.defineProperty(person, 'year', { value: '2008' });
 
     // Change a property
-    Object.defineProperty(person, "status", { value: "NO" })
+    Object.defineProperty(person, 'status', { value: 'NO' });
 
     console.log(person);
-};
+}
 createObject();
 
 // Object.entries() makes it simpler to use objects in loops:
 function entriesObject() {
     const fruits = { Bananas: 300, Oranges: 200, Apples: 500 };
 
-    let bucket = "";
+    let bucket = '';
     for (let [fruit, value] of Object.entries(fruits)) {
-        bucket += fruit + ": " + value + " <br> ";
-    };
+        bucket += fruit + ': ' + value + ' <br> ';
+    }
     console.log(bucket);
-};
+}
 entriesObject();
 
 function fromEntries() {
     const fruits = [
-        ["apples", 300],
-        ["pears", 900],
-        ["bananas", 500]
+        ['apples', 300],
+        ['pears', 900],
+        ['bananas', 500],
     ];
 
     const myObjFruits = Object.fromEntries(fruits);
@@ -243,7 +256,7 @@ function fromEntries() {
     const vegetables = {
         potato: 200,
         tomato: 600,
-        cucumber: 800
+        cucumber: 800,
     };
 
     // Преобразуем объект vegetables в массив пар [ключ, значение]
@@ -253,33 +266,33 @@ function fromEntries() {
     const myObjVegetables = Object.fromEntries(vegetableEntries);
 
     console.log(myObjVegetables);
-};
+}
 fromEntries();
 
 function getOwnPropertyDescriptor() {
     const person = {
-        firstName: "John",
-        lastName: "Doe",
+        firstName: 'John',
+        lastName: 'Doe',
         age: 50,
-        eyeColor: "blue"
+        eyeColor: 'blue',
     };
 
     let descriptor = Object.getOwnPropertyDescriptor(person, 'age');
     console.log(descriptor);
-};
+}
 getOwnPropertyDescriptor();
 
 function getOwnPropertyNames() {
     const person = {
-        firstName: "John",
-        lastName: "Doe",
+        firstName: 'John',
+        lastName: 'Doe',
         age: 50,
-        eyeColor: "blue"
+        eyeColor: 'blue',
     };
 
     let props = Object.getOwnPropertyNames(person);
     console.log(props);
-};
+}
 getOwnPropertyNames();
 
 function groupByCustomFunction(array, callback) {
@@ -297,22 +310,21 @@ function groupByCustomFunction(array, callback) {
 
         return acc;
     }, {});
-};
+}
 
 function groupBy() {
     const fruits = [
-        { name: "apples", quantity: 300 },
-        { name: "bananas", quantity: 500 },
-        { name: "oranges", quantity: 200 },
-        { name: "kiwi", quantity: 150 }
+        { name: 'apples', quantity: 300 },
+        { name: 'bananas', quantity: 500 },
+        { name: 'oranges', quantity: 200 },
+        { name: 'kiwi', quantity: 150 },
     ];
 
     function myCallback({ quantity }) {
-        return quantity > 200 ? "ok" : "low";
+        return quantity > 200 ? 'ok' : 'low';
     }
 
     const fruits_bucket = Object.groupBy(fruits, myCallback);
     console.log(fruits_bucket);
-};
+}
 groupBy();
-

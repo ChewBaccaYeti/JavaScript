@@ -1,20 +1,20 @@
 {
-  "name": "pipe",
-  "version": "1.0.0",
-  "description": "",
-  "main": "Pipeline.js",
-  "scripts": {
-    "pipe": "nodemon ./Pipe/Pipeline.ts",
-    "test": "jest"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^1.7.7",
-    "axios-mock-adapter": "^2.0.0",
-    "express": "^4.21.0",
-    "jest": "^29.7.0",
-    "nodemon": "^3.1.4",
-    "supertest": "^7.0.0"
-  }
+    "name": "pipe",
+    "version": "1.0.0",
+    "description": "",
+    "main": "Pipeline.js",
+    "scripts": {
+        "pipe": "nodemon ./Pipe/Pipeline.ts",
+        "test": "jest"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.7.7",
+        "axios-mock-adapter": "^2.0.0",
+        "express": "^4.21.0",
+        "jest": "^29.7.0",
+        "nodemon": "^3.1.4",
+        "supertest": "^7.0.0"
+    }
 }

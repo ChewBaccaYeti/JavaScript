@@ -7,7 +7,7 @@ const userConnected = 'User connected!';
 
 app.use(express.static(__dirname + '/public'));
 
-io.on('connection', (socket) => {
+io.on('connection', socket => {
     console.log(userConnected);
     socket.emit('message', userConnected);
 });

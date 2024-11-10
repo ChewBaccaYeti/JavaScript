@@ -6,7 +6,7 @@ const friends = [
     { name: 'Arthur', online: false },
     { name: 'Lebowski', online: false },
     { name: 'Isaac', online: true },
-    { name: 'Aragorn', online: false }
+    { name: 'Aragorn', online: false },
 ];
 
 console.table(friends);

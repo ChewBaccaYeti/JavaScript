@@ -10,7 +10,7 @@ try {
 } catch (error) {
     console.log(error);
     if (error.name === 'SyntaxError') {
-    console.log('Ошибка парса json надо что-то сделать');
+        console.log('Ошибка парса json надо что-то сделать');
     }
 }
 

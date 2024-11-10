@@ -1,54 +1,54 @@
 {
-  "name": "localstorage",
-  "version": "1.0.0",
-  "description": "localStorage usage",
-  "main": "index.js",
-  "scripts": {
-    "dev": "parcel src/*.html --open",
-    "build": "parcel build src/*.html --public-url /JavaScript",
-    "test": "jest"
-  },
-  "customDistStructure": {
-    "config": {
-      ".js": "js",
-      ".css": "css",
-      ".html": "html",
-      ".map": "map",
-      "images": [
-        ".jpg",
-        ".png"
-      ],
-      ".fileExtension": "folder/in/dist",
-      "folder/in/dist": [
-        ".file",
-        ".extensions"
-      ]
+    "name": "localstorage",
+    "version": "1.0.0",
+    "description": "localStorage usage",
+    "main": "index.js",
+    "scripts": {
+        "dev": "parcel src/*.html --open",
+        "build": "parcel build src/*.html --public-url /JavaScript",
+        "test": "jest"
     },
-    "options": {
-      "development": true
+    "customDistStructure": {
+        "config": {
+            ".js": "js",
+            ".css": "css",
+            ".html": "html",
+            ".map": "map",
+            "images": [
+                ".jpg",
+                ".png"
+            ],
+            ".fileExtension": "folder/in/dist",
+            "folder/in/dist": [
+                ".file",
+                ".extensions"
+            ]
+        },
+        "options": {
+            "development": true
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ChewBaccaYeti/JavaScript.git"
+    },
+    "keywords": [
+        "localStorage"
+    ],
+    "author": "https://github.com/ChewBaccaYeti",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ChewBaccaYeti/JavaScript/issues"
+    },
+    "homepage": "https://github.com/ChewBaccaYeti/JavaScript#readme",
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "parcel-bundler": "^1.12.5",
+        "parcel-plugin-custom-dist-structure": "^1.1.20",
+        "parcel-plugin-handlebars-precompile": "^1.0.2",
+        "prettier": "3.1.0"
+    },
+    "dependencies": {
+        "lodash.throttle": "^4.1.1"
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ChewBaccaYeti/JavaScript.git"
-  },
-  "keywords": [
-    "localStorage"
-  ],
-  "author": "https://github.com/ChewBaccaYeti",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ChewBaccaYeti/JavaScript/issues"
-  },
-  "homepage": "https://github.com/ChewBaccaYeti/JavaScript#readme",
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "parcel-bundler": "^1.12.5",
-    "parcel-plugin-custom-dist-structure": "^1.1.20",
-    "parcel-plugin-handlebars-precompile": "^1.0.2",
-    "prettier": "3.1.0"
-  },
-  "dependencies": {
-    "lodash.throttle": "^4.1.1"
-  }
 }

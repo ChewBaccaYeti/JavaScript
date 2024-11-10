@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const task = new Schema(
@@ -19,13 +19,13 @@ const task = new Schema(
         },
         isDone: {
             type: Boolean,
-            default: false
-        }
+            default: false,
+        },
     },
     // Отключение версификаций и мониторинг времени createdAt && updatedAt
-    { versionKey: false, timestamps: true }
+    { versionKey: false, timestamps: true },
 );
 
-const Task = mongoose.model("task", task);
+const Task = mongoose.model('task', task);
 
 module.exports = Task;

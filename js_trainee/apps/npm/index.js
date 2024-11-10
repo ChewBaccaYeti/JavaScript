@@ -1,6 +1,6 @@
 import apiService, {
-  getRandomHexColor as hexColor,
-  getRandomString,
+    getRandomHexColor as hexColor,
+    getRandomString,
 } from './src/js/api-service';
 import * as allExports from './src/js/api-service';
 import { addUser } from './src/js/api-service';
@@ -9,8 +9,8 @@ import passwordValidation from './src/js/validator';
 import * as app from './src/app';
 
 document.body
-  .appendChild(document.createElement('div'))
-  .classList.add('parcel-container');
+    .appendChild(document.createElement('div'))
+    .classList.add('parcel-container');
 
 const parcelDiv = document.querySelector('.parcel-container');
 

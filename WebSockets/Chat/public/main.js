@@ -1,6 +1,6 @@
 const usersList = document.getElementById('users');
 const userMessage = document.getElementById('msg_txt');
-const userName =  document.getElementById('msg_name');
+const userName = document.getElementById('msg_name');
 const sendButton = document.getElementById('msg_btn');
 const board = document.getElementById('board');
 
@@ -67,7 +67,7 @@ const sendUserMessage = () => {
 
     socket.emit('message', {
         message,
-        name
+        name,
     });
 
     userMessage.value = '';
@@ -77,5 +77,5 @@ const sendUserMessage = () => {
 sendButton.addEventListener('click', sendUserMessage);
 userMessage.addEventListener('keyup', pressEnterKey);
 
-socket.on("user", renderListOfUsers);
-socket.on("message", renderListOfMessages);
+socket.on('user', renderListOfUsers);
+socket.on('message', renderListOfMessages);

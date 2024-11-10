@@ -113,7 +113,7 @@ const technologies = ['HTML', 'CSS', 'JavaScript', 'React', 'Node'];
 const technologiesList = document.querySelector('.technologiesList');
 
 const markup = technologies
-    .map((technology) => `<li class="list-item">${technology}</li>`)
+    .map(technology => `<li class="list-item">${technology}</li>`)
     .join('');
 console.log(markup);
 technologiesList.innerHTML = markup;
@@ -147,13 +147,13 @@ article_replace.innerHTML += htmlString;
 
 const newTechnologies = ['React', 'TypeScript', 'Node.js'];
 const newMarkup = newTechnologies
-    .map((technology) => `<li class="list-item new">${technology}</li>`)
+    .map(technology => `<li class="list-item new">${technology}</li>`)
     .join('');
 
 technologiesList.insertAdjacentHTML('beforeend', markup);
 technologiesList.insertAdjacentHTML(
     'beforebegin',
-    '<h2>Popular technologies</h2>'
+    '<h2>Popular technologies</h2>',
 );
 
 //! "beforebegin" и "afterend" работают только в том случае, если elem уже находится в DOM-дереве.

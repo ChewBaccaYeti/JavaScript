@@ -1,97 +1,97 @@
 #hub .crew {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
 }
 #hub h1 {
-  text-align: center;
-  color: #f0f0f0;
+    text-align: center;
+    color: #f0f0f0;
 }
 #hub .navigation {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin: 15px 0;
-  color: #f0f0f0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 15px 0;
+    color: #f0f0f0;
 }
 #hub .routes #miners {
-  padding: 20px;
+    padding: 20px;
 }
 #hub .routes #miners h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #f0f0f0;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f0f0f0;
 }
 #hub .routes #miners .miners-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-top: 20px;
 }
 #hub .routes #miners .miners-grid .miner {
-  margin: 20px 10px;
-  padding: 14px;
-  border-radius: 6px;
-  box-shadow: 10px 5px 5px 0px gainsboro;
-  color: black;
-  background-color: #f0f0f0;
-  border: 6px solid red;
+    margin: 20px 10px;
+    padding: 14px;
+    border-radius: 6px;
+    box-shadow: 10px 5px 5px 0px gainsboro;
+    color: black;
+    background-color: #f0f0f0;
+    border: 6px solid red;
 }
 #hub .routes #miners .loading {
-  color: #f0f0f0;
+    color: #f0f0f0;
 }
 #hub .routes #engineers {
-  padding: 20px;
+    padding: 20px;
 }
 #hub .routes #engineers h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #f0f0f0;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f0f0f0;
 }
 #hub .routes #engineers .engineers-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-top: 20px;
 }
 #hub .routes #engineers .engineers-grid .engineer {
-  margin: 20px 10px;
-  padding: 14px;
-  border-radius: 6px;
-  box-shadow: 10px 5px 5px 0px gainsboro;
-  color: black;
-  background-color: #f0f0f0;
-  border: 6px solid blue;
+    margin: 20px 10px;
+    padding: 14px;
+    border-radius: 6px;
+    box-shadow: 10px 5px 5px 0px gainsboro;
+    color: black;
+    background-color: #f0f0f0;
+    border: 6px solid blue;
 }
 #hub .routes #engineers .loading {
-  color: #f0f0f0;
+    color: #f0f0f0;
 }
 #hub .routes #scientists {
-  padding: 20px;
+    padding: 20px;
 }
 #hub .routes #scientists h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #f0f0f0;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f0f0f0;
 }
 #hub .routes #scientists .scientists-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-top: 20px;
 }
 #hub .routes #scientists .scientists-grid .scientist {
-  margin: 20px 10px;
-  padding: 14px;
-  border-radius: 6px;
-  box-shadow: 10px 5px 5px 0px gainsboro;
-  color: black;
-  background-color: #f0f0f0;
-  border: 6px solid green;
+    margin: 20px 10px;
+    padding: 14px;
+    border-radius: 6px;
+    box-shadow: 10px 5px 5px 0px gainsboro;
+    color: black;
+    background-color: #f0f0f0;
+    border: 6px solid green;
 }
 #hub .routes #scientists .loading {
-  color: #f0f0f0;
+    color: #f0f0f0;
 }
 
 /*# sourceMappingURL=styles.css.map */

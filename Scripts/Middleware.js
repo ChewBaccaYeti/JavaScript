@@ -7,13 +7,15 @@ function logger(req, res, next) {
 // применение middleware к приложению Express
 const express = require('express');
 const app = express();
-const port = 6001
+const port = 6001;
 
 // использование middleware для всех запросов
 app.use(logger)
-    .get('/', (req, res) => { // обработка маршрутов
+    .get('/', (req, res) => {
+        // обработка маршрутов
         res.send('Привет, мир!');
-    }).listen(port, () => {
+    })
+    .listen(port, () => {
         console.log('Сервер запущен на порте 6001');
     });
 
@@ -69,12 +71,14 @@ function checkAuth(req, res, next) {
 // Основной обработчик маршрута
 app.get('/', (req, res) => {
     res.send('Welcome to the home page!'); // Применение middleware в приложении
-}).use(requestLogger) // Логирование будет выполнено для каждого запроса
+})
+    .use(requestLogger) // Логирование будет выполнено для каждого запроса
     .use(checkAuth) // Авторизация будет проверяться для каждого запроса
     // Применение middleware к конкретному маршруту
     .get('/protected', (req, res) => {
         res.send('This is a protected route.');
     })
-    .listen(PORT, () => { // Запуск сервера
+    .listen(PORT, () => {
+        // Запуск сервера
         console.log(`Server is running on http://localhost:${PORT}`);
     });

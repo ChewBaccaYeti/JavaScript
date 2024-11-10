@@ -2,8 +2,8 @@ import '../css/common.css';
 import BSN from 'bootstrap.native';
 
 const refs = {
-  modal: document.querySelector('#subscription-modal'),
-  subscribeBtn: document.querySelector('button[data-subscribe]'),
+    modal: document.querySelector('#subscription-modal'),
+    subscribeBtn: document.querySelector('button[data-subscribe]'),
 };
 const modal = new BSN.Modal('#subscription-modal');
 const PROMPT_DELAY = 1000;
@@ -18,22 +18,22 @@ refs.modal.addEventListener('hide.bs.modal', openModal);
 refs.subscribeBtn.addEventListener('click', onSubscribeBtnClick);
 
 function openModal() {
-  if (promptCounter === MAX_PROMPT_ATTEMPTS || hasSubscribed) {
-    console.log(
-      'Максимальное кол-во надоеданий или подписался - ' + Date.now(),
-    );
-    return;
-  }
-  setTimeout(() => {
-    console.log('Open modal');
-    modal.show();
-    promptCounter += 1;
-  }, PROMPT_DELAY);
+    if (promptCounter === MAX_PROMPT_ATTEMPTS || hasSubscribed) {
+        console.log(
+            'Максимальное кол-во надоеданий или подписался - ' + Date.now(),
+        );
+        return;
+    }
+    setTimeout(() => {
+        console.log('Open modal');
+        modal.show();
+        promptCounter += 1;
+    }, PROMPT_DELAY);
 }
 
 function onSubscribeBtnClick() {
-  hasSubscribed = true;
-  modal.hide();
+    hasSubscribed = true;
+    modal.hide();
 }
 
 // const intervalId = setInterval(() => {

@@ -1,6 +1,6 @@
-alert("Hello");
+alert('Hello');
 
-result = prompt(title, /*[default]*/);
+result = prompt(title /*[default]*/);
 
 // Квадратные скобки вокруг default
 // в описанном выше синтаксисе означают, что параметр факультативный, необязательный.
@@ -11,7 +11,7 @@ alert(`Тебе ${age} лет!`); // Тебе 100 лет!
 
 result = confirm(question);
 
-let isBoss = confirm("Ты здесь главный?");
+let isBoss = confirm('Ты здесь главный?');
 
 alert(isBoss); // true, если нажата OK
 

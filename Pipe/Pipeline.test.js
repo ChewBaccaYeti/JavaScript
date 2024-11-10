@@ -6,39 +6,51 @@ const app = express();
 
 // Middleware для получения данных о людях
 const fetchPeopleData = (req, res, next) => {
-    axios.get('https://swapi.dev/api/people')
-        .then((apiResponse) => {
+    axios
+        .get('https://swapi.dev/api/people')
+        .then(apiResponse => {
             req.swapiPeopleData = apiResponse.data;
             next();
         })
-        .catch((error) => {
-            console.error('Error acquired during fetching data from SWAPI.', error);
+        .catch(error => {
+            console.error(
+                'Error acquired during fetching data from SWAPI.',
+                error,
+            );
             res.status(500).send('Server error.');
         });
 };
 
 // Middleware для получения данных о звездных кораблях
 const fetchStarshipsData = (req, res, next) => {
-    axios.get('https://swapi.dev/api/starships')
-        .then((apiResponse) => {
+    axios
+        .get('https://swapi.dev/api/starships')
+        .then(apiResponse => {
             req.swapiStarshipsData = apiResponse.data;
             next();
         })
-        .catch((error) => {
-            console.error('Error acquired during fetching data from SWAPI.', error);
+        .catch(error => {
+            console.error(
+                'Error acquired during fetching data from SWAPI.',
+                error,
+            );
             res.status(500).send('Server error.');
         });
 };
 
 // Middleware для получения данных о видах
 const fetchSpeciesData = (req, res, next) => {
-    axios.get('https://swapi.dev/api/species')
-        .then((apiResponse) => {
+    axios
+        .get('https://swapi.dev/api/species')
+        .then(apiResponse => {
             req.swapiSpeciesData = apiResponse.data;
             next();
         })
-        .catch((error) => {
-            console.error('Error acquired during fetching data from SWAPI.', error);
+        .catch(error => {
+            console.error(
+                'Error acquired during fetching data from SWAPI.',
+                error,
+            );
             res.status(500).send('Server error.');
         });
 };
@@ -70,10 +82,7 @@ describe('GET /people', () => {
 
     test('should fetch data from SWAPI about people and return it as JSON', async () => {
         const mockData = {
-            results: [
-                { name: 'Luke Skywalker' },
-                { name: 'Darth Vader' }
-            ]
+            results: [{ name: 'Luke Skywalker' }, { name: 'Darth Vader' }],
         };
         mock.onGet('https://swapi.dev/api/people').reply(200, mockData);
         const response = await supertest(app).get('/people');
@@ -103,10 +112,7 @@ describe('GET /starships', () => {
 
     test('should fetch data from SWAPI about starships and return it as JSON', async () => {
         const mockData = {
-            results: [
-                { name: 'Death Star' },
-                { name: 'CR90 corvette' }
-            ]
+            results: [{ name: 'Death Star' }, { name: 'CR90 corvette' }],
         };
         mock.onGet('https://swapi.dev/api/starships').reply(200, mockData);
         const response = await supertest(app).get('/starships');
@@ -129,9 +135,7 @@ describe('GET /species', () => {
 
     test('should fetch data from SWAPI about species and return it as JSON', async () => {
         const mockData = {
-            results: [
-                { name: 'Wookie' }
-            ]
+            results: [{ name: 'Wookie' }],
         };
         mock.onGet('https://swapi.dev/api/species').reply(200, mockData);
         const response = await supertest(app).get('/species');

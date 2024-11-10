@@ -7,10 +7,10 @@
 const lazyImages = document.querySelectorAll('img[loading="lazy"]');
 
 lazyImages.forEach(image => {
-  image.addEventListener('load', onImageLoaded), { once: true };
+    image.addEventListener('load', onImageLoaded), { once: true };
 });
 
 function onImageLoaded(event) {
-  console.log('Image loaded');
-  event.target.classList.add('appear');
+    console.log('Image loaded');
+    event.target.classList.add('appear');
 }

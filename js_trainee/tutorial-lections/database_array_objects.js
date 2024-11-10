@@ -160,13 +160,13 @@ console.table(agentsDatabase);
 
 function manipulateAgentsArray(agentsDatabase, tag) {
     const isAgentPresent = agentsDatabase.some(
-        (agent) => agent.tag === 'Green Eye'
+        agent => agent.tag === 'Green Eye',
     );
     console.log(isAgentPresent);
 
     if (isAgentPresent) {
         const agentUnderCover = agentsDatabase.find(
-            (agent) => agent.tag === 'Green Eye'
+            agent => agent.tag === 'Green Eye',
         );
 
         console.log('Agent is here:', agentUnderCover.lastName);

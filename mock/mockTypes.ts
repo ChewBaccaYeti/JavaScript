@@ -13,7 +13,7 @@ export interface Random {
     Section: string;
     Degree: {
         name: string;
-        symbol: string
+        symbol: string;
     };
     Role: string;
     Bank: string;

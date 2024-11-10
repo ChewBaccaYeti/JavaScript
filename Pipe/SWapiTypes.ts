@@ -2,7 +2,7 @@ import { Request } from 'express';
 
 export interface ExtendedRequest<T> extends Request {
     swapiData?: T; // Теперь типизируем swapiData как  --> generic<T>
-    // Типизируй как `any` или более конкретно, если знаешь структуру данных, 
+    // Типизируй как `any` или более конкретно, если знаешь структуру данных,
     // но в данном случае я использую generic <T>
 }
 
