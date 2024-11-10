@@ -22,7 +22,7 @@ const tweets = [
     { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
 ];
 
-const tags = tweets.flatMap((t) => t.tags);
+const tags = tweets.flatMap(t => t.tags);
 console.log(tags);
 
 const statsReduce = tags.reduce((acc, tag) => {
@@ -34,13 +34,13 @@ const statsReduce = tags.reduce((acc, tag) => {
 console.log(statsReduce);
 
 const stats = tweets
-    .flatMap((tweet) => tweet.tags)
+    .flatMap(tweet => tweet.tags)
     .reduce(
         (acc, tag) => ({
             ...acc,
             [tag]: acc[tag] ? acc[tag] + 1 : 1,
         }),
-        {}
+        {},
     );
 
 console.log(stats);

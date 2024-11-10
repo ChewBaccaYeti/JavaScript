@@ -6,7 +6,7 @@ console.log('{} === {}: ', {} === {});
 //! This condition will always return 'false' since JavaScript compares objects by reference, not value.
 console.log(
     'function() {} === function() {}: ',
-    function () {} === function () {}
+    function () {} === function () {},
 );
 
 const fnA = function () {

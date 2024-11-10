@@ -10,10 +10,13 @@ require('dotenv').config();
 const PORT = 3000;
 
 // View engine setup middleware
-app.engine('handlebars', engine({
-    layoutsDir: path.join(__dirname, 'views/layouts'), // Путь к макетам
-    defaultLayout: 'main' // Имя основного макета
-}));
+app.engine(
+    'handlebars',
+    engine({
+        layoutsDir: path.join(__dirname, 'views/layouts'), // Путь к макетам
+        defaultLayout: 'main', // Имя основного макета
+    }),
+);
 app.set('view engine', 'handlebars');
 
 // Static folder middleware
@@ -51,8 +54,8 @@ app.post('/send', (req, res) => {
             pass: process.env.PASSWORD,
         },
         tls: {
-            rejectUnauthorized: false
-        }
+            rejectUnauthorized: false,
+        },
     };
 
     const transporter = nodemailer.createTransport(config);
@@ -62,14 +65,14 @@ app.post('/send', (req, res) => {
         to: 'jangofrett9982@gmail.com', // list of receivers
         subject: 'Nodemailer test',
         text: req.body.message,
-        html: output // html body
+        html: output, // html body
     };
 
     transporter
         .sendMail(emailOptions)
         .then(info => {
             console.log('Email sent successfully!', info);
-            console.log('Message ID:', info.messageId);  // Идентификатор письма
+            console.log('Message ID:', info.messageId); // Идентификатор письма
             console.log('Preview URL:', nodemailer.getTestMessageUrl(info)); // URL для просмотра
 
             res.render('contact', { msg: 'Email has been sent' });

@@ -41,4 +41,4 @@ export default function renderScientists() {
             }
         })
         .catch(err => console.log(err));
-};
+}

@@ -71,7 +71,7 @@ const onGetPositionError = function (error) {
 
 window.navigator.geolocation.getCurrentPosition(
     onGetPositionSuccess,
-    onGetPositionError
+    onGetPositionError,
 );
 
 /*
@@ -93,12 +93,12 @@ console.log('В коде после таймаута');
 const onRequestSuccess = function (response) {
     console.log(
         'Вызов функции onRequestSuccess после успешного ответа бекэнда',
-        response
+        response,
     );
 };
 
 fetch('https://pokeapi.co/api/v2/pokemon')
-    .then((res) => res.json())
+    .then(res => res.json())
     .then(onRequestSuccess);
 
 /*

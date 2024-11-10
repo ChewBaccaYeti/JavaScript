@@ -10,7 +10,7 @@ function getFruit(name) {
         apple: '🍎',
     };
 
-return new Promise((resolve, reject) =>
+    return new Promise((resolve, reject) =>
         setTimeout(() => resolve(fruits[name]), 500),
     );
 }
@@ -26,24 +26,24 @@ async function aMakeSmoothie() {
         console.log(fruits);
         console.timeEnd('aMakeSmoothie');
 
-    return fruits;
+        return fruits;
     } catch (error) {
-    console.log('Ошибка');
+        console.log('Ошибка');
     }
 }
 
 aMakeSmoothie();
 
-async function fn () {} // Функция
+async function fn() {} // Функция
 
-const fn = async function () {} // Функциональное выражение
+const fn = async function () {}; // Функциональное выражение
 
-const arr = async () => {} // Стрелочная функция
+const arr = async () => {}; // Стрелочная функция
 
 const x = {
-async getname () {} // Метод объекта
-}
+    async getname() {}, // Метод объекта
+};
 
 class X {
-async getName () {} // Метод класса
+    async getName() {} // Метод класса
 }

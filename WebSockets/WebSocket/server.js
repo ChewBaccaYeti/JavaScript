@@ -22,7 +22,7 @@ wss.on('connection', ws => {
     };
 
     // Error on connection
-    ws.onerror = (error) => {
+    ws.onerror = error => {
         console.log('Connection failed:', error.message);
     };
 
@@ -31,7 +31,7 @@ wss.on('connection', ws => {
     clients[id].send(`Hello, you get number: №${id}`);
 
     // Receiving message from the client
-    ws.on('message', (message) => {
+    ws.on('message', message => {
         console.log('Received message', message);
         ws.send(`You said ${message}`);
     });
@@ -47,7 +47,7 @@ wss.on('connection', ws => {
     ws.onclose = () => {
         console.log('Connection with server closed');
     };
-    ws.on ('close', () => {
+    ws.on('close', () => {
         console.log('Shutting connection');
     });
 });

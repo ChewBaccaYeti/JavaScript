@@ -66,7 +66,9 @@ function updateBookById(update, bookId) {
         body: JSON.stringify(update),
     };
 
-    return fetch(`${BASE_URL}/books/${bookId}`, options).then(res => res.json());
+    return fetch(`${BASE_URL}/books/${bookId}`, options).then(res =>
+        res.json(),
+    );
 }
 
 updateBookById({ title: 'Большая новая книга по NODE.js' }, 19);

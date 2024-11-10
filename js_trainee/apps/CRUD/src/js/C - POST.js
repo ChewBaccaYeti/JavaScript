@@ -4,7 +4,7 @@ function addBook(book) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            "Accept": "application/json",
+            Accept: 'application/json',
         },
         body: JSON.stringify(book),
     };
@@ -27,6 +27,6 @@ function addBook(book) {
 // }).then(renderBook);
 
 function renderBook() {
-    console.log("Пришел ответ от бекенда, можно отрисовывать книгу");
+    console.log('Пришел ответ от бекенда, можно отрисовывать книгу');
     console.log(book);
 }

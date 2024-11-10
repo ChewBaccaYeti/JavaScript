@@ -38,7 +38,7 @@ m = 3 + 5;
 p = m;
 p = n;
 
-console.log(m) // 8
+console.log(m); // 8
 
 let v = 2;
 v = v + 4;
@@ -56,4 +56,3 @@ let j = 4;
 j *= 5 + 6;
 
 console.log(j); // 44
-

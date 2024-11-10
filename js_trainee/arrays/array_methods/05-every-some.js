@@ -44,24 +44,24 @@ const players = [
  * Поиск онлайн и оффлайн игроков
  */
 
-const isEveryOnline = players.every((player) => player.online);
+const isEveryOnline = players.every(player => player.online);
 console.log(isEveryOnline); // false
 
-const isEveryOffline = players.every((player) => !player.online);
+const isEveryOffline = players.every(player => !player.online);
 console.log(isEveryOffline); // false
 
-const isSomeOnline = players.some((player) => player.online);
+const isSomeOnline = players.some(player => player.online);
 console.log(isSomeOnline); // true
 
-const isSomeOffline = players.some((player) => !player.online);
+const isSomeOffline = players.some(player => !player.online);
 console.log(isSomeOffline); // true
 
 /*
  * Все ли игроки играли больше > 200 часов ИЛИ || < 200 меньше
  */
 
-const isEveryPlayed = players.every((player) => player.timePlayed >= 200);
+const isEveryPlayed = players.every(player => player.timePlayed >= 200);
 console.log(isEveryPlayed); // false
 
-const isSomePlayed = players.some((player) => player.timePlayed < 200);
+const isSomePlayed = players.some(player => player.timePlayed < 200);
 console.log(isSomePlayed); // true

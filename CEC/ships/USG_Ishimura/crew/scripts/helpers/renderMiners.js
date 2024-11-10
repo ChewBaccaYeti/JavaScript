@@ -41,4 +41,4 @@ export default function renderMiners() {
             }
         })
         .catch(err => console.log(err));
-};
+}

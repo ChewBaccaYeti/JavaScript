@@ -8,7 +8,7 @@ async function addBook(book) {
         },
         body: JSON.stringify(book),
     };
-    
+
     const response = await fetch(`${BASE_URL}/books`, options);
     const newBook = await response.json();
     return newBook;
@@ -21,7 +21,7 @@ async function addBookAndUpdateUI() {
     } catch (error) {
         console.log(error);
     }
-};
+}
 
 addBookAndUpdateUI();
 

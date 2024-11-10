@@ -10,7 +10,7 @@ import '../css/common.css';
 const NOTIFICATION_DELAY = 3000;
 let timeOutId = null;
 const refs = {
-  notification: document.querySelector('.js-alert'),
+    notification: document.querySelector('.js-alert'),
 };
 
 refs.notification.addEventListener('click', onNotificationClick);
@@ -22,19 +22,19 @@ showNotification();
  */
 
 function onNotificationClick() {
-  hideNotification();
-  clearTimeout(timeOutId);
+    hideNotification();
+    clearTimeout(timeOutId);
 }
 
 function showNotification() {
-  refs.notification.classList.add('is-visible');
+    refs.notification.classList.add('is-visible');
 
-  timeOutId = setTimeout(() => {
-    console.log('Hide notification automatically');
-    hideNotification();
-  }, NOTIFICATION_DELAY);
+    timeOutId = setTimeout(() => {
+        console.log('Hide notification automatically');
+        hideNotification();
+    }, NOTIFICATION_DELAY);
 }
 
 function hideNotification() {
-  refs.notification.classList.remove('is-visible');
+    refs.notification.classList.remove('is-visible');
 }

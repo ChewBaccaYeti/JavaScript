@@ -15,7 +15,7 @@ describe('hooks', function () {
 
     afterEach(() => {
         console.log('Виконати наприкінці кожного тесту');
-    })
+    });
 
     test('1 to power 2 to equal 1', () => {
         console.log('1 to power 2 to equal 1');

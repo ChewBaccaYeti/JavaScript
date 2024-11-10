@@ -1,17 +1,17 @@
 const tech = [
-  { label: 'HTML' },
-  { label: 'CSS' },
-  { label: 'JavaScript' },
-  { label: 'Node.js' },
-  { label: 'React' },
-  { label: 'Vue' },
-  { label: 'Next.js' },
-  { label: 'Mobx' },
-  { label: 'Redux' },
-  { label: 'React Router' },
-  { label: 'GraphQl' },
-  { label: 'PostgreSQL' },
-  { label: 'MongoDB' },
+    { label: 'HTML' },
+    { label: 'CSS' },
+    { label: 'JavaScript' },
+    { label: 'Node.js' },
+    { label: 'React' },
+    { label: 'Vue' },
+    { label: 'Next.js' },
+    { label: 'Mobx' },
+    { label: 'Redux' },
+    { label: 'React Router' },
+    { label: 'GraphQl' },
+    { label: 'PostgreSQL' },
+    { label: 'MongoDB' },
 ];
 
 /*
@@ -21,8 +21,8 @@ const tech = [
  */
 
 const refs = {
-  list: document.querySelector('.js-list'),
-  input: document.querySelector('#filter'),
+    list: document.querySelector('.js-list'),
+    input: document.querySelector('#filter'),
 };
 
 refs.input.addEventListener('input', onFilterChange);
@@ -33,22 +33,22 @@ refs.list.innerHTML = listItemMarkup;
 populateList(listItemMarkup);
 
 function createListItemMarkup(items) {
-  return items.map(item => `<li>${item.label}</li>`).join('');
+    return items.map(item => `<li>${item.label}</li>`).join('');
 }
 
 function onFilterChange(event) {
-  const filter = event.target.value.toLowerCase();
+    const filter = event.target.value.toLowerCase();
 
-  const filteredItems = tech.filter(tech =>
-    tech.label.toLowerCase().includes(filter),
-  );
+    const filteredItems = tech.filter(tech =>
+        tech.label.toLowerCase().includes(filter),
+    );
 
-  const listItemsMarkup = createListItemMarkup(filteredItems);
-  refs.list.innerHTML = listItemsMarkup;
+    const listItemsMarkup = createListItemMarkup(filteredItems);
+    refs.list.innerHTML = listItemsMarkup;
 
-  console.log(filteredItems);
+    console.log(filteredItems);
 }
 
 function populateList(markup) {
-  refs.list.innerHTML = markup;
+    refs.list.innerHTML = markup;
 }

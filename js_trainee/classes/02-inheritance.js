@@ -117,5 +117,5 @@ console.log(
     'Warrior.prototype:',
     Warrior.prototype,
     Warrior.prototype.__proto__ === Character.prototype,
-    Knight.__proto__ === Warrior.prototype
+    Knight.__proto__ === Warrior.prototype,
 );

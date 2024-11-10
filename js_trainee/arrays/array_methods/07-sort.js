@@ -65,13 +65,13 @@ const players = [
 
 const sortByNoob = [...players].sort(
     (currentPlayer, nextPlayer) =>
-        currentPlayer.timePlayed - nextPlayer.timePlayed
+        currentPlayer.timePlayed - nextPlayer.timePlayed,
 );
 console.table(sortByNoob);
 
 const sortByBest = [...players].sort(
     (currentPlayer, nextPlayer) =>
-        nextPlayer.timePlayed - currentPlayer.timePlayed
+        nextPlayer.timePlayed - currentPlayer.timePlayed,
 );
 console.table(sortByBest);
 

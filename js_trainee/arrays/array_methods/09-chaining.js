@@ -3,10 +3,10 @@
  */
 const numbers = [1, 5, 2, 4, 3];
 
-const greaterThenTwo = numbers.filter((num) => num > 2);
+const greaterThenTwo = numbers.filter(num => num > 2);
 console.log(greaterThenTwo);
 
-const multByThree = greaterThenTwo.map((num) => num * 3);
+const multByThree = greaterThenTwo.map(num => num * 3);
 console.log(multByThree);
 
 const sorted = multByThree.sort((a, b) => a - b);
@@ -14,8 +14,8 @@ console.log(sorted);
 
 // Цепочка предыдущих трёх
 const sortedChain = numbers
-    .filter((num) => num > 2)
-    .map((num) => num * 3)
+    .filter(num => num > 2)
+    .map(num => num * 3)
     .sort((a, b) => a - b);
 
 console.log(sortedChain);
@@ -34,7 +34,7 @@ const players = [
 ];
 
 const onlineAndSorted = players
-    .filter((player) => player.isOnline)
+    .filter(player => player.isOnline)
     .sort((playerA, playerB) => playerA.rank - playerB.rank);
 
 console.table(onlineAndSorted);

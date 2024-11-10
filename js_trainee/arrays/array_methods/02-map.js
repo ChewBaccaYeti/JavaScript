@@ -7,7 +7,7 @@
 
 const numbers = [5, 10, 15, 20, 25]; // Оригигальный массив
 
-const doubleNumbers = numbers.map((number) => {
+const doubleNumbers = numbers.map(number => {
     console.log(number);
 
     return number * 5;
@@ -47,10 +47,10 @@ const players = [
 ];
 console.table(players);
 
-const playersName = players.map((player) => player.name); //* Возврат нового массива ТОЛЬКО из имён игроков  в одну строку благодаря НЕЯВНОМУ возврату
+const playersName = players.map(player => player.name); //* Возврат нового массива ТОЛЬКО из имён игроков  в одну строку благодаря НЕЯВНОМУ возврату
 console.log('playersName', playersName);
 
-const playersID = players.map((player) => player.id);
+const playersID = players.map(player => player.id);
 console.log('playersID', playersID);
 
 const res = players.map(({ name, online }) => ({ name, online })); // Деструктуризация короткие свойства объекта
@@ -60,7 +60,7 @@ console.log('res', res);
  * Увеличиваем кол-во поинтов каждого игрока на 10%
  */
 
-const updatePoints = players.map((player) => ({
+const updatePoints = players.map(player => ({
     ...player,
     points: player.points * 1.1,
 }));
@@ -73,7 +73,7 @@ console.table(updatePoints); //* С НЕЯВНЫМ возвратом
 
 const playerIdToUpdate = 'player-3';
 
-const updatedTime = players.map((player) => {
+const updatedTime = players.map(player => {
     if (playerIdToUpdate === player.id) {
         console.log('Found right one - Kiwi!');
 

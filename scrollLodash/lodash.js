@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             eventCounter.throttled += 1;
             throttledOutput.textContent = eventCounter.throttled;
             console.log('Scroll handler call every 300ms');
-        }, 300)
+        }, 300),
     );
 
     document.addEventListener(
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
             eventCounter.debounced += 1;
             debouncedOutput.textContent = eventCounter.debounced;
             console.log('Scroll handler call after 300ms pause');
-        }, 300)
+        }, 300),
     );
 
     document.addEventListener(
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
         _.debounce(() => {
             eventCounter.trailing += 1;
             trailingOutput.textContent = eventCounter.trailing;
-        }, 300)
+        }, 300),
     );
 
     document.addEventListener(
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 leadingOutput.textContent = eventCounter.leading;
             },
             300,
-            { trailing: false, leading: true }
-        )
+            { trailing: false, leading: true },
+        ),
     );
 });

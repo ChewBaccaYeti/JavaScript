@@ -9,7 +9,7 @@
 
 const numbers = [5, 10, 15, 20, 25];
 
-const filteredNumbers = numbers.filter((number) => {
+const filteredNumbers = numbers.filter(number => {
     console.log(number);
 
     if (number < 10 || number > 20) {
@@ -49,14 +49,14 @@ const players = [
 ];
 
 // ! ONLINE
-const onlinePlayers_0 = players.filter((player) => player.online);
+const onlinePlayers_0 = players.filter(player => player.online);
 console.log(onlinePlayers_0);
 //? ИЛИ
 const onlinePlayers_1 = players.filter(({ online }) => online);
 console.log(onlinePlayers_1);
 
 // ! OFFLINE
-const offlinePlayers_0 = players.filter((player) => !player.online);
+const offlinePlayers_0 = players.filter(player => !player.online);
 console.log(offlinePlayers_0);
 //? ИЛИ
 const offlinePlayers_1 = players.filter(({ online }) => !online);
@@ -67,14 +67,14 @@ console.log(offlinePlayers_1);
  */
 
 // HARDCORE
-const hardcorePlayers_0 = players.filter((player) => player.timePlayed > 250);
+const hardcorePlayers_0 = players.filter(player => player.timePlayed > 250);
 console.log(hardcorePlayers_0);
 //? ИЛИ
 const hardcorePlayers_1 = players.filter(({ timePlayed }) => timePlayed > 250);
 console.log(hardcorePlayers_1);
 
 // NOOBS
-const noobPlayers_0 = players.filter((player) => player.timePlayed < 250);
+const noobPlayers_0 = players.filter(player => player.timePlayed < 250);
 console.log(noobPlayers_0);
 //? ИЛИ
 const noobPlayers_1 = players.filter(({ timePlayed }) => timePlayed < 250);

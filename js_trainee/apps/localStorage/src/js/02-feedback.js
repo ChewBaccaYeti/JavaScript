@@ -5,9 +5,9 @@ import '../css/feedback-form.css';
 const STORAGE_KEY = 'feedback-message';
 
 const refs = {
-  form: document.querySelector('.js-feedback-form'),
-  name: document.querySelector('.js-name'),
-  textarea: document.querySelector('.js-feedback-form textarea'),
+    form: document.querySelector('.js-feedback-form'),
+    name: document.querySelector('.js-name'),
+    textarea: document.querySelector('.js-feedback-form textarea'),
 };
 
 refs.form.addEventListener('submit', onFormSubmit);
@@ -23,12 +23,12 @@ populateTextArea();
  */
 
 function onFormSubmit(evt) {
-  evt.preventDefault();
-  console.log('Отправляем форму');
+    evt.preventDefault();
+    console.log('Отправляем форму');
 
-  evt.currentTarget.reset();
+    evt.currentTarget.reset();
 
-  localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(STORAGE_KEY);
 }
 
 /*
@@ -38,10 +38,10 @@ function onFormSubmit(evt) {
  */
 
 function onTextareaInput(evt) {
-  const message = evt.target.value;
+    const message = evt.target.value;
 
-  localStorage.setItem(STORAGE_KEY, message);
-  console.log(message);
+    localStorage.setItem(STORAGE_KEY, message);
+    console.log(message);
 }
 
 /*
@@ -50,10 +50,10 @@ function onTextareaInput(evt) {
  */
 
 function populateTextArea() {
-  const SavedMessage = localStorage.getItem(STORAGE_KEY);
+    const SavedMessage = localStorage.getItem(STORAGE_KEY);
 
-  if (SavedMessage) {
-    refs.textarea.value = SavedMessage;
-    console.log(SavedMessage);
-  }
+    if (SavedMessage) {
+        refs.textarea.value = SavedMessage;
+        console.log(SavedMessage);
+    }
 }

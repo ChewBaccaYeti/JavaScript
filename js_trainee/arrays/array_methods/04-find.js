@@ -7,7 +7,7 @@
 
 const numbers = [5, 10, 15, 20, 25];
 
-const number = numbers.find((number) => number === 10);
+const number = numbers.find(number => number === 10);
 console.log(number);
 
 const players = [

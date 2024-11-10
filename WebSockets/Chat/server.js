@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/public'));
 
 const users = {};
 
-io.sockets.on('connection', (client) => {
+io.sockets.on('connection', client => {
     const broadcast = (event, data) => {
         client.emit(event, data);
         client.broadcast.emit(event, data);

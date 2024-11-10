@@ -5,7 +5,7 @@ import '../css/common.css';
  */
 
 const logger = time => {
-  console.log(`Log every ${time} ms = ${Date.now()}`);
+    console.log(`Log every ${time} ms = ${Date.now()}`);
 };
 
 console.log('Log before setInterval()');
@@ -21,5 +21,5 @@ const shouldCancelInterval = Math.random() > 0.3;
 console.log(shouldCancelInterval);
 
 if (shouldCancelInterval) {
-  clearInterval(intervalId);
+    clearInterval(intervalId);
 }

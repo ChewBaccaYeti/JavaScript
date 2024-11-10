@@ -39,8 +39,8 @@ function findGreaterOrEqualByString(a, b) {
     return a === b
         ? 'a and b are equal'
         : a > b
-        ? 'a is greater'
-        : 'b is greater';
+          ? 'a is greater'
+          : 'b is greater';
 }
 
 function checkSign(num) {

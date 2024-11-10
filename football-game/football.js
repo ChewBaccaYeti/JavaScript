@@ -8,7 +8,7 @@ ball.classList.add('ball');
 body.append(field);
 field.append(ball);
 
-field.addEventListener('click', (event) => {
+field.addEventListener('click', event => {
     let x = event.clientX - field.offsetLeft;
     let y = event.clientY - field.offsetTop;
 

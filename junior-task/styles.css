@@ -35,7 +35,7 @@ p {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    
+
     gap: 20px;
     padding: 10px;
     list-style-type: none;
@@ -51,9 +51,9 @@ p {
 
     background-color: #fff;
 
-    box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.71);
-    -webkit-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.71);
-    -moz-box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.71);
+    box-shadow: 1px 4px 7px 0px rgba(0, 0, 0, 0.71);
+    -webkit-box-shadow: 1px 4px 7px 0px rgba(0, 0, 0, 0.71);
+    -moz-box-shadow: 1px 4px 7px 0px rgba(0, 0, 0, 0.71);
     overflow: hidden;
 }
 
@@ -62,17 +62,17 @@ p {
     width: 500px;
     height: 300px;
     padding: 12px;
-    
+
     transform: skewY(2deg);
 
     &::before,
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         width: 30px;
         height: 130px;
-        background-color: #fff; 
+        background-color: #fff;
     }
 
     &::before {
@@ -117,28 +117,28 @@ p {
 }
 
 .card1 {
-background-color: #f9ebd7;
+    background-color: #f9ebd7;
 }
 .card2 {
-background-color: #609ea0;
+    background-color: #609ea0;
 }
 .card3 {
-background-color: #e6e6fa;
+    background-color: #e6e6fa;
 }
-.card4 {    
-background-color: #ffe4b4;
+.card4 {
+    background-color: #ffe4b4;
 }
 .card5 {
-background-color: #f9ebd7;
+    background-color: #f9ebd7;
 }
 .card6 {
-background-color: #609ea0;
+    background-color: #609ea0;
 }
 .card7 {
-background-color: #e6e6fa;
+    background-color: #e6e6fa;
 }
 .card8 {
-background-color: #ffe4b4;
+    background-color: #ffe4b4;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {

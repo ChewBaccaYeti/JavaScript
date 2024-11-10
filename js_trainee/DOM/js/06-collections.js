@@ -15,8 +15,8 @@ const colorPickerContainerEl = document.querySelector('.js-color-picker');
 /*
  * Пишем функцию для создания разметки колорпикера
  */
-const makeColorPickerOptions = (options) => {
-    return options.map((option) => {
+const makeColorPickerOptions = options => {
+    return options.map(option => {
         const buttonEl = document.createElement('button');
         buttonEl.type = 'button';
         buttonEl.classList.add('color-picker__option');
