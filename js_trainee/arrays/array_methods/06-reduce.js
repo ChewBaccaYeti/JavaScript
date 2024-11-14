@@ -58,7 +58,7 @@ const players = [
     { id: 'player-2', name: 'Poly', timePlayed: 470, online: true },
     { id: 'player-3', name: 'Kiwi', timePlayed: 230, online: true },
     { id: 'player-4', name: 'Ajax', timePlayed: 150, online: false },
-    { id: 'player-5', name: 'Chelsey', timePlayed: 80, online: true },
+    { id: 'player-5', name: 'Chelsy', timePlayed: 80, online: true },
 ];
 
 const totalTimeExplicit = Object.values(players).reduce(
@@ -144,4 +144,4 @@ const tagsStats = allTags.reduce((acc, tag) => {
 // console.log(tagsStats);
 
 //* если свойство с ключом tag есть. увеличить его значение на 1
-//* если свойствоства нет с таким ключом что в tag, сделать и записать 1
+//* если свойства нет с таким ключом что в tag, сделать и записать 1
