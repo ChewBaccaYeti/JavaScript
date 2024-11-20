@@ -5,7 +5,7 @@
  * - Возвращает новый массив такой же длины
  */
 
-const numbers = [5, 10, 15, 20, 25]; // Оригигальный массив
+const numbers = [5, 10, 15, 20, 25]; // Оригинальный массив
 
 const doubleNumbers = numbers.map(number => {
     console.log(number);
@@ -47,13 +47,13 @@ const players = [
 ];
 console.table(players);
 
-const playersName = players.map(player => player.name); //* Возврат нового массива ТОЛЬКО из имён игроков  в одну строку благодаря НЕЯВНОМУ возврату
+const playersName = players.map(player => player.name); //* Возврат нового массива ТОЛЬКО из имён игроков в одну строку благодаря НЕЯВНОМУ возврату
 console.log('playersName', playersName);
 
 const playersID = players.map(player => player.id);
 console.log('playersID', playersID);
 
-const res = players.map(({ name, online }) => ({ name, online })); // Деструктуризация короткие свойства объекта
+const res = players.map(({ name, online }) => ({ name, online })); // Де структуризация короткие свойства объекта
 console.log('res', res);
 
 /*
@@ -85,7 +85,7 @@ const updatedTime = players.map(player => {
 
     return player;
 });
-/* Более краткая запись 
+/* Более краткая запись
 playerIdToUpdate === player.id
     ? {
         ...player,
