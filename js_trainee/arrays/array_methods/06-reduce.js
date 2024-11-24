@@ -1,6 +1,6 @@
 /*
  * Array.prototype.reduce()
- * - Поэлементо перебирает оригинальный массив
+ * - Поэлементно перебирает оригинальный массив
  * - Возвращает что угодно 🤯
  * - Заменяет всё на свете, но использовать нужно с умом
  */
@@ -15,6 +15,7 @@ const totalExplicit = numbersExplicit.reduce((accumulator, number) => {
 
     return accumulator + number;
 }, 0);
+console.log(totalExplicit);
 
 const totalImplicit = numbersImplicit.reduce((acc, number) => acc + number, 1);
 console.log(totalImplicit);
@@ -58,7 +59,7 @@ const players = [
     { id: 'player-2', name: 'Poly', timePlayed: 470, online: true },
     { id: 'player-3', name: 'Kiwi', timePlayed: 230, online: true },
     { id: 'player-4', name: 'Ajax', timePlayed: 150, online: false },
-    { id: 'player-5', name: 'Chelsey', timePlayed: 80, online: true },
+    { id: 'player-5', name: 'Chelsy', timePlayed: 80, online: true },
 ];
 
 const totalTimeExplicit = Object.values(players).reduce(
@@ -130,18 +131,3 @@ console.table(allTagsImmutable);
 const allTagsFlatMap = tweets.flatMap(tweet => tweet.tags);
 console.table(allTagsFlatMap);
 //* Используя flatMap, мы получаем массив тегов, и он автоматически "выравнивает" результат, чтобы получить одномерный массив, как и ранее с оператором ...spread.
-
-/*
- * Ведём статистику тегов
- */
-
-const tagsStats = allTags.reduce((acc, tag) => {
-    return {
-        ...acc,
-        [tag]: acc[tag] ? acc[tag] + 1 : 1,
-    };
-}, {});
-// console.log(tagsStats);
-
-//* если свойство с ключом tag есть. увеличить его значение на 1
-//* если свойствоства нет с таким ключом что в tag, сделать и записать 1
