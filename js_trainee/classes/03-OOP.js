@@ -75,14 +75,28 @@ clock.start();
 
 //! <-->
 
-class Animal {
-    constructor(name) {
-        this.speed = 0;
+class Animal { // prototype
+    constructor(name, speed, age, furColor) {
+        this.speed = speed;
         this.name = name;
+        this.age = age;
+        this.furColor = furColor;
     }
     run(speed) {
         this.speed = speed;
         console.log(`${this.name} бежит со скоростью ${this.speed}.`);
+    }
+    called(name) {
+        this.name = name;
+        console.log(`Зовут ${this.name}!`);
+    }
+    old(age) {
+        this.age = age;
+        console.log(`${this.name} возраст ${this.age}.`);
+    }
+    fur(furColor) {
+        this.furColor = furColor;
+        console.log(`${this.name} цвет шерсти ${this.furColor}.`);
     }
     stop() {
         this.speed = 0;
@@ -90,12 +104,12 @@ class Animal {
     }
 }
 
-let animal = new Animal('Animal');
+let animal = new Animal('Animal', '15km', '2 years', 'black');
 console.log(animal);
 
-class Rabbit extends Animal {
-    constructor(name, earLength) {
-        super(name);
+class Rabbit extends Animal { // экземпляр Animal
+    constructor(speed, name, age, furColor, earLength) {
+        super(speed, name, age, furColor);
         this.earLength = earLength;
     }
     hide() {
@@ -103,11 +117,10 @@ class Rabbit extends Animal {
     }
     stop() {
         super.stop(); // parent's method stop() calling
-        this.hide;
+        this.hide();
         console.log(`${this.name} остановился и прячется!`);
     }
 }
 
-let rabbit = new Rabbit('Rabbit', 10);
-console.log(rabbit.run(5), rabbit.stop(), rabbit.hide());
-console.log(rabbit.name, rabbit.earLength);
+let rabbit = new Rabbit('Jennie', 15, '1 year', 'white', 10);
+console.log(rabbit);
