@@ -1,0 +1,98 @@
+classDiagram
+    direction TD
+
+    class Character {
+        +String name
+        +String story
+        +Number xp
+        +Array skills
+        +String weapon
+        +String armor
+        +gainXp(amount)
+        +attack()
+        +rage()
+        +castSpell()
+    }
+
+    class Warrior {
+        +constructor(config)
+        %% inherits all Character fields and methods
+        %% super(config) — passes everything up
+    }
+
+    class Berserk {
+        +String warcry
+        %% super(restProps) — warcry extracted, rest to Warrior
+    }
+
+    class Mage {
+        +Array spells
+        %% super(restProps) — spells extracted, rest to Character
+    }
+
+    class BattleMage {
+        %% no extra fields — extends Mage
+        %% has both attack() from Character and spells from Mage
+    }
+
+    Character <|-- Warrior : extends
+    Warrior <|-- Berserk : extends
+    Character <|-- Mage : extends
+    Mage <|-- BattleMage : extends
+
+    class Stranger {
+        name: Brut
+        story: Prisoner
+        xp: 1000
+        ~gainXp(1000)
+    }
+
+    class Knight {
+        name: Dante
+        story: Crusader
+        xp: 2000
+        weapon: Long Sword
+        armor: Silver Shell
+        ~attack()
+        ~gainXp(2500)
+    }
+
+    class Demolisher {
+        name: Grunter
+        story: Barbarian
+        xp: 3700
+        weapon: Bloody Axe
+        warcry: Blood!!!
+        ~rage()
+        ~attack()
+        ~gainXp(3700)
+    }
+
+    class Cleric {
+        name: Duncan
+        story: Warden
+        xp: 2300
+        spells: Heal FireBall
+        weapon: Mace
+        ~castSpell()
+        ~gainXp(1800)
+    }
+
+    class Destroyer {
+        name: Gorgon
+        story: Undead
+        xp: 3000
+        spells: Lava river Cursed weapon
+        weapon: Magic Hammer
+        ~castSpell()
+        ~gainXp(3600)
+    }
+
+    Character <.. Stranger : instanceof
+    Warrior <.. Knight : instanceof
+    Berserk <.. Demolisher : instanceof
+    Mage <.. Cleric : instanceof
+    BattleMage <.. Destroyer : instanceof
+
+    note for Warrior "Warrior.prototype.__proto__ === Character.prototype\nKnight.__proto__ === Warrior.prototype"
+    note for BattleMage "has both castSpell() via Mage chain\nand attack() via Character chain"

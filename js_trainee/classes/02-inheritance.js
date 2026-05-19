@@ -4,7 +4,7 @@
  *  - super()
  */
 
-class Character {
+class Character { // prototype
     constructor({
         name = 'Hero',
         story = 'Unknown',
@@ -33,6 +33,9 @@ class Character {
     }
     castSpell() {
         console.log(`${this.name} кастует заклинания ${this.spells}`);
+    }
+    labubuKiss() {
+        console.log(`${this.name} целует Labubu!`);
     }
 }
 class Warrior extends Character {

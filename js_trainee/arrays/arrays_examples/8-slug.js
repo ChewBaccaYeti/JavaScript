@@ -19,7 +19,7 @@ console.log(words);
 const slug = words.join('-');
 console.log(slug);
 
-const allMethods = title.toLowerCase().split(' ').join('-'); // Эта страка выполняет сразу 3 действия, используя методы которые расписаны по отдельности выше.
+const allMethods = title.toLowerCase().split(' ').join('-'); // Эта строка выполняет сразу 3 действия, используя методы которые расписаны по отдельности выше.
 console.log(allMethods);
 
 const shift = words.shift();

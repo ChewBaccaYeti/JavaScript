@@ -145,3 +145,72 @@ const getFruitsByQuantity = function (fruit) {
 
 const fruitsFilter = filter(fruits, getFruitsByQuantity);
 console.log(fruitsFilter);
+
+/*
+ * ============================================================
+ * УПРАЖНЕНИЯ — реши сам, потом проверь
+ * ============================================================
+ */
+
+// ЗАДАЧА 1: Напиши функцию repeat(n, action)
+// Она вызывает action(i) ровно n раз, передавая номер итерации
+// repeat(3, i => console.log(i)) → 0, 1, 2
+
+function repeat(n, action) {
+    for (let i = 0; i < n; i++) {
+        action(i)
+    }
+        
+}
+repeat(3, console.log);
+
+// ЗАДАЧА 2: Напиши функцию map(array, transform)
+// Возвращает новый массив, где каждый элемент прошёл через transform
+// map([1,2,3], x => x * 2) → [2, 4, 6]
+// for...of + .push
+
+function map(array, transform) {
+    let nums = []
+    for (let item of array) {
+        nums.push(transform(item))
+        return nums
+    }
+}
+console.log(map([1, 2, 3], x => x * 2))
+
+// ЗАДАЧА 3: Исправь баг — почему handleClick вызывается сразу?
+// const btn = document.querySelector('.js-button');
+// btn.addEventListener('click', handleBtnClick());  // ← баг здесь
+ btn.addEventListener('click', handleBtnClick);
+
+// ЗАДАЧА 4: Напиши unless(test, action)
+// Вызывает action() только если test === false
+// unless(5 > 10, () => console.log('5 не больше 10')) → выведет строку
+
+function unless(test, action) {
+    // твой код
+}
+
+/*
+ * РЕШЕНИЯ — раскомментируй когда сделаешь сам
+ *
+ * Задача 1:
+ * function repeat(n, action) {
+ *     for (let i = 0; i < n; i++) action(i);
+ * }
+ *
+ * Задача 2:
+ * function map(array, transform) {
+ *     const result = [];
+ *     for (const item of array) result.push(transform(item));
+ *     return result;
+ * }
+ *
+ * Задача 3:
+ * btn.addEventListener('click', handleBtnClick); // убрать ()
+ *
+ * Задача 4:
+ * function unless(test, action) {
+ *     if (!test) action();
+ * }
+ */

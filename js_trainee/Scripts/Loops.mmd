@@ -1,0 +1,116 @@
+flowchart TD
+
+    subgraph FOR_LOOPS["for loops"]
+        F0S([for_0 — i=0]) --> F0C{i < 10?}
+        F0C -->|Yes| F0B["log i · i++"]
+        F0B --> F0C
+        F0C -->|No| F0E([return i])
+
+        F1S([for_1 — j=11]) --> F1C{j < 21?}
+        F1C -->|Yes| F1B["multiValue = j*10 · log · j++"]
+        F1B --> F1C
+        F1C -->|No| F1E([return j])
+    end
+
+    subgraph WHILE_LOOPS["while loops"]
+        W0S([while_0 — i=0]) --> W0C{i < 5?}
+        W0C -->|Yes| W0B["log i · i++"]
+        W0B --> W0C
+        W0C -->|No| W0E([log done])
+
+        W1S([while_1 — j=15]) --> W1C{j < 20?}
+        W1C -->|Yes| W1B["log j · j++"]
+        W1B --> W1C
+        W1C -->|No| W1E([log end])
+
+        W2S([while_2 — balance=1000]) --> W2C{balance > 400?}
+        W2C -->|Yes| W2B["balance -= 100 · log balance"]
+        W2B --> W2C
+        W2C -->|No| W2E([end])
+    end
+
+    subgraph DO_WHILE["do...while — body runs first, condition after"]
+        DW0S([do_while_0 — i=0]) --> DW0B["log i · i++"]
+        DW0B --> DW0C{i < 5?}
+        DW0C -->|Yes| DW0B
+        DW0C -->|No| DW0E([end])
+
+        DW1S([do_while_1 — j=17]) --> DW1B["log j · j++"]
+        DW1B --> DW1C{j < 24?}
+        DW1C -->|Yes| DW1B
+        DW1C -->|No| DW1E([end])
+    end
+
+    subgraph FOR_IN["for...in — iterate object keys"]
+        FIS([for_in — obj with keys]) --> FIC{next key?}
+        FIC -->|key| FIB["log key + obj[key]"]
+        FIB --> FIC
+        FIC -->|done| FIE([end])
+    end
+
+    subgraph FOR_OF["for...of — iterate iterable values"]
+        FOS([for_of — array of values]) --> FOC{next value?}
+        FOC -->|value| FOB["log value / accumulate sum"]
+        FOB --> FOC
+        FOC -->|done| FOE([end])
+
+        FO3S([for_of_3 — search in names]) --> FO3C{next name?}
+        FO3C -->|name| FO3CHK{name === searchName?}
+        FO3CHK -->|Yes| FO3BRK["found = true · break"]
+        FO3CHK -->|No| FO3C
+        FO3C -->|done| FO3E([log found])
+        FO3BRK --> FO3E
+    end
+
+    subgraph SWITCH_CASE["switch/case — day=7, no fall-through"]
+        SWS([switch_case — day=7]) --> SW1{case 1?}
+        SW1 -->|Yes| SW1R["Monday · break"]
+        SW1 -->|No| SW2{case 2?}
+        SW2 -->|Yes| SW2R["Tuesday · break"]
+        SW2 -->|No| SW345["...3, 4, 5, 6..."]
+        SW345 --> SW7{case 7?}
+        SW7 -->|"Yes — match"| SW7R["Sunday · break"]
+        SW7 -->|No| SWDEF["default: Invalid day"]
+        SW1R & SW2R & SW7R & SWDEF --> SWE([log dayName])
+    end
+
+    subgraph FALL_THROUGH["switch fall-through — fruit=apple, no break on case apple"]
+        FTS([fruit = apple]) --> FTC1{case apple?}
+        FTC1 -->|"Yes — no break!"| FTL1["log: This is an apple."]
+        FTL1 --> FTL2["FALLS THROUGH to next case"]
+        FTL2 --> FTL3["case banana: log banana · break"]
+        FTC1 -->|No| FTDEF["default: Unknown fruit"]
+        FTL3 & FTDEF --> FTE([end])
+    end
+
+    subgraph MULTI_SWITCH["grouped cases — color=blue"]
+        MSS([color = blue]) --> MSC1{case red?}
+        MSC1 -->|Yes| MSP["Primary color · break"]
+        MSC1 -->|No| MSC2{case blue?}
+        MSC2 -->|"Yes — match"| MSP
+        MSC2 -->|No| MSC3{case green?}
+        MSC3 -->|Yes| MSP
+        MSC3 -->|No| MSC4{case yellow or orange?}
+        MSC4 -->|Yes| MSS2["Secondary color · break"]
+        MSC4 -->|No| MSD["default: Unknown color"]
+        MSP & MSS2 & MSD --> MSE([end])
+    end
+
+    subgraph IF_ELSE["if...else chain — day=3, same logic as switch"]
+        IFS([day = 3]) --> IFC1{day === 1?}
+        IFC1 -->|Yes| IFR1[Monday]
+        IFC1 -->|No| IFC2{day === 2?}
+        IFC2 -->|Yes| IFR2[Tuesday]
+        IFC2 -->|No| IFC3{day === 3?}
+        IFC3 -->|"Yes — match"| IFR3["Wednesday"]
+        IFC3 -->|No| IFDOT["...4, 5, 6, 7..."]
+        IFDOT --> IFDEF[Invalid day]
+        IFR1 & IFR2 & IFR3 & IFDEF --> IFE([log dayName])
+    end
+
+    subgraph TERNARY["ternary operator — age=18"]
+        TS([age = 18]) --> TC{age >= 18?}
+        TC -->|Yes| TY["isAdult = Adult"]
+        TC -->|No| TN["isAdult = Not an adult"]
+        TY & TN --> TE([log isAdult])
+    end
