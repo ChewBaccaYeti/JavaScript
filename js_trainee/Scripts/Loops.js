@@ -1,4 +1,9 @@
 // for итерирует значение до получения желаемого результата
+/*
+for (initialization; condition; post-expression) {
+  // statements
+}
+*/
 function for_0() {
     let i;
     for (i = 0; i < 10; i++) {

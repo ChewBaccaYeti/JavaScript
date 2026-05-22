@@ -8,7 +8,9 @@
         "transporter": "nodemon nodemailer/transporter.js",
         "pipe": "nodemon Pipe/Pipeline.js",
         "test": "jest",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+
+        "loops": "nodemon js_trainee/Scripts/loops/exercises.js"
     },
     "repository": {
         "type": "git",
