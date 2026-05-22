@@ -47,7 +47,13 @@ function task2() {
  * Инструменты: for
  * Hints: объяви переменную-аккумулятор перед циклом, накапливай внутри
  */
-function task3() {}
+function task3() {
+    let acc = 0
+    for (let i = 0; i <= 100; i++) {
+        acc = acc + i
+    }
+    console.log(acc)
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -345,7 +351,7 @@ function task24() {
 
 task1()
 task2();
-// task3();
+task3();
 // task4();
 // task5();
 // task6();
