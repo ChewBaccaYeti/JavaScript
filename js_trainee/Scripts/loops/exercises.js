@@ -33,8 +33,8 @@ function task1() {
  * Hints: шаг может быть отрицательным: i--
  */
 function task2() {
-    for(let i = 10; i <= 0; i--) {
-        console.log(i)
+    for(let i = 10; i > 0; i--) {
+        console.log("-" + i)
     }
 }
 
@@ -52,7 +52,7 @@ function task3() {
     for (let i = 0; i <= 100; i++) {
         acc = acc + i
     }
-    console.log(acc)
+    console.log(acc, "accumulated")
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -63,7 +63,12 @@ function task3() {
  * Инструменты: for, оператор %
  * Hints: число чётное если n % 2 === 0
  */
-function task4() {}
+function task4() {
+    // let acc = 0
+    for (let int = 0; int <= 20; int+=2) {
+        console.log(int)
+    }
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -74,7 +79,25 @@ function task4() {}
  * Инструменты: for, template literals
  * Hints: `${a} × ${b} = ${a * b}`
  */
-function task5() {}
+function task5() {
+    for (let int = 1; int <= 10; int++) {
+        let a = 7
+        let b = int
+        let tab = a * b
+        console.log(`${a} * ${b} = ${tab}`)
+    }
+}
+// Вся таблица умножения (бонус от себя самого)
+function quadTab() {
+    for (let int = 1; int <= 10; int++) {
+        for (let inc = 1; inc <= 10; inc++) {
+            let i = int
+            let j = inc
+            let sum = inc * int
+            console.table(`${i} * ${j} = ${sum}`) // Как сделать табличку действительно красивой табличкой?
+        }
+    }
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // БЛОК 2 — while / do...while
@@ -349,14 +372,19 @@ function task24() {
 // ЗАПУСК — раскомментируй нужную задачу
 // =============================================================================
 
+/* БЛОК 1 for_loop */
 task1()
 task2();
 task3();
-// task4();
-// task5();
+task4();
+task5();
+quadTab(); //* bonus
+
+/* БЛОК 2 while_do_while */
 // task6();
 // task7();
 // task8();
+
 // task9();
 // task10();
 // task11();

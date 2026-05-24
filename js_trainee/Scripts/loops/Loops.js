@@ -4,6 +4,8 @@ for (initialization; condition; post-expression) {
   // statements
 }
 */
+// Посчитай до 10
+console.log("=========for_0-=========");
 function for_0() {
     let i;
     for (i = 0; i < 10; i++) {
@@ -13,9 +15,10 @@ function for_0() {
 }
 console.log(for_0());
 
+console.log("=========for_1=========");
 function for_1() {
     let j;
-    for (j = 11; j < 21; j++) {
+    for (j = 10; j <= 22; j+=1) {
         let multiValue = j * 10;
         console.log(multiValue);
     }
@@ -23,13 +26,14 @@ function for_1() {
 }
 console.log(for_1());
 
-const fruits = ['apple', 'banana', 'cherry', 'date'];
 
 /*
 for (value definition; condition; accumulator) {
     _action_
 }
- */
+*/
+console.log("=========fruits=========");
+const fruits = ['apple', 'banana', 'cherry', 'date'];
 for (let index = 0; index < fruits.length; index++) {
     console.log(index, fruits[index]); // i = счётчик итерации
 };
@@ -39,7 +43,7 @@ for (let index = 0; index < fruits.length; index++) {
 for (count value, counter condition; accumulator) {
     __action__-counting up++
 }
- */
+*/
 for (let count = 0; count <= 5; count++) {
     console.log('count up:', count);
 };
@@ -52,6 +56,19 @@ for (let count = 5; count >= 0; count--) {
 for (let i = 0; i <= 10; i += 2) { // double accumulating
     console.log('even:', i); // 0,2,4,6,8,10
 };
+
+// Таблица умножения
+function quadTab() {
+    for (let int = 1; int <= 10; int++) {
+        for (let inc = 1; inc <= 10; inc++) {
+            let i = int
+            let j = inc
+            let sum = inc * int
+            console.table(`${i} * ${j} = ${sum}`)
+        }
+    }
+}
+quadTab()
 
 // while цикл выполняется до первой лжи
 // Выполнение кода, пока не выполнится определённое условие.

@@ -10,7 +10,8 @@
         "test": "jest",
         "format": "prettier --write .",
 
-        "loops": "nodemon js_trainee/Scripts/loops/exercises.js"
+        "exer": "nodemon js_trainee/Scripts/loops/exercises.js",
+        "loops": "nodemon js_trainee/Scripts/loops/Loops.js"
     },
     "repository": {
         "type": "git",
