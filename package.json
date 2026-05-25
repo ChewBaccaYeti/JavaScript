@@ -9,7 +9,6 @@
         "pipe": "nodemon Pipe/Pipeline.js",
         "test": "jest",
         "format": "prettier --write .",
-
         "exer": "nodemon js_trainee/Scripts/loops/exercises.js",
         "loops": "nodemon js_trainee/Scripts/loops/Loops.js"
     },

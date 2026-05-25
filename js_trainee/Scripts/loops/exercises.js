@@ -19,7 +19,7 @@
  * Hints: for (let i = 1; i <= N; i++)
  */
 function task1() {
-    for (let i = 0; i <= 10; i++) {
+    for (let i = 1; i <= 10; i++) {
         console.log(i);
     }
 }
@@ -34,7 +34,7 @@ function task1() {
  */
 function task2() {
     for(let i = 10; i > 0; i--) {
-        console.log("-" + i)
+        console.log(i)
     }
 }
 
@@ -50,7 +50,7 @@ function task2() {
 function task3() {
     let acc = 0
     for (let i = 0; i <= 100; i++) {
-        acc = acc + i
+        acc = acc + i // acc += i - same
     }
     console.log(acc, "accumulated")
 }
@@ -65,7 +65,7 @@ function task3() {
  */
 function task4() {
     // let acc = 0
-    for (let int = 0; int <= 20; int+=2) {
+    for (let int = 2; int <= 20; int+=2) {
         console.log(int)
     }
 }
@@ -83,21 +83,24 @@ function task5() {
     for (let int = 1; int <= 10; int++) {
         let a = 7
         let b = int
-        let tab = a * b
-        console.log(`${a} * ${b} = ${tab}`)
+        let sum = a * b
+        console.log(`${a} x ${b} = ${sum}`,)
     }
 }
 // Вся таблица умножения (бонус от себя самого)
 function quadTab() {
+    const rows = {}
     for (let int = 1; int <= 10; int++) {
+        rows[int] = {}
         for (let inc = 1; inc <= 10; inc++) {
             let i = int
             let j = inc
-            let sum = inc * int
-            console.table(`${i} * ${j} = ${sum}`) // Как сделать табличку действительно красивой табличкой?
+            rows[i][j] = i * j
         }
     }
+    console.table(rows)
 }
+quadTab()
 
 // ─────────────────────────────────────────────────────────────────────────────
 // БЛОК 2 — while / do...while

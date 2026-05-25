@@ -59,14 +59,16 @@ for (let i = 0; i <= 10; i += 2) { // double accumulating
 
 // Таблица умножения
 function quadTab() {
+    const rows = {}
     for (let int = 1; int <= 10; int++) {
+        rows[int] = {}
         for (let inc = 1; inc <= 10; inc++) {
             let i = int
             let j = inc
-            let sum = inc * int
-            console.table(`${i} * ${j} = ${sum}`)
+            rows[i][j] = i * j
         }
     }
+    console.table(rows)
 }
 quadTab()
 
