@@ -261,22 +261,140 @@ function slice() {
 }
 slice();
 
+function forEach() {
+    const fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+    fruits.forEach((fruit, index) => console.log(index, fruit));
+}
+forEach(); // Вызывает функцию для каждого элемента. Возвращает undefined — нет нового массива, нельзя прервать (используй for..of + break).
+
+function map() {
+    const numbers = [1, 2, 3, 4];
+    const doubled = numbers.map(n => n * 2);
+    console.log(doubled); // [2, 4, 6, 8]
+}
+map(); // Создаёт новый массив, применяя функцию к каждому элементу. Не мутирует исходный.
+
+function filter() {
+    const numbers = [1, 2, 3, 4, 5, 6];
+    const even = numbers.filter(n => n % 2 === 0);
+    console.log(even); // [2, 4, 6]
+}
+filter(); // Новый массив только из элементов, прошедших проверку (callback вернул true).
+
+function find_findIndex() {
+    const users = [{ id: 1 }, { id: 2 }, { id: 3 }];
+    console.log(users.find(u => u.id === 2)); // { id: 2 } — первый совпавший элемент или undefined
+    console.log(users.findIndex(u => u.id === 2)); // 1 — индекс или -1
+}
+find_findIndex();
+
+function findLast_findLastIndex() {
+    const numbers = [1, 2, 3, 4, 3];
+    console.log(numbers.findLast(n => n === 3)); // 3 — ищет с конца
+    console.log(numbers.findLastIndex(n => n === 3)); // 4 — индекс с конца (ES2023)
+}
+findLast_findLastIndex();
+
+function some_every() {
+    const numbers = [1, 2, 3, 4];
+    console.log(numbers.some(n => n > 3)); // true — хотя бы один проходит
+    console.log(numbers.every(n => n > 0)); // true — все проходят
+}
+some_every();
+
+function reduce() {
+    const numbers = [175, 50, 25];
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    console.log(sum); // 250
+    // Группировка в объект — частый паттерн reduce
+    const users = [
+        { name: 'Alice', group: 'admin' },
+        { name: 'Bob', group: 'editor' },
+        { name: 'Charlie', group: 'admin' },
+    ];
+    const byGroup = users.reduce((acc, user) => {
+        (acc[user.group] ||= []).push(user.name);
+        return acc;
+    }, {});
+    console.log(byGroup); // { admin: ['Alice','Charlie'], editor: ['Bob'] }
+}
+reduce(); // Сворачивает массив в одно значение. acc — аккумулятор, второй аргумент — начальное значение.
+
+function reduceRight() {
+    const parts = [['a'], ['b'], ['c']];
+    const flat = parts.reduceRight((acc, cur) => acc.concat(cur), []);
+    console.log(flat); // ['c', 'b', 'a'] — reduce справа налево
+}
+reduceRight();
+
+function sort() {
+    const fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+    console.log(fruits.sort()); // лексикографически, МУТИРУЕТ исходный
+    const numbers = [40, 1, 5, 200];
+    console.log(numbers.sort((a, b) => a - b)); // [1, 5, 40, 200] — числовая сортировка по возрастанию
+    console.log(numbers.sort((a, b) => b - a)); // [200, 40, 5, 1] — по убыванию
+}
+sort(); // Без компаратора сортирует как строки: [1,5,40,200].sort() => [1,200,40,5].
+
+function toSorted_toReversed() {
+    const numbers = [3, 1, 2];
+    console.log(numbers.toSorted((a, b) => a - b)); // [1, 2, 3] — новый массив (ES2023)
+    console.log(numbers.toReversed()); // [2, 1, 3] — новый массив, не мутирует
+    console.log(numbers); // [3, 1, 2] — оригинал цел
+}
+toSorted_toReversed(); // Иммутабельные копии sort/reverse — без побочных эффектов.
+
+function toSpliced_with() {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr'];
+    console.log(months.toSpliced(1, 2, 'Feb-fix')); // ['Jan','Feb-fix','Apr'] — копия (ES2023)
+    console.log(months.with(0, 'JAN')); // ['JAN','Feb','Mar','Apr'] — копия с заменой по индексу
+    console.log(months); // оригинал не тронут
+}
+toSpliced_with();
+
+function keys_values_entries() {
+    const fruits = ['Banana', 'Orange'];
+    console.log([...fruits.keys()]); // [0, 1] — итератор индексов
+    console.log([...fruits.values()]); // ['Banana', 'Orange'] — итератор значений
+    console.log([...fruits.entries()]); // [[0,'Banana'], [1,'Orange']] — пары [индекс, значение]
+}
+keys_values_entries();
+
+function staticConstructors() {
+    console.log(Array.of(7)); // [7] — в отличие от Array(7) => пустой массив длины 7
+    console.log(Array.from('abc')); // ['a','b','c'] — из итерируемого
+    console.log(Array.from({ length: 3 }, (_, i) => i * 2)); // [0, 2, 4] — с map-функцией
+}
+staticConstructors();
+
 // arr.reduce();
-// arr.length();
+// arr.reduceRight();
+// arr.length;
 // arr.toString();
 // arr.at();
 // arr.join();
 // arr.pop();
 // arr.push();
-// arr.peek();
 // arr.shift();
 // arr.unshift();
-// arr.delete(arr[1]);
+// delete arr[1];
 // arr.concat();
 // arr.copyWithin();
+// arr.forEach();
 // arr.map();
+// arr.filter();
+// arr.find(); arr.findIndex();
+// arr.findLast(); arr.findLastIndex();
+// arr.some(); arr.every();
+// arr.indexOf(); arr.lastIndexOf(); arr.includes();
+// arr.sort();
+// arr.toSorted(); arr.toReversed();
+// arr.reverse();
 // arr.flat();
 // arr.flatMap();
-// arr.splice()
-// arr.toSpliced();
+// arr.splice();
+// arr.toSpliced(); arr.with();
 // arr.slice();
+// arr.fill();
+// arr.keys(); arr.values(); arr.entries();
+// Array.isArray(); Array.of(); Array.from();

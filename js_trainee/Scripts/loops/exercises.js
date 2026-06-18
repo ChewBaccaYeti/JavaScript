@@ -19,6 +19,7 @@
  * Hints: for (let i = 1; i <= N; i++)
  */
 function task1() {
+    console.log("==============================================================================")
     for (let i = 1; i <= 10; i++) {
         console.log(i);
     }
@@ -33,7 +34,8 @@ function task1() {
  * Hints: шаг может быть отрицательным: i--
  */
 function task2() {
-    for(let i = 10; i > 0; i--) {
+    console.log("==============================================================================")
+    for (let i = 10; i > 0; i--) {
         console.log(i)
     }
 }
@@ -48,6 +50,7 @@ function task2() {
  * Hints: объяви переменную-аккумулятор перед циклом, накапливай внутри
  */
 function task3() {
+    console.log("==============================================================================")
     let acc = 0
     for (let i = 0; i <= 100; i++) {
         acc = acc + i // acc += i - same
@@ -64,8 +67,9 @@ function task3() {
  * Hints: число чётное если n % 2 === 0
  */
 function task4() {
+    console.log("==============================================================================")
     // let acc = 0
-    for (let int = 2; int <= 20; int+=2) {
+    for (let int = 2; int <= 20; int += 2) {
         console.log(int)
     }
 }
@@ -80,6 +84,7 @@ function task4() {
  * Hints: `${a} × ${b} = ${a * b}`
  */
 function task5() {
+    console.log("==============================================================================")
     for (let int = 1; int <= 10; int++) {
         let a = 7
         let b = int
@@ -89,6 +94,7 @@ function task5() {
 }
 // Вся таблица умножения (бонус от себя самого)
 function quadTab() {
+    console.log("==============================================================================")
     const rows = {}
     for (let int = 1; int <= 10; int++) {
         rows[int] = {}
@@ -113,7 +119,14 @@ quadTab()
  * Инструменты: while
  * Hints: while (n <= 500) { console.log(n); n = n * 2; }
  */
-function task6() {}
+function task6() {
+    console.log("==============================================================================")
+    let n = 1
+    while (n <= 500) {
+        n = n * 2
+        console.log(n)
+    }
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -124,7 +137,14 @@ function task6() {}
  * Инструменты: do...while
  * Hints: do { ... } while (n < 1000)
  */
-function task7() {}
+function task7() {
+    console.log("==============================================================================")
+    let n = 1
+    do {
+        n *= 3
+        console.log(n)
+    } while (n < 1000)
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -138,7 +158,18 @@ function task7() {}
  * Hints: последняя цифра числа = n % 10; убрать последнюю цифру = Math.floor(n / 10)
  */
 function task8() {
+    console.log("==============================================================================")
     let n = 9875;
+    let sum
+    while (n > 9) {
+        sum = 0
+        while (n > 0) {
+            sum = sum + (n % 10) // sum += n % 10
+            n = Math.floor(n / 10)
+        }
+        n = sum
+    }
+    console.log(n)
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -151,7 +182,15 @@ function task8() {
  * Инструменты: for, continue
  * Hints: if (i % 3 === 0) continue;
  */
-function task9() {}
+function task9() {
+    console.log("==============================================================================")
+    for (let i = 1; i <= 30; i++) {
+        if (i % 3 === 0) {
+            continue
+        }
+        console.log(i)
+    }
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -162,7 +201,15 @@ function task9() {}
  * Инструменты: for, break
  * Hints: if (n % 7 === 0 && n % 11 === 0) { console.log(n); break; }
  */
-function task10() {}
+function task10() {
+    console.log("==============================================================================")
+    for (let i = 50; i <= 200; i++) {
+        if (i % 7 === 0 && i % 11 === 0) {
+            console.log(i)
+            break
+        }
+    }
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -176,7 +223,23 @@ function task10() {}
  * Инструменты: for, if/else
  * Hints: проверяй FizzBuzz ПЕРВЫМ, иначе логика сломается
  */
-function task11() {}
+function task11() {
+    console.log("==============================================================================")
+    for (let i = 1; i <= 100; i++) {
+        if (i % 3 === 0) {
+            console.log("Fizz")
+        }
+        if (i % 5 === 0) {
+            console.log("Buzz")
+        }
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz")
+        }
+        else {
+            console.log(i)
+        }
+    }
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // БЛОК 4 — for...of / for...in (итерация коллекций)
@@ -190,7 +253,13 @@ function task11() {}
  * Hints: for (const num of nums) { sum += num; }
  */
 function task12() {
+    console.log("==============================================================================")
     const nums = [3, 7, 2, 14, 9, 1, 6];
+    let acc = 0
+    for (const num of nums) {
+        acc += num
+    }
+    console.log(acc) // 42
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -203,21 +272,50 @@ function task12() {
  * Hints: храни текущий максимум в переменной, обновляй при каждом сравнении
  */
 function task13() {
+    console.log("==============================================================================")
     const nums = [4, 17, 3, 99, 22, 56, 8];
+    let curVal = nums[0]
+    for (const num of nums) {
+        if (num > curVal) {
+            curVal = num
+        }
+    }
+    console.log(curVal)
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
 
 /**
  * ЗАДАЧА 14 — for...in: перебор объекта
- * Дан объект:
- *   const scores = { alice: 88, bob: 72, carol: 95, dave: 61 }
+ * Дан объект: scores 
  * Выведи каждую пару "имя: балл" и найди имя с наибольшим баллом.
  * Инструменты: for...in
  * Hints: for (const key in obj) даёт ключи; значение = obj[key]
  */
 function task14() {
+    console.log("==============================================================================")
     const scores = { alice: 88, bob: 72, carol: 95, dave: 61 };
+
+    for (const key in scores) {
+        const value = scores[key];
+        // console.log(`${key}: ${value}`)
+
+        console.log(value)
+
+        let smallestScore = value
+        let biggestScore = value
+
+        if (value < smallestScore) {
+            smallestScore = value
+        } else if (value > biggestScore) {
+            biggestScore = value
+        }
+        return smallestScore, biggestScore, console.log(value)
+        // console.log(
+        //     "Smallest score number: " + smallestScore,
+        //     "Biggest score number: " + biggestScore
+        // )
+    }
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -246,7 +344,7 @@ function task15() {
  * Hints: внешний цикл = строки (1..9), внутренний = столбцы (1..9)
  *        накапливай строку через let row = "", затем console.log(row)
  */
-function task16() {}
+function task16() { }
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -263,7 +361,7 @@ function task16() {}
  * Hints: внешний цикл = строки; внутренний накапливает '*' × i
  *        альтернатива: '*'.repeat(i)
  */
-function task17() {}
+function task17() { }
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -278,7 +376,7 @@ function task17() {}
  * Инструменты: for (вложенный), массивы
  * Hints: сначала построй массив массивов, потом выведи через console.log(row)
  */
-function task18() {}
+function task18() { }
 
 // ─────────────────────────────────────────────────────────────────────────────
 // БЛОК 6 — Сложные задачи (алгоритмы)
@@ -292,7 +390,7 @@ function task18() {}
  * Hints: каждое следующее = сумма двух предыдущих; храни два значения: a, b
  *        на каждой итерации: [a, b] = [b, a + b]
  */
-function task19() {}
+function task19() { }
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -304,7 +402,7 @@ function task19() {}
  * Hints: для каждого числа n проверяй делители от 2 до √n (Math.sqrt(n))
  *        если делитель найден — число составное, перейди к следующему
  */
-function task20() {}
+function task20() { }
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -384,18 +482,23 @@ task5();
 quadTab(); //* bonus
 
 /* БЛОК 2 while_do_while */
-// task6();
-// task7();
-// task8();
+task6();
+task7();
+task8();
 
-// task9();
-// task10();
-// task11();
-// task12();
-// task13();
-// task14();
-// task15();
-// task16();
+/* БЛОК 3 — break / continue */
+task9();
+task10();
+task11();
+
+/* БЛОК 4 — for...of / for...in (итерация коллекций) */
+task12();
+task13();
+task14();
+task15();
+
+/* БЛОК 5 — Вложенные циклы */
+task16();
 // task17();
 // task18();
 // task19();

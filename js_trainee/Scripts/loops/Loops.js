@@ -44,28 +44,30 @@ for (count value, counter condition; accumulator) {
     __action__-counting up++
 }
 */
+console.log("=========UP=========");
 for (let count = 0; count <= 5; count++) {
     console.log('count up:', count);
 };
 
 // Счётчик вниз
+console.log("=========DOWN=========");
 for (let count = 5; count >= 0; count--) {
     console.log('count down:', count);
 };
 
+console.log("=========2X_ACC=========");
 for (let i = 0; i <= 10; i += 2) { // double accumulating
     console.log('even:', i); // 0,2,4,6,8,10
 };
 
+console.log("=========MULTI_TAB=========");
 // Таблица умножения
 function quadTab() {
     const rows = {}
     for (let int = 1; int <= 10; int++) {
         rows[int] = {}
         for (let inc = 1; inc <= 10; inc++) {
-            let i = int
-            let j = inc
-            rows[i][j] = i * j
+            rows[int][inc] = int * inc
         }
     }
     console.table(rows)
@@ -329,3 +331,47 @@ function ternarnian() {
     console.log(isAdult); // Выведет "Adult"
 }
 ternarnian();
+
+// for...of по Set — уникальные значения, перебор без индексов
+function for_of_set() {
+    const unique = new Set([1, 1, 2, 3, 3, 3]);
+    console.log('Set size:', unique.size); // 3 — дубликаты отброшены
+    for (const value of unique) {
+        console.log('set value:', value); // 1, 2, 3
+    }
+}
+for_of_set();
+
+// for...of по Map — деструктуризация пар [ключ, значение]
+function for_of_map() {
+    const prices = new Map([
+        ['apple', 50],
+        ['banana', 30],
+    ]);
+    for (const [product, price] of prices) {
+        console.log(`${product}: ${price}`);
+    }
+    // Map также даёт .keys(), .values(), .entries() как итераторы
+    for (const key of prices.keys()) console.log('key:', key);
+    for (const value of prices.values()) console.log('value:', value);
+}
+for_of_map();
+
+// for...of по строке — перебор по символам (с учётом Unicode)
+function for_of_string() {
+    for (const char of 'abc') {
+        console.log('char:', char); // a, b, c
+    }
+}
+for_of_string();
+
+// Отличие for...in от for...of:
+// for...in  — перебирает КЛЮЧИ (индексы/свойства), включая унаследованные перечисляемые
+// for...of  — перебирает ЗНАЧЕНИЯ итерируемого (массив/строка/Set/Map), НЕ работает с обычным объектом
+function in_vs_of() {
+    const arr = ['a', 'b', 'c'];
+    arr.extra = 'не-индекс'; // добавочное свойство
+    for (const key in arr) console.log('for-in:', key); // 0, 1, 2, extra
+    for (const value of arr) console.log('for-of:', value); // a, b, c (extra пропущен)
+}
+in_vs_of();

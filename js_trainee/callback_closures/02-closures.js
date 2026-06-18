@@ -136,3 +136,48 @@ console.log(salaryManager.current());
 
 salaryManager.raise(2000000);
 console.log(salaryManager.current());
+
+/*
+ * Классический счётчик — приватное состояние в замыкании
+ */
+const makeCounter = function () {
+    let count = 0; // недоступно снаружи, живёт между вызовами
+    return {
+        increment: () => ++count,
+        decrement: () => --count,
+        value: () => count,
+    };
+};
+
+const counter = makeCounter();
+counter.increment();
+counter.increment();
+counter.decrement();
+console.log(counter.value()); // 1
+// Каждый вызов makeCounter() создаёт НОВОЕ независимое замыкание:
+const counterB = makeCounter();
+console.log(counterB.value()); // 0 — не делит состояние с counter
+
+/*
+ * Ловушка замыкания в цикле: var vs let
+ */
+// var — одна переменная на весь цикл, все колбэки видят финальное значение (3)
+const withVar = [];
+for (var i = 0; i < 3; i++) {
+    withVar.push(() => i);
+}
+console.log(withVar.map(fn => fn())); // [3, 3, 3] — НЕ [0,1,2]!
+
+// let — новая привязка на каждой итерации, каждое замыкание ловит своё значение
+const withLet = [];
+for (let j = 0; j < 3; j++) {
+    withLet.push(() => j);
+}
+console.log(withLet.map(fn => fn())); // [0, 1, 2] — правильно
+
+// До let эту проблему решали через IIFE, создавая новую область видимости вручную
+const withIIFE = [];
+for (var k = 0; k < 3; k++) {
+    withIIFE.push(((captured) => () => captured)(k));
+}
+console.log(withIIFE.map(fn => fn())); // [0, 1, 2]

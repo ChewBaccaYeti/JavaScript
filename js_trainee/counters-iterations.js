@@ -197,7 +197,6 @@ function sumAll(nums) {
     return nums.reduce((accumulator, currentInt) => {
         return accumulator + currentInt
     }, initValue);
-    return nums
 }
 console.log('R1 sum:', sumAll(nums));
 
@@ -208,7 +207,6 @@ function findMax(nums) {
     return nums.reduce((accumulator, currentInt) => {
         return Math.max(accumulator, currentInt)
     }, initValue);
-    return nums
 }
 console.log('R2 max:', findMax(nums));
 
@@ -218,7 +216,6 @@ function countEvens(nums) {
     return nums.reduce((accumulator, currentInt) => {
         return accumulator + currentInt * !(currentInt & 1)
     }, initValue);
-    return nums
 }
 console.log('R3 evens:', countEvens(nums));
 

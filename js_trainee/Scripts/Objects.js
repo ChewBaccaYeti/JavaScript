@@ -6,7 +6,14 @@
 
 //! Методы проверки свойств:
 // hasOwnProperty(): Возвращает логическое значение, указывающее, содержит ли объект указанное свойство как собственное (не унаследованное).
+// Object.hasOwn(obj, key): ES2022 — безопасная замена hasOwnProperty (см. функцию hasOwn ниже).
 // in: Оператор in возвращает true, если указанное свойство существует в объекте или его прототипе.
+
+//! Методы работы с прототипами (чтение):
+// Object.getPrototypeOf(): Возвращает прототип ([[Prototype]]) объекта — пара к Object.setPrototypeOf().
+
+//! Глубокое клонирование:
+// structuredClone(obj): глубокая копия (spread/Object.assign копируют поверхностно — вложенные объекты по ссылке).
 
 //! Методы работы с прототипами:
 // Object.create(): Создает новый объект с указанным прототипом и опциональными свойствами. / creates an object from an existing object
@@ -328,3 +335,64 @@ function groupBy() {
     console.log(fruits_bucket);
 }
 groupBy();
+
+function seal() {
+    const car = { brand: 'Volvo', speed: 200 };
+    Object.seal(car); // запрещает добавление/удаление свойств, но РАЗРЕШАЕТ менять существующие
+    car.speed = 250; // ✓ изменится
+    car.color = 'red'; // ✗ проигнорируется
+    delete car.brand; // ✗ проигнорируется
+    console.log(car); // { brand: 'Volvo', speed: 250 }
+    console.log(Object.isSealed(car)); // true
+    console.log(Object.isFrozen(Object.freeze({}))); // true
+    console.log(Object.isExtensible(car)); // false — sealed => не расширяемый
+}
+seal();
+
+function getPrototypeOf() {
+    const animal = { eats: true };
+    const rabbit = Object.create(animal);
+    console.log(Object.getPrototypeOf(rabbit) === animal); // true — читает [[Prototype]]
+    console.log(Object.getPrototypeOf(rabbit).eats); // true — наследуется
+    console.log(Object.getPrototypeOf({}) === Object.prototype); // true
+}
+getPrototypeOf();
+
+function hasOwn() {
+    const proto = { inherited: 1 };
+    const obj = Object.create(proto);
+    obj.own = 2;
+    // Object.hasOwn() (ES2022) — безопасная замена hasOwnProperty,
+    // работает даже если объект создан через Object.create(null) или переопределил hasOwnProperty
+    console.log(Object.hasOwn(obj, 'own')); // true
+    console.log(Object.hasOwn(obj, 'inherited')); // false — унаследованное, не собственное
+    console.log('inherited' in obj); // true — in видит цепочку прототипов
+}
+hasOwn();
+
+function getOwnPropertyDescriptors() {
+    const source = {};
+    Object.defineProperty(source, 'hidden', { value: 42, enumerable: false });
+    const descriptors = Object.getOwnPropertyDescriptors(source);
+    console.log(descriptors); // { hidden: { value: 42, writable: false, enumerable: false, configurable: false } }
+    // Правильное клонирование с геттерами/сеттерами и не-перечисляемыми свойствами:
+    const clone = Object.create(
+        Object.getPrototypeOf(source),
+        Object.getOwnPropertyDescriptors(source),
+    );
+    console.log(clone.hidden); // 42 — spread {...source} потерял бы это свойство
+}
+getOwnPropertyDescriptors();
+
+function shallowVsDeepClone() {
+    const original = { a: 1, nested: { b: 2 } };
+    const shallow = { ...original }; // вложенные объекты по ссылке!
+    shallow.nested.b = 99;
+    console.log(original.nested.b); // 99 — мутация просочилась (поверхностная копия)
+
+    const data = { a: 1, nested: { b: 2 }, list: [1, 2, 3] };
+    const deep = structuredClone(data); // глубокое копирование (Node 17+/современные браузеры)
+    deep.nested.b = 99;
+    console.log(data.nested.b); // 2 — оригинал защищён
+}
+shallowVsDeepClone();

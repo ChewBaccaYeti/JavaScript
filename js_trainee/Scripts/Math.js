@@ -273,3 +273,56 @@ function log() {
     console.log('log():', a, b, c, d, e);
 }
 log();
+
+// Math.log2() / Math.log10() — логарифмы по основанию 2 и 10
+function log2_log10() {
+    console.log('log2(8):', Math.log2(8)); // 3
+    console.log('log10(1000):', Math.log10(1000)); // 3
+}
+log2_log10();
+
+// Math.max() / Math.min() — наибольшее / наименьшее из аргументов (НЕ массива)
+function maxMin() {
+    console.log(Math.max(1, 5, 3)); // 5
+    console.log(Math.min(1, 5, 3)); // 1
+    const nums = [7, 2, 9, 4];
+    console.log(Math.max(...nums)); // 9 — массив через spread
+    console.log(Math.max()); // -Infinity (нет аргументов)
+    console.log(Math.min()); // Infinity
+}
+maxMin();
+
+// Math.sqrt() — квадратный корень
+function sqrt() {
+    console.log(Math.sqrt(144)); // 12
+    console.log(Math.sqrt(-1)); // NaN
+}
+sqrt();
+
+// Math.sign() — знак числа: 1 / -1 / 0 / -0 / NaN
+function sign() {
+    console.log(Math.sign(7), Math.sign(-7), Math.sign(0), Math.sign(NaN)); // 1 -1 0 NaN
+}
+sign();
+
+// Math.trunc() — отбрасывает дробную часть (НЕ округляет): к нулю, в отличие от floor/ceil
+function trunc() {
+    console.log(Math.trunc(4.9), Math.trunc(-4.9)); // 4 -4
+    console.log(Math.floor(-4.9), Math.ceil(-4.9)); // -5 -4 — для сравнения
+}
+trunc();
+
+// Math.hypot() — sqrt суммы квадратов: длина гипотенузы / вектора
+function hypot() {
+    console.log(Math.hypot(3, 4)); // 5
+}
+hypot();
+
+// Константы Math
+function constants() {
+    console.log('PI:', Math.PI); // 3.14159...
+    console.log('E:', Math.E); // 2.718...
+    console.log('SQRT2:', Math.SQRT2); // 1.414...
+    console.log('LN2:', Math.LN2); // 0.693...
+}
+constants();

@@ -122,3 +122,38 @@ console.log(
     Warrior.prototype.__proto__ === Character.prototype,
     Knight.__proto__ === Warrior.prototype,
 );
+
+/*
+ * instanceof проверяет всю цепочку прототипов, а не только прямой класс.
+ */
+console.log(Demolisher instanceof Berserk); // true — прямой класс
+console.log(Demolisher instanceof Warrior); // true — родитель
+console.log(Demolisher instanceof Character); // true — корень цепочки
+console.log(Demolisher instanceof Mage); // false — другая ветка
+console.log(Cleric instanceof Character); // true
+
+/*
+ * Переопределение метода + вызов родительского через super.method().
+ * Paladin расширяет attack(), но переиспользует логику родителя.
+ */
+class Paladin extends Warrior {
+    constructor({ holyPower = 100, ...restProps } = {}) {
+        super(restProps);
+        this.holyPower = holyPower;
+    }
+    // override: сначала зовём родительский attack, затем добавляем своё
+    attack() {
+        super.attack(); // вызов метода Character.attack в контексте this
+        console.log(`${this.name} наносит священный урон (${this.holyPower})`);
+    }
+}
+
+const Templar = new Paladin({
+    name: 'Roland',
+    weapon: 'Holy Blade',
+    holyPower: 250,
+});
+Templar.attack();
+// Roland атакует используя Holy Blade
+// Roland наносит священный урон (250)
+console.log(Templar instanceof Warrior, Templar instanceof Character); // true true

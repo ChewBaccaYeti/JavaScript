@@ -83,3 +83,40 @@ updateCounter(10, counter.increment.bind(counter)); // Передаю копию
 updateCounter(5, counter.decrement.bind(counter)); // Так решается проблема передачи методов объекта как коллбэков
 
 console.log(counter);
+
+/*
+ * Стрелочные функции НЕ имеют своего this — берут его лексически из окружения.
+ * call/apply/bind НЕ могут переопределить this у стрелочной функции.
+ */
+const arrow = () => console.log('arrow -> this', this);
+arrow.call({ a: 1 }); // this всё равно из внешней области (не { a: 1 })
+
+/*
+ * Главное применение: сохранить this внутри коллбэка без bind.
+ */
+const timerObj = {
+    seconds: 0,
+    // Обычная функция в setTimeout потеряла бы this (был бы undefined/window).
+    // Стрелка наследует this метода start -> остаётся timerObj.
+    start() {
+        setTimeout(() => {
+            this.seconds += 1;
+            console.log('arrow callback -> this.seconds', this.seconds); // 1
+        }, 0);
+    },
+    // Анти-пример: обычная функция теряет контекст
+    startBroken() {
+        setTimeout(function () {
+            console.log('broken -> this', this); // НЕ timerObj
+        }, 0);
+    },
+};
+timerObj.start();
+timerObj.startBroken();
+
+/*
+ * Зеркало паттерна .bind(counter) выше — но через стрелку.
+ * Здесь стрелка-обёртка вызывает метод в правильном контексте.
+ */
+updateCounter(3, value => counter.increment(value)); // эквивалент counter.increment.bind(counter)
+console.log(counter);
