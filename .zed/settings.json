@@ -1,0 +1,17 @@
+{
+    "lsp": {
+        "basedpyright": {
+            "settings": {
+                "python": {
+                    "pythonPath": "venv311/bin/python"
+                },
+                "basedpyright": {
+                    "analysis": {
+                        "diagnosticMode": "workspace",
+                        "typeCheckingMode": "standard"
+                    }
+                }
+            }
+        }
+    }
+}

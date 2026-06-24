@@ -110,3 +110,36 @@ dist
 
 # JS compiled files
 archive/
+
+# ----- Python (algorithms/) -----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+venv311/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.python-version
+.tox/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# ----- IDE / editor -----
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ----- OS -----
+Thumbs.db
+ehthumbs.db

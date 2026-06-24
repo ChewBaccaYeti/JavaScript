@@ -1,9 +1,23 @@
 {
-    "watch": ["Ishimura/", "mock/", "nodemailer/", "Pipe/", "Scripts/"],
-    "ext": "js,ts,json",
-    "ignore": ["node_modules/", ".git/", "index.html"],
+    "watch": [
+        "nested_projects/CEC/",
+        "nested_projects/mock/",
+        "nested_projects/nodemailer/",
+        "nested_projects/Pipe/",
+        "js_trainee/Scripts/",
+        "algorithms/"
+    ],
+    "ext": "js,ts,json,py",
+    "ignore": [
+        "node_modules/",
+        ".git/",
+        "index.html",
+        "**/__pycache__/**",
+        "**/.venv/**"
+    ],
     "execMap": {
         "js": "node",
-        "ts": "ts-node"
+        "ts": "ts-node",
+        "py": "python3"
     }
 }

@@ -3,14 +3,19 @@
     "version": "1.0.0",
     "description": "JS practice repo",
     "scripts": {
-        "RIG": "nodemon CEC/IshimuraDB.js",
-        "mock": "nodemon mock/mock.js",
-        "transporter": "nodemon nodemailer/transporter.js",
-        "pipe": "nodemon Pipe/Pipeline.js",
         "test": "jest",
         "format": "prettier --write .",
-        "exer": "nodemon js_trainee/Scripts/loops/exercises.js",
-        "loops": "nodemon js_trainee/Scripts/loops/Loops.js"
+        "RIG": "nodemon nested_projects/CEC/IshimuraDB.js",
+        "mock": "nodemon nested_projects/mock/mock.js",
+        "transporter": "nodemon nested_projects/nodemailer/transporter.js",
+        "pipe": "nodemon nested_projects/Pipe/Pipeline.js",
+        "loop_exer": "nodemon js_trainee/Scripts/loops/exercises.js",
+        "func_exer": "nodemon js_trainee/Scripts/functions/exercises.js",
+        "loops": "nodemon js_trainee/Scripts/loops/Loops.js",
+        "algo:js": "node",
+        "algo:py": "python3",
+        "algo:test": "jest --config algorithms/tests/js/jest.config.js",
+        "algo:pytest": "pytest algorithms/tests"
     },
     "repository": {
         "type": "git",
@@ -45,6 +50,7 @@
         "nodemailer": "^6.9.15",
         "passport-jwt": "^4.0.1",
         "puppeteer": "^23.9.0",
+        "react": "^19.2.7",
         "socket.io": "^4.8.0",
         "tesseract.js": "^5.1.1",
         "ws": "^8.18.0"
@@ -54,6 +60,7 @@
         "@types/dotenv": "^8.2.0",
         "@types/express": "^4.17.21",
         "@types/node": "^22.4.0",
+        "@types/react": "^19.2.17",
         "axios-mock-adapter": "^2.0.0",
         "eslint": "^9.13.0",
         "jest": "^29.7.0",
