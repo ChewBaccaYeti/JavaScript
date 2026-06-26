@@ -136,6 +136,8 @@ dist/
 # ----- IDE / editor -----
 .idea/
 .vscode/
+.vscode
+.zed
 *.swp
 *.swo
 *~
