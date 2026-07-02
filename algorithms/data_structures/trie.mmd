@@ -1,0 +1,48 @@
+---
+title: Trie (Prefix Tree)
+---
+%% Path from root = string. Node marked isEnd = word terminator.
+%% insert/search/startsWith = O(L). Use: autocomplete, T9, spell check.
+
+graph TD
+    R((root))
+    A((a))
+    P1((p))
+    P2((p*))
+    L((l))
+    E((e*))
+    R2((r))
+    I((i))
+    C((c))
+    O((o))
+    T((t*))
+    B((b))
+    AN((a))
+    N((n))
+    AN2((a))
+    NA((n))
+    A2((a*))
+
+    R --> A
+    R --> B
+    A --> P1
+    P1 --> P2
+    P2 --> L
+    L --> E
+    A --> R2
+    R2 --> I
+    I --> C
+    C --> O
+    O --> T
+    B --> AN
+    AN --> N
+    N --> AN2
+    AN2 --> NA
+    NA --> A2
+
+    classDef root fill:#4fc3f7,stroke:#4fc3f7,color:#0f1419;
+    classDef terminal fill:#66bb6a,stroke:#66bb6a,color:#0f1419;
+    classDef node fill:#232a3d,stroke:#4fc3f7,color:#e6e8ee;
+    class R root;
+    class P2,E,T,A2 terminal;
+    class A,P1,L,R2,I,C,O,B,AN,N,AN2,NA node;

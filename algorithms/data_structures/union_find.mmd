@@ -1,0 +1,26 @@
+---
+title: Union-Find / Disjoint Set Union (DSU)
+---
+%% Each element points to parent. Root = representative.
+%% Optimizations: path compression + union by rank → O(α(n)) ≈ O(1).
+%% Use: Kruskal MST, cycle detection, connectivity queries.
+
+graph TD
+    subgraph Set1["Set A (root=0)"]
+        R0((0))
+        N1((1))
+        N2((2))
+        N3((3))
+        N1 --> R0
+        N2 --> R0
+        N3 --> N2
+    end
+
+    subgraph Set2["Set B (root=4)"]
+        R4((4))
+    end
+
+    classDef root fill:#66bb6a,stroke:#66bb6a,color:#0f1419;
+    classDef node fill:#232a3d,stroke:#4fc3f7,color:#e6e8ee;
+    class R0,R4 root;
+    class N1,N2,N3 node;

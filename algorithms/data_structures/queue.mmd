@@ -1,0 +1,28 @@
+---
+title: Queue (FIFO)
+---
+%% enqueue → tail. dequeue ← head. All O(1) amortized.
+%% Use: BFS, task scheduling, event loop.
+
+graph LR
+    IN[enqueue] -.->|push| TAIL
+    HEAD -.->|shift| OUT[dequeue]
+
+    subgraph queue
+        direction LR
+        H((a))
+        I((b))
+        J((c))
+        K((d))
+        H --> I --> J --> K
+    end
+
+    HEAD --> H
+    K --> TAIL
+
+    classDef op fill:#66bb6a,stroke:#66bb6a,color:#0f1419;
+    classDef ptr fill:#4fc3f7,stroke:#4fc3f7,color:#0f1419;
+    classDef item fill:#232a3d,stroke:#4fc3f7,color:#e6e8ee;
+    class IN,OUT op;
+    class HEAD,TAIL ptr;
+    class H,I,J,K item;

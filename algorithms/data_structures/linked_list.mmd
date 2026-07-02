@@ -1,0 +1,22 @@
+---
+title: Singly Linked List
+---
+%% Node: { value, next }
+%% prepend O(1), append O(n), insertAt/removeAt O(n), reverse O(n)
+
+graph LR
+    HEAD[head]
+    A["0 | next"]
+    B["1 | next"]
+    C["2 | next"]
+    D["3 | null"]
+
+    HEAD --> A
+    A --> B
+    B --> C
+    C --> D
+
+    classDef ptr fill:#4fc3f7,stroke:#4fc3f7,color:#0f1419;
+    classDef node fill:#232a3d,stroke:#4fc3f7,color:#e6e8ee;
+    class HEAD ptr;
+    class A,B,C,D node;

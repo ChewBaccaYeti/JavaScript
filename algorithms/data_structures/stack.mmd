@@ -1,0 +1,23 @@
+---
+title: Stack (LIFO)
+---
+%% push/pop only at top. All O(1).
+%% Use: DFS, call stack, bracket balancing, undo.
+
+graph TD
+    OP[push / pop]
+    TOP((3)) --> M((2))
+    M --> B((1))
+    BASE[base]
+    B --> BASE
+
+    OP -.-> TOP
+
+    classDef op fill:#66bb6a,stroke:#66bb6a,color:#0f1419;
+    classDef top fill:#ffee58,stroke:#ffb74d,color:#0f1419;
+    classDef item fill:#232a3d,stroke:#4fc3f7,color:#e6e8ee;
+    classDef ptr fill:#4fc3f7,stroke:#4fc3f7,color:#0f1419;
+    class OP op;
+    class TOP top;
+    class M,B item;
+    class BASE ptr;

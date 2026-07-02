@@ -18,6 +18,9 @@
                             >Binary Search Tree</a
                         >
                     </li>
+                    <li>
+                        <a href="#linked-list">Linked List</a>
+                    </li>
                     <!-- Future: sorting, graph, dp, etc. -->
                 </ul>
             </nav>
@@ -76,8 +79,69 @@
 
                 <div id="bst-canvas" class="canvas"></div>
             </section>
+
+            <!-- ============ LINKED LIST ============ -->
+            <section id="linked-list" class="algo-section">
+                <header>
+                    <h2>Singly Linked List</h2>
+                    <p class="meta">
+                        prepend <code>O(1)</code> &middot;
+                        append/insertAt/removeAt <code>O(n)</code> &middot;
+                        reverse <code>O(n)</code>.
+                    </p>
+                    <p class="desc">
+                        Sequence of nodes <code>{ value, next }</code>. Head
+                        points to first node. Last node's next = null. No random
+                        access — must traverse from head.
+                    </p>
+                </header>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="ll-value">Value</label>
+                        <input
+                            id="ll-value"
+                            type="text"
+                            placeholder="e.g. 42"
+                        />
+                        <label for="ll-index">Index</label>
+                        <input
+                            id="ll-index"
+                            type="number"
+                            placeholder="0"
+                            min="0"
+                        />
+                    </div>
+
+                    <div class="control-group">
+                        <button data-ll-action="prepend">Prepend</button>
+                        <button data-ll-action="append">Append</button>
+                        <button data-ll-action="insert-at">Insert at</button>
+                        <button data-ll-action="remove-at">Remove at</button>
+                    </div>
+
+                    <div class="control-group">
+                        <button data-ll-action="find">Find value</button>
+                        <button data-ll-action="traverse">Traverse</button>
+                        <button data-ll-action="reverse">Reverse</button>
+                    </div>
+
+                    <div class="control-group">
+                        <button data-ll-action="reset">Reset</button>
+                        <button data-ll-action="seed">Load sample</button>
+                    </div>
+                </div>
+
+                <div class="output">
+                    <span id="ll-status">Ready.</span>
+                    <span id="ll-result"></span>
+                </div>
+
+                <div id="ll-canvas" class="canvas"></div>
+            </section>
         </main>
 
         <script src="binary_tree.js"></script>
+        <script src="linked_list.js"></script>
     </body>
 </html>
