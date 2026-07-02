@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Algorithms Visualizer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="styles.css" />
+        <!-- D3 v7 via CDN -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    </head>
+    <body>
+        <aside class="sidebar">
+            <h1>Algorithms</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#binary-tree" class="active"
+                            >Binary Search Tree</a
+                        >
+                    </li>
+                    <!-- Future: sorting, graph, dp, etc. -->
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <!-- ============ BINARY SEARCH TREE ============ -->
+            <section id="binary-tree" class="algo-section">
+                <header>
+                    <h2>Binary Search Tree (BST)</h2>
+                    <p class="meta">
+                        Avg: <code>O(log n)</code> insert/search/delete &middot;
+                        Worst: <code>O(n)</code> (degenerate).
+                    </p>
+                    <p class="desc">
+                        Left subtree values &lt; node. Right subtree values &gt;
+                        node. Inorder traversal returns sorted order.
+                    </p>
+                </header>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="bst-value">Value</label>
+                        <input
+                            id="bst-value"
+                            type="number"
+                            placeholder="e.g. 42"
+                        />
+                        <button data-action="insert">Insert</button>
+                        <button data-action="delete">Delete</button>
+                        <button data-action="search">Search</button>
+                    </div>
+
+                    <div class="control-group">
+                        <span class="group-label">Traversal:</span>
+                        <button data-traverse="inorder">Inorder</button>
+                        <button data-traverse="preorder">Preorder</button>
+                        <button data-traverse="postorder">Postorder</button>
+                        <button data-traverse="levelorder">
+                            Level-order (BFS)
+                        </button>
+                    </div>
+
+                    <div class="control-group">
+                        <button data-action="reset">Reset</button>
+                        <button data-action="seed">Load sample</button>
+                    </div>
+                </div>
+
+                <div class="output">
+                    <span id="bst-status"
+                        >Ready. Insert values to build tree.</span
+                    >
+                    <span id="bst-traversal-result"></span>
+                </div>
+
+                <div id="bst-canvas" class="canvas"></div>
+            </section>
+        </main>
+
+        <script src="binary_tree.js"></script>
+    </body>
+</html>

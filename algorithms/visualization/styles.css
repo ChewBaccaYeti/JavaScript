@@ -1,0 +1,248 @@
+:root {
+    --bg: #0f1419;
+    --panel: #1a2030;
+    --panel-2: #232a3d;
+    --border: #2d3651;
+    --text: #e6e8ee;
+    --text-dim: #8892a6;
+    --accent: #4fc3f7;
+    --accent-2: #66bb6a;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --highlight: #ffee58;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui,
+        sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+    width: 220px;
+    background: var(--panel);
+    border-right: 1px solid var(--border);
+    padding: 20px 16px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar h1 {
+    font-size: 18px;
+    margin: 0 0 20px;
+    color: var(--accent);
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 8px 12px;
+    color: var(--text-dim);
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    transition: all 0.15s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: var(--panel-2);
+    color: var(--text);
+}
+
+/* ---------- Main ---------- */
+main {
+    flex: 1;
+    padding: 32px 40px;
+    max-width: 1400px;
+}
+
+.algo-section header h2 {
+    margin: 0 0 6px;
+    font-size: 24px;
+}
+
+.algo-section .meta {
+    color: var(--text-dim);
+    font-size: 13px;
+    margin: 4px 0;
+}
+
+.algo-section .meta code {
+    background: var(--panel-2);
+    padding: 1px 6px;
+    border-radius: 4px;
+    color: var(--accent);
+}
+
+.algo-section .desc {
+    color: var(--text-dim);
+    font-size: 14px;
+    max-width: 700px;
+}
+
+/* ---------- Controls ---------- */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 20px 0;
+    padding: 16px;
+    background: var(--panel);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.control-group .group-label {
+    color: var(--text-dim);
+    font-size: 13px;
+    margin-right: 4px;
+}
+
+.control-group label {
+    font-size: 13px;
+    color: var(--text-dim);
+}
+
+input[type='number'] {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 6px 10px;
+    border-radius: 4px;
+    width: 100px;
+    font-size: 14px;
+}
+
+input[type='number']:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+button {
+    background: var(--panel-2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.15s;
+}
+
+button:hover {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* ---------- Output ---------- */
+.output {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: var(--panel);
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-family: 'SF Mono', Menlo, monospace;
+    min-height: 20px;
+}
+
+#bst-status {
+    color: var(--text-dim);
+}
+
+#bst-traversal-result {
+    color: var(--accent-2);
+    font-weight: 600;
+}
+
+/* ---------- Canvas / SVG ---------- */
+.canvas {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    min-height: 500px;
+    overflow: auto;
+}
+
+.canvas svg {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Nodes */
+.node circle {
+    fill: var(--panel-2);
+    stroke: var(--accent);
+    stroke-width: 2px;
+    transition:
+        fill 0.3s,
+        stroke 0.3s;
+}
+
+.node text {
+    fill: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+}
+
+.node.highlight circle {
+    fill: var(--highlight);
+    stroke: var(--warn);
+}
+
+.node.found circle {
+    fill: var(--accent-2);
+    stroke: var(--accent-2);
+}
+
+.node.found text {
+    fill: var(--bg);
+}
+
+.node.visited circle {
+    fill: var(--accent);
+    stroke: var(--accent);
+}
+
+.node.visited text {
+    fill: var(--bg);
+}
+
+/* Links */
+.link {
+    fill: none;
+    stroke: var(--border);
+    stroke-width: 2px;
+}
