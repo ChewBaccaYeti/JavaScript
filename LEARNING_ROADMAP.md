@@ -13,16 +13,16 @@
 
 **Файлы:**
 
-- 📖 `Scripts/DataTypes.js` — типы данных, == vs ===, falsy, ?., ??
-- 📖 `Scripts/variables.js` — var/let/const, hoisting, scope, redeclaration
+-   📖 `Scripts/DataTypes.js` — типы данных, == vs ===, falsy, ?., ??
+-   📖 `Scripts/variables.js` — var/let/const, hoisting, scope, redeclaration
     trap
 
 **Упражнения:**
 
-- Определи тип каждого значения (primitives vs objects)
-- Вычисли результат coercion: `"5" + 3`, `"5" - 3`, `true + 1`
-- Найди опасности var в циклах vs let
-- Работа с optional chaining `?.` и nullish coalescing `??`
+-   Определи тип каждого значения (primitives vs objects)
+-   Вычисли результат coercion: `"5" + 3`, `"5" - 3`, `true + 1`
+-   Найди опасности var в циклах vs let
+-   Работа с optional chaining `?.` и nullish coalescing `??`
 
 **Практика:** `playground.js` → SECTION 1 (Data Types)
 
@@ -34,13 +34,13 @@
 
 **Файлы:**
 
-- 📖 `Scripts/loops/switch_case.js` — switch паттерны
+-   📖 `Scripts/loops/switch_case.js` — switch паттерны
 
 **Упражнения:**
 
-- Напиши декодер для switch (коды → значения)
-- Реши цепочку if/else vs switch (когда что лучше)
-- Комбинируй логические операторы: `&&`, `||`, `!`
+-   Напиши декодер для switch (коды → значения)
+-   Реши цепочку if/else vs switch (когда что лучше)
+-   Комбинируй логические операторы: `&&`, `||`, `!`
 
 **Практика:** `playground.js` → SECTION 2 (Control Flow)
 
@@ -52,12 +52,12 @@
 
 **Файлы:**
 
-- 📖 `Scripts/loops/Loops.js` — все типы циклов
-- 📖 `Scripts/loops/doWhileFor_break-continue.js` — break/continue детали
+-   📖 `Scripts/loops/Loops.js` — все типы циклов
+-   📖 `Scripts/loops/doWhileFor_break-continue.js` — break/continue детали
 
 **Упражнения:**
 
-- ✅ `loops/exercises.js` — задачи 1-24 (закончено)
+-   ✅ `loops/exercises.js` — задачи 1-24 (закончено)
 
 **Практика:** `playground.js` → SECTION 3 (Loops)
 
@@ -71,18 +71,18 @@
 
 **Файлы:**
 
-- 📖 `Scripts/Arrays.js` — полный каталог методов
-- 📖 `arrays/array_methods/` — методы в глубину (forEach, map, filter,
+-   📖 `Scripts/Arrays.js` — полный каталог методов
+-   📖 `arrays/array_methods/` — методы в глубину (forEach, map, filter,
     reduce...)
-- 📖 `arrays/arrays_examples/` — прикладные примеры
+-   📖 `arrays/arrays_examples/` — прикладные примеры
 
 **Упражнения:**
 
-- Трансформируй массив: map, filter, find
-- Вычисли: reduce, some, every
-- Сортировка: sort, с кастомным comparator
-- Immutable операции: spread, slice vs splice
-- Вложенные массивы: flat, flatMap
+-   Трансформируй массив: map, filter, find
+-   Вычисли: reduce, some, every
+-   Сортировка: sort, с кастомным comparator
+-   Immutable операции: spread, slice vs splice
+-   Вложенные массивы: flat, flatMap
 
 **Практика:** `playground.js` → SECTION 4 (Arrays)
 
@@ -95,15 +95,15 @@ descriptors, freeze/seal, clone
 
 **Файлы:**
 
-- 📖 `Scripts/Objects.js` — Object.\*, descriptors, freeze, clone, **proto**
-- 📖 `objects/` — создание, методы, примеры (friends, cart)
+-   📖 `Scripts/Objects.js` — Object.\*, descriptors, freeze, clone, **proto**
+-   📖 `objects/` — создание, методы, примеры (friends, cart)
 
 **Упражнения:**
 
-- Вложенные объекты: доступ, изменение, clone (shallow vs structuredClone)
-- Object.entries/keys/values для iteration
-- freeze vs seal (когда что?)
-- Property descriptors: configurable, enumerable, writable
+-   Вложенные объекты: доступ, изменение, clone (shallow vs structuredClone)
+-   Object.entries/keys/values для iteration
+-   freeze vs seal (когда что?)
+-   Property descriptors: configurable, enumerable, writable
 
 **Практика:** `playground.js` → SECTION 5 (Objects)
 
@@ -118,13 +118,13 @@ descriptors, freeze/seal, clone
 
 **Файлы:**
 
-- 📖 `Scripts/functions/func_decl_expr.js` — decl vs expr, hoisting
-- 📖 `Scripts/functions/func.js` — параметры, return, scope
-- 📖 `Scripts/functions/func_arrow.js` — arrow functions, this binding
+-   📖 `Scripts/functions/func_decl_expr.js` — decl vs expr, hoisting
+-   📖 `Scripts/functions/func.js` — параметры, return, scope
+-   📖 `Scripts/functions/func_arrow.js` — arrow functions, this binding
 
 **Упражнения:**
 
-- ✅ `functions/exercises.js` — задачи 1-16 (базовые функции, arrow, params)
+-   ✅ `functions/exercises.js` — задачи 1-16 (базовые функции, arrow, params)
 
 **Практика:** `playground.js` → SECTION 6 (Functions)
 
@@ -137,17 +137,17 @@ chain
 
 **Файлы:**
 
-- 📖 `Scripts/callback_closures/` — callbacks, closures (factories, counter,
+-   📖 `Scripts/callback_closures/` — callbacks, closures (factories, counter,
     currying)
-- 📖 `Scripts/Middleware.js` — middleware паттерн (closure application)
+-   📖 `Scripts/Middleware.js` — middleware паттерн (closure application)
 
 **Упражнения:**
 
-- Closure: counter (инкремент, не глобальный state)
-- Closure: private data (bank account, user profile)
-- Factory: createUser, createLogger
-- Currying: add(2)(3), multiply(2)(3)(4)
-- Memoization: fibonacci кэширование
+-   Closure: counter (инкремент, не глобальный state)
+-   Closure: private data (bank account, user profile)
+-   Factory: createUser, createLogger
+-   Currying: add(2)(3), multiply(2)(3)(4)
+-   Memoization: fibonacci кэширование
 
 **Практика:** `playground.js` → SECTION 7 (Closures & Advanced Functions)
 
@@ -160,14 +160,14 @@ lexical this
 
 **Файлы:**
 
-- 📖 `Scripts/this/` — binding rules, call/apply/bind, arrows
+-   📖 `Scripts/this/` — binding rules, call/apply/bind, arrows
 
 **Упражнения:**
 
-- Method binding: когда `this` теряется
-- call/apply/bind: переопределение context
-- Стрелочная функция vs обычная в методах
-- Event handler binding
+-   Method binding: когда `this` теряется
+-   call/apply/bind: переопределение context
+-   Стрелочная функция vs обычная в методах
+-   Event handler binding
 
 **Практика:** `playground.js` → SECTION 8 (this & Context)
 
@@ -181,13 +181,13 @@ lexical this
 
 **Файлы:**
 
-- 📖 `Scripts/Callback.js` — callback pattern, error-first
+-   📖 `Scripts/Callback.js` — callback pattern, error-first
 
 **Упражнения:**
 
-- Error-first callbacks: (err, data) => { if (err) ... }
-- Цепочка callbacks (deep nesting)
-- Асинхронные операции: setTimeout, file read, API call
+-   Error-first callbacks: (err, data) => { if (err) ... }
+-   Цепочка callbacks (deep nesting)
+-   Асинхронные операции: setTimeout, file read, API call
 
 **Практика:** `playground.js` → SECTION 9 (Callbacks)
 
@@ -200,15 +200,15 @@ all/race/any
 
 **Файлы:**
 
-- 📖 `js_trainee/apps/promises/` — Promise примеры с Bootstrap
+-   📖 `js_trainee/apps/promises/` — Promise примеры с Bootstrap
 
 **Упражнения:**
 
-- Создай Promise: resolve/reject
-- Chaining: .then(...).then(...).catch(...)
-- Promise.all — когда все выполнены
-- Promise.race — кто первый
-- .finally() — cleanup логика
+-   Создай Promise: resolve/reject
+-   Chaining: .then(...).then(...).catch(...)
+-   Promise.all — когда все выполнены
+-   Promise.race — кто первый
+-   .finally() — cleanup логика
 
 **Практика:** `playground.js` → SECTION 10 (Promises)
 
@@ -220,14 +220,14 @@ all/race/any
 
 **Файлы:**
 
-- 📖 `js_trainee/apps/async-await/` — async/await CRUD примеры
+-   📖 `js_trainee/apps/async-await/` — async/await CRUD примеры
 
 **Упражнения:**
 
-- Переделай Promise-цепочку в async/await
-- Error handling: try/catch vs .catch()
-- Sequential: await одно после другого
-- Parallel: Promise.all с await
+-   Переделай Promise-цепочку в async/await
+-   Error handling: try/catch vs .catch()
+-   Sequential: await одно после другого
+-   Parallel: Promise.all с await
 
 **Практика:** `playground.js` → SECTION 11 (Async/Await)
 
@@ -241,15 +241,15 @@ all/race/any
 
 **Файлы:**
 
-- 📖 `Scripts/prototypes/` — prototype chain, constructor functions,
+-   📖 `Scripts/prototypes/` — prototype chain, constructor functions,
     Object.create, **proto**
 
 **Упражнения:**
 
-- Prototype chain: child → parent → Object.prototype
-- Constructor functions: function User(name) { ... }
-- Object.create: создание с кастомным прототипом
-- instanceof: проверка наследования
+-   Prototype chain: child → parent → Object.prototype
+-   Constructor functions: function User(name) { ... }
+-   Object.create: создание с кастомным прототипом
+-   instanceof: проверка наследования
 
 **Практика:** `playground.js` → SECTION 12 (Prototypes)
 
@@ -262,16 +262,16 @@ instanceof, private (#), getters/setters
 
 **Файлы:**
 
-- 📖 `Scripts/classes/` — class syntax, inheritance, getters/setters, private
+-   📖 `Scripts/classes/` — class syntax, inheritance, getters/setters, private
     fields
 
 **Упражнения:**
 
-- Базовый класс: constructor, методы
-- Наследование: extends, super()
-- Переопределение методов: override
-- Приватные поля: #privateField
-- Getters/setters: get name() { }, set name(val) { }
+-   Базовый класс: constructor, методы
+-   Наследование: extends, super()
+-   Переопределение методов: override
+-   Приватные поля: #privateField
+-   Getters/setters: get name() { }, set name(val) { }
 
 **Практика:** `playground.js` → SECTION 13 (Classes & OOP)
 
@@ -285,15 +285,15 @@ instanceof, private (#), getters/setters
 
 **Файлы:**
 
-- 📖 `Scripts/Recursion.js` — factorial, fibonacci, memoization, iterative
+-   📖 `Scripts/Recursion.js` — factorial, fibonacci, memoization, iterative
     form
 
 **Упражнения:**
 
-- Factorial, fibonacci (с memoization)
-- Tree traversal: DFS, BFS
-- Permutations, combinations
-- Ханойские башни
+-   Factorial, fibonacci (с memoization)
+-   Tree traversal: DFS, BFS
+-   Permutations, combinations
+-   Ханойские башни
 
 **Практика:** `playground.js` → SECTION 14 (Recursion)
 
@@ -306,14 +306,14 @@ chains
 
 **Файлы:**
 
-- 📖 `arrays/array_methods/` — chaining, reduce complexity
+-   📖 `arrays/array_methods/` — chaining, reduce complexity
 
 **Упражнения:**
 
-- Compose функции: compose(f, g)(x) = f(g(x))
-- Pipe: pipe(f, g)(x) = g(f(x))
-- Pure vs impure functions
-- Immutable updates: spread, Object.assign
+-   Compose функции: compose(f, g)(x) = f(g(x))
+-   Pipe: pipe(f, g)(x) = g(f(x))
+-   Pure vs impure functions
+-   Immutable updates: spread, Object.assign
 
 **Практика:** `playground.js` → SECTION 15 (Functional Programming)
 
@@ -325,14 +325,14 @@ chains
 
 **Файлы:**
 
-- 📖 `Scripts/Middleware.js` — Middleware (Observer-like)
+-   📖 `Scripts/Middleware.js` — Middleware (Observer-like)
 
 **Упражнения:**
 
-- Factory: создание объектов
-- Singleton: единственный экземпляр
-- Observer: subscribe/unsubscribe
-- Decorator: функция оборачивает функцию
+-   Factory: создание объектов
+-   Singleton: единственный экземпляр
+-   Observer: subscribe/unsubscribe
+-   Decorator: функция оборачивает функцию
 
 **Практика:** `playground.js` → SECTION 16 (Design Patterns)
 
@@ -346,13 +346,13 @@ chains
 
 **Файлы:**
 
-- 📖 `Scripts/DOM/` — DOM методы
+-   📖 `Scripts/DOM/` — DOM методы
 
 **Упражнения:**
 
-- Поиск элементов: getElementById, querySelector, querySelectorAll
-- Изменение: innerHTML, textContent, setAttribute
-- Классы: classList.add/remove/toggle
+-   Поиск элементов: getElementById, querySelector, querySelectorAll
+-   Изменение: innerHTML, textContent, setAttribute
+-   Классы: classList.add/remove/toggle
 
 **Практика:** `js_trainee/apps/` (DOM driven apps)
 
@@ -365,13 +365,13 @@ stopPropagation
 
 **Файлы:**
 
-- 📖 `Scripts/events/`, `Scripts/delegation/` — event handling, delegation
+-   📖 `Scripts/events/`, `Scripts/delegation/` — event handling, delegation
 
 **Упражнения:**
 
-- Event listener: click, change, submit
-- Event delegation: один listener на родителе для многих children
-- Event object: e.target, e.currentTarget, e.preventDefault()
+-   Event listener: click, change, submit
+-   Event delegation: один listener на родителе для многих children
+-   Event object: e.target, e.currentTarget, e.preventDefault()
 
 **Практика:** `js_trainee/apps/` (event-driven apps)
 
@@ -385,10 +385,10 @@ stopPropagation
 
 **Упражнения:**
 
-- require: импорт модулей
-- module.exports: экспорт функций
-- fs: читать/писать файлы
-- Callbacks vs promises в Node API
+-   require: импорт модулей
+-   module.exports: экспорт функций
+-   fs: читать/писать файлы
+-   Callbacks vs promises в Node API
 
 **Практика:** `nested_projects/` примеры
 
@@ -400,15 +400,15 @@ stopPropagation
 
 **Файлы:**
 
-- 📖 `nested_projects/mongoose/` — Express + MongoDB API
-- 📖 `nested_projects/JWT_token/` — auth, middleware
+-   📖 `nested_projects/mongoose/` — Express + MongoDB API
+-   📖 `nested_projects/JWT_token/` — auth, middleware
 
 **Упражнения:**
 
-- GET/POST/PUT/DELETE endpoints
-- Middleware: logging, auth, validation
-- Request body parsing: JSON
-- Error handling: try/catch, status codes
+-   GET/POST/PUT/DELETE endpoints
+-   Middleware: logging, auth, validation
+-   Request body parsing: JSON
+-   Error handling: try/catch, status codes
 
 **Практика:** `nested_projects/mongoose/`, `nested_projects/JWT_token/`
 
@@ -420,14 +420,14 @@ stopPropagation
 
 **Файлы:**
 
-- 📖 `nested_projects/mongoose/` — Mongoose schemas, queries
+-   📖 `nested_projects/mongoose/` — Mongoose schemas, queries
 
 **Упражнения:**
 
-- Schema definition: fields, types, validation
-- CRUD: create, read, update, delete
-- Relationships: references, populate
-- Aggregation, filtering, sorting
+-   Schema definition: fields, types, validation
+-   CRUD: create, read, update, delete
+-   Relationships: references, populate
+-   Aggregation, filtering, sorting
 
 **Практика:** `nested_projects/mongoose/`
 
@@ -441,14 +441,14 @@ stopPropagation
 
 **Файлы:**
 
-- 📖 `nested_projects/CEC/` — React TypeScript app
+-   📖 `nested_projects/CEC/` — React TypeScript app
 
 **Упражнения:**
 
-- Functional components, props
-- useState, useEffect
-- Conditional rendering
-- Lists: map, keys
+-   Functional components, props
+-   useState, useEffect
+-   Conditional rendering
+-   Lists: map, keys
 
 ---
 
@@ -464,7 +464,7 @@ stopPropagation
 
 ## 📊 Зависимости (Prerequisites)
 
-``` -
+```-
 Level 1 (Basics)
     ↓
 Level 2 (Data Structures)
@@ -485,21 +485,21 @@ JS.
 
 ## 🚀 Быстрый Чек-лист
 
-- [ ] Level 1: DataTypes, Variables, Control Flow
-- [ ] Level 1: Loops (все типы)
-- [ ] Level 2: Arrays (все методы, chaining)
-- [ ] Level 2: Objects (iteration, clone, descriptors)
-- [ ] Level 3: Functions (decl, expr, arrow)
-- [ ] Level 3: Closures (counter, factory, private state)
-- [ ] Level 3: this & Context (binding, call/apply/bind)
-- [ ] Level 4: Callbacks (error-first)
-- [ ] Level 4: Promises (then/catch/finally, all/race)
-- [ ] Level 4: Async/Await (sequential, parallel, error handling)
-- [ ] Level 5: Prototypes (chain, constructor, Object.create)
-- [ ] Level 5: Classes (syntax, inheritance, private, getters/setters)
-- [ ] Level 6: Recursion (memoization, algorithms)
-- [ ] Level 6: Functional Programming (compose, pure functions)
-- [ ] Level 6: Design Patterns (factory, singleton, observer)
+-   [ ] Level 1: DataTypes, Variables, Control Flow
+-   [ ] Level 1: Loops (все типы)
+-   [ ] Level 2: Arrays (все методы, chaining)
+-   [ ] Level 2: Objects (iteration, clone, descriptors)
+-   [ ] Level 3: Functions (decl, expr, arrow)
+-   [ ] Level 3: Closures (counter, factory, private state)
+-   [ ] Level 3: this & Context (binding, call/apply/bind)
+-   [ ] Level 4: Callbacks (error-first)
+-   [ ] Level 4: Promises (then/catch/finally, all/race)
+-   [ ] Level 4: Async/Await (sequential, parallel, error handling)
+-   [ ] Level 5: Prototypes (chain, constructor, Object.create)
+-   [ ] Level 5: Classes (syntax, inheritance, private, getters/setters)
+-   [ ] Level 6: Recursion (memoization, algorithms)
+-   [ ] Level 6: Functional Programming (compose, pure functions)
+-   [ ] Level 6: Design Patterns (factory, singleton, observer)
 
 ---
 

@@ -1,0 +1,10 @@
+blank_issues_enabled: true
+contact_links:
+    - name: Learning roadmap
+      url: https://github.com/ChewBaccaYeti/JavaScript/blob/main/LEARNING_ROADMAP.md
+      about:
+          The level-by-level study plan — check here before filing a "what next"
+          issue.
+    - name: Algorithms index
+      url: https://github.com/ChewBaccaYeti/JavaScript/blob/main/algorithms/README.md
+      about: Complexity tables and the full algorithm listing.

@@ -158,9 +158,8 @@ console.log(fruitsFilter);
 
 function repeat(n, action) {
     for (let i = 0; i < n; i++) {
-        action(i)
+        action(i);
     }
-        
 }
 repeat(3, console.log);
 
@@ -170,18 +169,18 @@ repeat(3, console.log);
 // for...of + .push
 
 function map(array, transform) {
-    let nums = []
+    let nums = [];
     for (let item of array) {
-        nums.push(transform(item))
-        return nums
+        nums.push(transform(item));
+        return nums;
     }
 }
-console.log(map([1, 2, 3], x => x * 2))
+console.log(map([1, 2, 3], x => x * 2));
 
 // ЗАДАЧА 3: Исправь баг — почему handleClick вызывается сразу?
 // const btn = document.querySelector('.js-button');
 // btn.addEventListener('click', handleBtnClick());  // ← баг здесь
- btn.addEventListener('click', handleBtnClick);
+btn.addEventListener('click', handleBtnClick);
 
 // ЗАДАЧА 4: Напиши unless(test, action)
 // Вызывает action() только если test === false

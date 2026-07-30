@@ -1,18 +1,18 @@
 function ask(question, yes, no) {
     if (confirm(question)) {
-        yes()
+        yes();
     } else {
-        no()
+        no();
     }
-};
+}
 
 function Yes() {
-    alert('Yes')
-};
+    alert('Yes');
+}
 
 function No() {
-    alert('No')
-};
+    alert('No');
+}
 
 ask('Are you agree?', Yes, No);
 
@@ -22,17 +22,24 @@ let welcome;
 
 if (age < 18) {
     welcome = function deny() {
-        alert('You are too young for this sh!t.')
-    }
+        alert('You are too young for this sh!t.');
+    };
 } else {
     welcome = function getIt() {
-        alert('Damn boy, get it!')
-    }
-};
+        alert('Damn boy, get it!');
+    };
+}
 
 welcome();
 
-let blablarism = (age < 18) ? function () { alert('Wazzup!!!') } : function () { alert('How are you, sir?') };
+let blablarism =
+    age < 18
+        ? function () {
+              alert('Wazzup!!!');
+          }
+        : function () {
+              alert('How are you, sir?');
+          };
 
 blablarism();
 

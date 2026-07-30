@@ -18,7 +18,7 @@ for (value definition; condition; accumulator) {
  */
 for (let index = 0; index < fruits.length; index++) {
     console.log(index, fruits[index]); // i = счётчик итераций
-};
+}
 
 // Счётчик вверх ++
 /*
@@ -28,27 +28,28 @@ for (count value, counter condition; accumulator) {
  */
 for (let count = 0; count <= 5; count++) {
     console.log('count up:', count);
-};
+}
 
 // Счётчик вниз
 for (let count = 5; count >= 0; count--) {
     console.log('count down:', count);
-};
+}
 
-for (let i = 0; i <= 10; i += 2) { // double accumulating
+for (let i = 0; i <= 10; i += 2) {
+    // double accumulating
     console.log('even:', i); // 0,2,4,6,8,10
-};
+}
 
 // ─── 2. FOR...OF — счётчик не нужен ──────────────────────────────────────────
 
 for (const fruit of fruits) {
     console.log(fruit); // значение, без индекса
-};
+}
 
 // Нужен и индекс и значение? entries() Похоже на обычный for
 for (const [index, fruit_item] of fruits.entries()) {
     console.log(index, fruit_item);
-};
+}
 
 // ─── 3. WHILE — счётчик с условием ───────────────────────────────────────────
 
@@ -56,7 +57,7 @@ let i = 0;
 while (i < fruits.length) {
     console.log('while:', fruits[i]);
     i++; // ОБЯЗАТЕЛЬНО — иначе бесконечный цикл
-};
+}
 
 // do...while — выполняется минимум 1 раз
 let attempt = 0;
@@ -95,7 +96,7 @@ for (let row = 0; row < matrix.length; row++) {
         process.stdout.write(matrix[row][col] + ' ');
     }
     console.log(); // перенос строки
-};
+}
 
 // ─── УПРАЖНЕНИЯ ───────────────────────────────────────────────────────────────
 
@@ -115,7 +116,7 @@ function printPlayersWithIndex(players) {
     for (let i = 0; i < players.length; i++) {
         console.log(`Players names with index: ${i}: ${players[i].name}`);
     }
-};
+}
 printPlayersWithIndex(players);
 
 // ЗАДАЧА 2: for...of
@@ -130,7 +131,7 @@ function countOnline(players) {
         }
     }
     return count;
-};
+}
 console.log('online count:', countOnline(players)); // 3
 
 // ЗАДАЧА 3: while
@@ -140,10 +141,10 @@ console.log('online count:', countOnline(players)); // 3
 function findTopPlayer(players) {
     let i = 0;
     while (i < players.length) {
-        if (players[i].points > 70) return players[i].name
+        if (players[i].points > 70) return players[i].name;
         i++;
     }
-};
+}
 console.log('top player:', findTopPlayer(players)); // Poly
 
 // ЗАДАЧА 4: reduce как счётчик
@@ -151,7 +152,7 @@ console.log('top player:', findTopPlayer(players)); // Poly
 
 function totalOnlinePoints(players) {
     return players.reduce((total, player) => {
-        return total + (player.online ? player.points : 0)
+        return total + (player.online ? player.points : 0);
     }, {});
 }
 console.log('online points:', totalOnlinePoints(players)); // 92+48+48 = 188
@@ -165,14 +166,14 @@ const tagGroups = [['js', 'node'], ['css'], ['js', 'react', 'css']];
 function countTagsReduce(tagGroups) {
     const tallyReduce = tagGroups.reduce((accumulator, tag) => {
         accumulator[tag] = (accumulator[tag] || 0) + 1;
-        return accumulator
+        return accumulator;
     }, 0);
     return tallyReduce;
 }
 console.log('tags.reduce:', countTagsReduce(tagGroups));
 
 function countTagsFor(tagGroups) {
-    const tallyFor = {}
+    const tallyFor = {};
     for (const tags of tagGroups) {
         for (const tag of tags) {
             tallyFor[tag] = (tallyFor[tag] || 0) + 1;
@@ -195,7 +196,7 @@ const initValue = 0;
 // ожидание: 45
 function sumAll(nums) {
     return nums.reduce((accumulator, currentInt) => {
-        return accumulator + currentInt
+        return accumulator + currentInt;
     }, initValue);
 }
 console.log('R1 sum:', sumAll(nums));
@@ -205,7 +206,7 @@ console.log('R1 sum:', sumAll(nums));
 // подсказка: Math.max(acc, n) возвращает большее из двух
 function findMax(nums) {
     return nums.reduce((accumulator, currentInt) => {
-        return Math.max(accumulator, currentInt)
+        return Math.max(accumulator, currentInt);
     }, initValue);
 }
 console.log('R2 max:', findMax(nums));
@@ -214,7 +215,7 @@ console.log('R2 max:', findMax(nums));
 // ожидание: 4  (4,6,2,8)
 function countEvens(nums) {
     return nums.reduce((accumulator, currentInt) => {
-        return accumulator + currentInt * !(currentInt & 1)
+        return accumulator + currentInt * !(currentInt & 1);
     }, initValue);
 }
 console.log('R3 evens:', countEvens(nums));
@@ -229,9 +230,9 @@ const words = ['hello', 'world', 'foo', 'bar', 'javascript'];
 function longWords(words) {
     return words.reduce((accumulator, currentWord) => {
         if (currentWord.length > 3) {
-            accumulator.push(currentWord)
+            accumulator.push(currentWord);
         }
-        return accumulator
+        return accumulator;
     }, []);
 }
 console.log('R4 long:', longWords(words));
@@ -241,8 +242,8 @@ console.log('R4 long:', longWords(words));
 // подсказка: каждый новый элемент ставь В НАЧАЛО: [item, ...acc]
 function reverseArr(words) {
     return words.reduce((accumulator, currentWord) => {
-        accumulator.unshift(currentWord)
-        return accumulator
+        accumulator.unshift(currentWord);
+        return accumulator;
     }, []);
 }
 console.log('R5 reversed:', reverseArr(words));
@@ -261,7 +262,7 @@ const orders = [
 // ожидание: 30*3 + 20*5 + 30*2 + 80*1 + 20*4 = 410
 function totalRevenue(orders) {
     return orders.reduce((accumulator, currentSum, index, array) => {
-        return accumulator + (currentSum.price * currentSum.qty)
+        return accumulator + currentSum.price * currentSum.qty;
     }, initValue);
 }
 console.log('R6 revenue:', totalRevenue(orders));
@@ -273,9 +274,9 @@ function groupByProduct(orders) {
     return orders.reduce((acc, order, index, array) => {
         // если ключа ещё нет — создай пустой массив
         if (!acc[order.product]) {
-            acc[order.product] = []
-        }   // потом добавь order в этот массив
-        acc[order.product].push(order)
+            acc[order.product] = [];
+        } // потом добавь order в этот массив
+        acc[order.product].push(order);
         // верни acc
         return acc;
     }, {});
@@ -298,9 +299,9 @@ const students = [
 function calcAverages(students) {
     return students.reduce((acc, student) => {
         const sum = student.grades.reduce((total, avgGrade) => {
-            return total + avgGrade
+            return total + avgGrade;
         }, initValue);
-        const avg = Math.round(sum) / student.grades.length
+        const avg = Math.round(sum) / student.grades.length;
         return [...acc, { name: student.name, avgGrade: avg }];
     }, []);
 }
@@ -310,8 +311,10 @@ console.log('R8 averages:', calcAverages(students));
 // ожидание: 'Clara'
 // подсказка: accumulator — первый студент, сравнивай средние на каждом шаге
 function topStudent(students) {
-    const avgRound = (grades) =>
-        Math.round(grades.reduce((sum, grade) => sum + grade, 0) / grades.length);
+    const avgRound = grades =>
+        Math.round(
+            grades.reduce((sum, grade) => sum + grade, 0) / grades.length,
+        );
 
     return students.reduce((maxStudent, currentStudent) => {
         const currentAvg = avgRound(currentStudent.grades);
@@ -381,56 +384,110 @@ console.log('R9 top student:', topStudent(students));
  */
 
 const engineeringTeam = [
-    { name: "Jacob Taylor", rank: 4, status: "OFF-BOARD", role: "Security Officer" },
-    { name: "Miranda Lowson", rank: 3, status: "ON-DECK", role: "Security Chief" },
-    { name: "Isaac Clarke", rank: 1, status: "ON-DECK", role: "Chief Engineer" },
-    { name: "Amanda Madnight", rank: 5, status: "OFF-BOARD", role: "Decontamination Processor" },
-    { name: "Geth Legions", rank: 2, status: "SHIFT", role: "Software Assets" },
-    { name: "Allan Honzales", rank: 5, status: "ON-DECK", role: "Fire Safety" },
-    { name: "Yuriy Gagarin", rank: 1, status: "SHIFT", role: "Chief Engineer/Deputy" },
-    { name: "Otari Maximashvili", rank: 2, status: "SHIFT", role: "Observation Control" },
-    { name: "Ashley Quinix", rank: 6, status: "OFF-BOARD", role: "Engine Assistant" },
-    { name: "Samara Kasumi", rank: 4, status: "MEDICAL-OFF", role: "Engine Control" },
-    { name: "Tain Krios", rank: 2, status: "BAY-CHECK", role: "Stasis Control" },
-    { name: "Garrus Vakarian", rank: 4, status: "BAY-CHECK", role: "Relays Control" },
+    {
+        name: 'Jacob Taylor',
+        rank: 4,
+        status: 'OFF-BOARD',
+        role: 'Security Officer',
+    },
+    {
+        name: 'Miranda Lowson',
+        rank: 3,
+        status: 'ON-DECK',
+        role: 'Security Chief',
+    },
+    {
+        name: 'Isaac Clarke',
+        rank: 1,
+        status: 'ON-DECK',
+        role: 'Chief Engineer',
+    },
+    {
+        name: 'Amanda Madnight',
+        rank: 5,
+        status: 'OFF-BOARD',
+        role: 'Decontamination Processor',
+    },
+    { name: 'Geth Legions', rank: 2, status: 'SHIFT', role: 'Software Assets' },
+    { name: 'Allan Honzales', rank: 5, status: 'ON-DECK', role: 'Fire Safety' },
+    {
+        name: 'Yuriy Gagarin',
+        rank: 1,
+        status: 'SHIFT',
+        role: 'Chief Engineer/Deputy',
+    },
+    {
+        name: 'Otari Maximashvili',
+        rank: 2,
+        status: 'SHIFT',
+        role: 'Observation Control',
+    },
+    {
+        name: 'Ashley Quinix',
+        rank: 6,
+        status: 'OFF-BOARD',
+        role: 'Engine Assistant',
+    },
+    {
+        name: 'Samara Kasumi',
+        rank: 4,
+        status: 'MEDICAL-OFF',
+        role: 'Engine Control',
+    },
+    {
+        name: 'Tain Krios',
+        rank: 2,
+        status: 'BAY-CHECK',
+        role: 'Stasis Control',
+    },
+    {
+        name: 'Garrus Vakarian',
+        rank: 4,
+        status: 'BAY-CHECK',
+        role: 'Relays Control',
+    },
 ];
 
 function teamStatus() {
-    let off_Board = []
-    let on_Deck = []
-    let on_Shift = []
-    let rest = []
+    let off_Board = [];
+    let on_Deck = [];
+    let on_Shift = [];
+    let rest = [];
 
     for (const key in engineeringTeam) {
-        const name = engineeringTeam[key].name
-        const status = engineeringTeam[key].status
-        console.log(`Mate: ${name}, REASON: ${status}`)
+        const name = engineeringTeam[key].name;
+        const status = engineeringTeam[key].status;
+        console.log(`Mate: ${name}, REASON: ${status}`);
 
         for (const { name, status } of engineeringTeam) {
-            if (status === "OFF-BOARD") {
-                off_Board.push(name)
-                console.log("-----------------------OFF-BOARD-------------------------")
-                console.log(`Mate out of the deck: ${name}, REASON: ${status}`)
-            } else if (status === "ON-DECK") {
-                on_Deck.push(name)
-                console.log("---------------------ON-DECK-----------------------")
-                console.log(`Mate on the deck: ${name}, REASON: ${status}`)
-            } else if (status === "SHIFT") {
-                on_Shift.push(name)
-                console.log("-------------------ON-SHIFT---------------------")
-                console.log(`Mate at duty: ${name}, REASON: ${status}`)
+            if (status === 'OFF-BOARD') {
+                off_Board.push(name);
+                console.log(
+                    '-----------------------OFF-BOARD-------------------------',
+                );
+                console.log(`Mate out of the deck: ${name}, REASON: ${status}`);
+            } else if (status === 'ON-DECK') {
+                on_Deck.push(name);
+                console.log(
+                    '---------------------ON-DECK-----------------------',
+                );
+                console.log(`Mate on the deck: ${name}, REASON: ${status}`);
+            } else if (status === 'SHIFT') {
+                on_Shift.push(name);
+                console.log('-------------------ON-SHIFT---------------------');
+                console.log(`Mate at duty: ${name}, REASON: ${status}`);
             } else {
-                rest.push(name)
-                console.log("---------------REST-----------------")
-                console.log(`Rest: ${name}, REASON: ${status}`)
+                rest.push(name);
+                console.log('---------------REST-----------------');
+                console.log(`Rest: ${name}, REASON: ${status}`);
             }
         }
     }
-    console.table("OFF-BOARD: " + off_Board)
-    console.table("ON-DECK: " + on_Deck)
-    console.table("SHIFT: " + on_Shift)
-    console.table("REST: " + rest)
-};
+    console.table('OFF-BOARD: ' + off_Board);
+    console.table('ON-DECK: ' + on_Deck);
+    console.table('SHIFT: ' + on_Shift);
+    console.table('REST: ' + rest);
+}
 teamStatus();
 /*
     Mate out of the deck: Jacob Taylor, REASON: OFF-BOARD

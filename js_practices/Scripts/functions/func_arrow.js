@@ -12,37 +12,39 @@ emptyArgs();
 
 let age = prompt('Возраст?', 18);
 
-let welcome = (age < 18) ?
-    () => alert('Сынок.') :
-    () => alert('Здарова, мужик.');
+let welcome = age < 18 ? () => alert('Сынок.') : () => alert('Здарова, мужик.');
 
 welcome();
 
 let sus = (a, b) => {
-    let result = a + b
-    return result
+    let result = a + b;
+    return result;
 };
 
 //! Задачи
 
 // Замените код Function Expression стрелочной функцией:
 function ask(question, yes, no) {
-    if (confirm(question)) yes()
-    else no()
-};
+    if (confirm(question)) yes();
+    else no();
+}
 
 ask(
-    "Вы согласны?",
-    function () { alert("Вы согласились."); },
-    function () { alert("Вы отменили выполнение."); }
+    'Вы согласны?',
+    function () {
+        alert('Вы согласились.');
+    },
+    function () {
+        alert('Вы отменили выполнение.');
+    },
 );
 
 //? Моё решение
 
 let ques = (question, yes, no) => {
-    (confirm(question)) ?
-        () => alert("Вы согласились.") :
-        () => alert("Вы отменили выполнение.")
+    confirm(question)
+        ? () => alert('Вы согласились.')
+        : () => alert('Вы отменили выполнение.');
 };
 
 ques();
@@ -50,7 +52,7 @@ ques();
 //? Решение задачи
 
 ask(
-    "Вы согласны?",
-    () => alert("Вы согласились."),
-    () => alert("Вы отменили выполнение.")
+    'Вы согласны?',
+    () => alert('Вы согласились.'),
+    () => alert('Вы отменили выполнение.'),
 );

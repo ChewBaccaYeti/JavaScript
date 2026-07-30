@@ -1,0 +1,59 @@
+# JavaScript sandbox — Code Owners
+
+#
+
+# Every path is owned by @ChewBaccaYeti
+
+# GitHub requires a review from the matched owner on any PR touching the file
+
+# Only the LAST matching line applies for a given path
+
+#
+
+# Docs: <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-security/customizing-your-repository/about-code-owners>
+
+# Default owner for the whole repo
+
+* @ChewBaccaYeti
+
+# CI / DevOps surface
+
+/.github/                       @ChewBaccaYeti
+/.github/CODEOWNERS             @ChewBaccaYeti
+/.github/workflows/             @ChewBaccaYeti
+/.github/dependabot.yml         @ChewBaccaYeti
+
+# Root tooling and dependency manifests
+
+/package.json                   @ChewBaccaYeti
+/package-lock.json              @ChewBaccaYeti
+/tsconfig.json                  @ChewBaccaYeti
+/babel.config.json              @ChewBaccaYeti
+/nodemon.json                   @ChewBaccaYeti
+/pyproject.toml                 @ChewBaccaYeti
+/requirements.in                @ChewBaccaYeti
+/requirements.txt               @ChewBaccaYeti
+/.prettierrc.json               @ChewBaccaYeti
+/.prettierignore                @ChewBaccaYeti
+/.browserslistrc                @ChewBaccaYeti
+/.gitignore                     @ChewBaccaYeti
+
+# Reference material — changes here alter the "database" the repo exists for
+
+/algorithms/                    @ChewBaccaYeti
+/algorithms/tests/              @ChewBaccaYeti
+/js_practices/Scripts/          @ChewBaccaYeti
+
+# Nested projects with their own dependency trees
+
+/nested_projects/Pipe/          @ChewBaccaYeti
+/nested_projects/nodemailer/    @ChewBaccaYeti
+/nested_projects/JWT_token/     @ChewBaccaYeti
+/nested_projects/mongoose/      @ChewBaccaYeti
+
+# Docs
+
+/README.md                      @ChewBaccaYeti
+/CLAUDE.md                      @ChewBaccaYeti
+/LEARNING_ROADMAP.md            @ChewBaccaYeti
+/TASK_MANAGER_PROJECT.md        @ChewBaccaYeti

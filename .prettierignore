@@ -1,0 +1,49 @@
+# CODEOWNERS has no extension, so Prettier infers Markdown and inserts blank
+# lines between comment lines. Harmless for GitHub, but keep the file verbatim.
+.github/CODEOWNERS
+
+# Dependencies / build output
+node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+archive/
+
+# Lockfiles and generated manifests
+package-lock.json
+**/package-lock.json
+requirements.txt
+
+# Vendored / third-party sources
+nested_projects/scrollLodash/lodash.js
+js_practices/apps/**/dist/
+tasks/**/dist/
+
+# Archived task exercises — kept verbatim as submitted
+tasks/
+
+# Handlebars templates. Prettier parses them as HTML and throws on partial
+# markup inside {{#each}} blocks (e.g. an <ul> opened outside the block and
+# closed inside it), so it cannot check them at all.
+*.hbs
+*.handlebars
+
+# Binary-ish and non-source assets
+*.ico
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.svg
+
+# Local, untracked tool state
+.claude/settings.local.json
+
+# Prettier's trailingComma:"all" adds a trailing comma that JSONC linters flag.
+.markdownlint.jsonc
+
+# Python artifacts
+__pycache__/
+.venv/
+venv311/

@@ -11,7 +11,6 @@ function factorial(n) {
 // Пример вызова функции
 console.log(factorial(5)); // Вывод: 120
 
-
 function fibonacci(n) {
     if (n <= 1) {
         return n;
@@ -68,7 +67,10 @@ console.log(deepSum([1, [2, 3, [4, 5]], [6, [7, [8]]]])); // 36
 function countNodes(node) {
     if (!node) return 0;
     // 1 за текущий узел + рекурсия по всем детям
-    return 1 + (node.children ?? []).reduce((sum, child) => sum + countNodes(child), 0);
+    return (
+        1 +
+        (node.children ?? []).reduce((sum, child) => sum + countNodes(child), 0)
+    );
 }
 const tree = {
     value: 'root',

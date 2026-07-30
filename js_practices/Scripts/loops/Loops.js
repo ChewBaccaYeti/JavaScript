@@ -5,7 +5,7 @@ for (initialization; condition; post-expression) {
 }
 */
 // Посчитай до 10
-console.log("=========for_0-=========");
+console.log('=========for_0-=========');
 function for_0() {
     let i;
     for (i = 0; i < 10; i++) {
@@ -15,10 +15,10 @@ function for_0() {
 }
 console.log(for_0());
 
-console.log("=========for_1=========");
+console.log('=========for_1=========');
 function for_1() {
     let j;
-    for (j = 10; j <= 22; j+=1) {
+    for (j = 10; j <= 22; j += 1) {
         let multiValue = j * 10;
         console.log(multiValue);
     }
@@ -26,17 +26,16 @@ function for_1() {
 }
 console.log(for_1());
 
-
 /*
 for (value definition; condition; accumulator) {
     _action_
 }
 */
-console.log("=========fruits=========");
+console.log('=========fruits=========');
 const fruits = ['apple', 'banana', 'cherry', 'date'];
 for (let index = 0; index < fruits.length; index++) {
     console.log(index, fruits[index]); // i = счётчик итерации
-};
+}
 
 // Счётчик вверх ++
 /*
@@ -44,35 +43,36 @@ for (count value, counter condition; accumulator) {
     __action__-counting up++
 }
 */
-console.log("=========UP=========");
+console.log('=========UP=========');
 for (let count = 0; count <= 5; count++) {
     console.log('count up:', count);
-};
+}
 
 // Счётчик вниз
-console.log("=========DOWN=========");
+console.log('=========DOWN=========');
 for (let count = 5; count >= 0; count--) {
     console.log('count down:', count);
-};
+}
 
-console.log("=========2X_ACC=========");
-for (let i = 0; i <= 10; i += 2) { // double accumulating
+console.log('=========2X_ACC=========');
+for (let i = 0; i <= 10; i += 2) {
+    // double accumulating
     console.log('even:', i); // 0,2,4,6,8,10
-};
+}
 
-console.log("=========MULTI_TAB=========");
+console.log('=========MULTI_TAB=========');
 // Таблица умножения
 function quadTab() {
-    const rows = {}
+    const rows = {};
     for (let int = 1; int <= 10; int++) {
-        rows[int] = {}
+        rows[int] = {};
         for (let inc = 1; inc <= 10; inc++) {
-            rows[int][inc] = int * inc
+            rows[int][inc] = int * inc;
         }
     }
-    console.table(rows)
+    console.table(rows);
 }
-quadTab()
+quadTab();
 
 // while цикл выполняется до первой лжи
 // Выполнение кода, пока не выполнится определённое условие.
@@ -111,7 +111,7 @@ let i = 0;
 while (i < fruits.length) {
     console.log('while:', fruits[i]);
     i++; // ОБЯЗАТЕЛЬНО — иначе бесконечный цикл
-};
+}
 
 // do...while — выполняется минимум 1 раз
 let attempt = 0;
@@ -218,12 +218,12 @@ for_of_3();
 // FOR...OF — счётчик не нужен, он сам перебирает все элементы массива и выдаёт их по очереди
 for (const fruit of fruits) {
     console.log(fruit); // значение, без индекса
-};
+}
 
 // Нужен и индекс и значение? entries() Похоже на обычный for
 for (const [index, fruit_item] of fruits.entries()) {
     console.log(index, fruit_item);
-};
+}
 
 // switch case когда нужно проверить одно значение на равенство нескольким возможным значениям.
 function switch_case() {

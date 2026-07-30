@@ -75,7 +75,8 @@ clock.start();
 
 //! <-->
 
-class Animal { // prototype
+class Animal {
+    // prototype
     constructor(name, speed, age, furColor) {
         this.speed = speed;
         this.name = name;
@@ -107,7 +108,8 @@ class Animal { // prototype
 let animal = new Animal('Animal', '15km', '2 years', 'black');
 console.log(animal);
 
-class Rabbit extends Animal { // экземпляр Animal
+class Rabbit extends Animal {
+    // экземпляр Animal
     constructor(speed, name, age, furColor, earLength) {
         super(speed, name, age, furColor);
         this.earLength = earLength;

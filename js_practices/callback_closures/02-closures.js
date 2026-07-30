@@ -178,6 +178,11 @@ console.log(withLet.map(fn => fn())); // [0, 1, 2] — правильно
 // До let эту проблему решали через IIFE, создавая новую область видимости вручную
 const withIIFE = [];
 for (var k = 0; k < 3; k++) {
-    withIIFE.push(((captured) => () => captured)(k));
+    withIIFE.push(
+        (
+            captured => () =>
+                captured
+        )(k),
+    );
 }
 console.log(withIIFE.map(fn => fn())); // [0, 1, 2]

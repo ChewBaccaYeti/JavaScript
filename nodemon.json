@@ -4,7 +4,7 @@
         "nested_projects/mock/",
         "nested_projects/nodemailer/",
         "nested_projects/Pipe/",
-        "js_trainee/Scripts/",
+        "js_practices/Scripts/",
         "algorithms/"
     ],
     "ext": "js,ts,json,py",

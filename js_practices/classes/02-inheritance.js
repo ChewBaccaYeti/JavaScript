@@ -4,7 +4,8 @@
  *  - super()
  */
 
-class Character { // prototype
+class Character {
+    // prototype
     constructor({
         name = 'Hero',
         story = 'Unknown',
