@@ -4,12 +4,12 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta content="freeCodeCamp.org" property="og:title" />
-        <meta property="og:type" content="website" />
+        <meta content="website" property="og:type" />
         <meta
             content="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png"
             property="og:image"
         />
-        <meta property="og:url" content="https://www.freecodecamp.org" />
+        <meta content="https://www.freecodecamp.org" property="og:url" />
         <meta
             name="description"
             content="Everything you should know about cats."
@@ -62,12 +62,135 @@
                     <li>laser pointers</li>
                     <li>lasagna</li>
                 </ul>
+                <!-- Media -->
+                <audio
+                    controls
+                    loop
+                    muted
+                    src="https://cdn.freecodecamp.org/curriculum/js-music-player/cruising-for-a-musing.mp3"
+                >
+                    <source src="audio.ogg" type="audio/ogg" />
+                    <source src="audio.wav" type="audio/wav" />
+                    <source src="audio.mp3" type="audio/mpeg" />
+                </audio>
+                <video
+                    controls
+                    loop
+                    muted
+                    width="400"
+                    src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+                    poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+                >
+                    <source
+                        src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+                        type="video/mp4"
+                    />
+                    <source
+                        src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.webm"
+                        type="video/webm"
+                    />
+                    Your browser does not support the video tag.
+                </video>
+                <!-- Embedded frame from other website -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/JZT8R1pkNW4?si=k1R2MUqc_9CxSF9S&amp;start=971" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe
+                    title="Map of the Royal Observatory, Greenwich, London"
+                    width="300"
+                    height="200"
+                    style="border: 2px solid black; border-radius: 4px"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&amp;layer=mapnik"
+                >
+                </iframe>
+                <iframe
+                    src="https://www.netrek.org/beginner/"
+                    title="Netrek begginer page"
+                    width="900"
+                    height="900"
+                    style="border: 2px solid black; border-radius: 4px"
+                ></iframe>
+                <iframe
+                    srcdoc="
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                            &lt;body&gt;
+                                &lt;h1&gt;Title&lt;/h1&gt;
+                                &lt;p&gt;This is embedded HTML code&lt;/p&gt;
+                            &lt;/body&gt;
+                        &lt;/html&gt;
+                    "
+                ></iframe>
+                <input
+                    type="image"
+                    alt="USG Ishimura Logo"
+                    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/10e0ed69-5254-42e4-be98-423b2a106081/dfr4aw9-b6a2fff4-6f33-4b68-9253-6a7abcb39c8f.png/v1/fill/w_894,h_894/usg_ishimura_logo_2023_remake_by_the_brade_dfr4aw9-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MSIsInBhdGgiOiIvZi8xMGUwZWQ2OS01MjU0LTQyZTQtYmU5OC00MjNiMmExMDYwODEvZGZyNGF3OS1iNmEyZmZmNC02ZjMzLTRiNjgtOTI1My02YTdhYmNiMzljOGYucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.voysUyWa11MQiIVYI7gbizvMWwX7M-0FwNXEvpMv4rk"
+                />
                 <figure>
                     <img
                         src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg"
                         alt="A slice of lasagna on a plate."
                     />
                     <figcaption>Cats <em>love</em> lasagna.</figcaption>
+                    <svg
+                        width="100"
+                        height="100"
+                        viewBox="0 0 100 100"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <circle
+                            cx="50"
+                            cy="50"
+                            r="45"
+                            stroke="black"
+                            stroke-width="4"
+                            fill="#1500ff"
+                        />
+                        <circle cx="35" cy="40" r="5" fill="gold" />
+                        <circle cx="65" cy="40" r="5" fill="gold" />
+                        <path
+                            d="M35 65 Q50 80 65 65"
+                            stroke="gold"
+                            stroke-width="4"
+                            fill="transparent"
+                        />
+                    </svg>
+                    <!-- Star Icon -->
+                    <svg
+                        width="50"
+                        height="50"
+                        viewBox="0 0 24 24"
+                        fill="hsl(51,100%,50%)"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M12 2L14.9 8.6L22 9.3L17 14.1L18.3 21.2L12 17.8L5.7 21.2L7 14.1L2 9.3L9.1 8.6L12 2Z"
+                        />
+                    </svg>
+
+                    <!-- Heart Icon -->
+                    <svg
+                        width="50"
+                        height="50"
+                        viewBox="0 0 24 24"
+                        fill="rgb(220,20,60)"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 6 4 4 6.5 4C8 4 9.5 4.8 10.5 6.09C11.5 4.8 13 4 14.5 4C17 4 19 6 19 8.5C19 12.28 15.6 15.36 10.45 20.04L12 21.35Z"
+                        />
+                    </svg>
+
+                    <!-- Checkmark Icon -->
+                    <svg
+                        width="50"
+                        height="50"
+                        viewBox="0 0 24 24"
+                        fill="#008000"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M20.29 5.71L9 17L3.71 11.71L5.12 10.29L9 14.17L18.88 4.29L20.29 5.71Z"
+                        />
+                    </svg>
                 </figure>
                 <h3>Top 3 things cats hate:</h3>
                 <ol>
@@ -157,8 +280,14 @@
         <footer>
             <p>
                 No Copyright -
-                <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
+                <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp.org</a>
             </p>
+            <input
+                title="E-mail"
+                placeholder="Your E-mail"
+                type="email"
+                alt="Your email goes here"
+            />
         </footer>
     </body>
 </html>
