@@ -28,6 +28,6 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "dependencies": {
     "flatpickr": "^4.6.13",
-    "notiflix": "^3.2.6"
+    "notiflix": "^3.2.8"
   }
 }
