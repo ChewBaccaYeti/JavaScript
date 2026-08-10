@@ -17,3 +17,7 @@ print(f"Total RAM: {total_gb:.3f} GB")
 print(f"Available RAM: {available_gb:.3f} GB")
 print(f"Used RAM: {used_gb:.3f} GB")
 print(f"RAM Usage: {memory.percent}%")
+
+result = [total_gb, available_gb, used_gb, memory.percent]
+with open("check_RAM.txt", "a") as f:
+    print(result, file=f)

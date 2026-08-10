@@ -1,115 +1,125 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta content="freeCodeCamp.org" property="og:title" />
-        <meta content="website" property="og:type" />
-        <meta
-            content="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png"
-            property="og:image"
-        />
-        <meta content="https://www.freecodecamp.org" property="og:url" />
-        <meta
-            name="description"
-            content="Everything you should know about cats."
-        />
 
-        <title>CatPhotoApp</title>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="freeCodeCamp.org" property="og:title" />
+    <meta content="website" property="og:type" />
+    <meta content="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png" property="og:image" />
+    <meta content="https://www.freecodecamp.org" property="og:url" />
+    <meta name="description" content="Everything you should know about cats." />
 
-        <link rel="stylesheet" href="./styles.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="icon" href="favicon.ico" />
-    </head>
+    <title>CatPhotoApp</title>
 
-    <body>
-        <main>
-            <h1>CatPhotoApp</h1>
-            <section>
-                <h2>Cat Photos</h2>
-                <p>
-                    Everyone loves
-                    <a
-                        href="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg"
-                        >cute cats</a
-                    >
-                    online!
-                </p>
-                <p>
-                    See more
-                    <a target="_blank" href="https://freecatphotoapp.com"
-                        >cat photos</a
-                    >
-                    in our gallery.
-                </p>
-                <a href="https://freecatphotoapp.com">
-                    <img
-                        src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
-                        alt="A cute orange cat lying on its back."
-                    />
-                </a>
-            </section>
-            <section>
-                <h2>Cat Lists</h2>
-                <h3>Things cats love:</h3>
-                <ul>
-                    <li>catnip</li>
-                    <li>laser pointers</li>
-                    <li>lasagna</li>
-                </ul>
-                <!-- Media -->
-                <audio
-                    controls
-                    loop
-                    muted
-                    src="https://cdn.freecodecamp.org/curriculum/js-music-player/cruising-for-a-musing.mp3"
-                >
-                    <source src="audio.ogg" type="audio/ogg" />
-                    <source src="audio.wav" type="audio/wav" />
-                    <source src="audio.mp3" type="audio/mpeg" />
-                </audio>
-                <video
-                    controls
-                    loop
-                    muted
-                    width="400"
-                    src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
-                    poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
-                >
-                    <source
-                        src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
-                        type="video/mp4"
-                    />
-                    <source
-                        src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.webm"
-                        type="video/webm"
-                    />
-                    Your browser does not support the video tag.
-                </video>
-                <!-- Embedded frame from other website -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/JZT8R1pkNW4?si=k1R2MUqc_9CxSF9S&amp;start=971" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe
-                    title="Map of the Royal Observatory, Greenwich, London"
-                    width="300"
-                    height="200"
-                    style="border: 2px solid black; border-radius: 4px"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&amp;layer=mapnik"
-                >
-                </iframe>
-                <iframe
-                    src="https://www.netrek.org/beginner/"
-                    title="Netrek begginer page"
-                    width="900"
-                    height="900"
-                    style="border: 2px solid black; border-radius: 4px"
-                ></iframe>
-                <iframe
-                    srcdoc="
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" />
+</head>
+
+<body>
+    <main>
+        <h1>CatPhotoApp</h1>
+        <section>
+            <h2>Cat Photos</h2>
+            <p>
+                Everyone loves
+                <a href="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg">cute cats</a>
+                online!
+            </p>
+            <p>
+                <strong><mark>Warning</mark>:</strong> This <b>product</b> may
+                <em>cause</em> <i lang="en">allergic</i> reactions.
+                <br />
+                <cite>First sentence in Nineteen Eighty-Four by George Orwell (Part 1, Chapter 1).</cite>
+            <blockquote cite="https://www.freecodecamp.org/news/learn-to-code-book/">
+                "Can you imagine what it would be like to be a successful developer? To have built software systems that
+                people rely upon?"
+            </blockquote>
+            <blockquote cite="https://www.freecodecamp.org/news/learn-to-code-book/">
+                <p>Build your projects. Show them to your friends. Build projects for your friends.</p>
+                <p>Build your network. Help the people you meet along the way. What goes around comes around. You'll get
+                    what's coming to you.</p>
+                <p>It is not too late. Life is long.</p>
+                <p>You will look back on this moment years from now and be glad you made a move.</p>
+            </blockquote>
+            <div>
+                <blockquote cite="https://www.freecodecamp.org/news/learn-to-code-book/">
+                    Can you imagine what it would be like to be a successful developer? To have built software systems
+                    that people rely upon?
+                </blockquote>
+                <p>—Quincy Larson, <cite>How to Learn to Code and Get a Developer Job [Full Book].</cite></p>
+            </div>
+            <p>
+                As Quincy Larson said,
+                <q cite="https://www.freecodecamp.org/news/learn-to-code-book/">
+                    Momentum is everything.
+                </q>
+            </p>
+            </p>
+            <dl>
+                <dt><abbr title="HyperText Markup Language">HTML</abbr></dt>
+                <dd>HyperText Markup Language</dd>
+                <dt>CSS</dt>
+                <dd>Cascading Style Sheets</dd>
+                <dt>JS</dt>
+                <dd>JavaScript</dd>
+                <dt>dfn element</dt>
+                <dd>A <dfn id="def-validator">validator</dfn> is a program that checks for syntax errors in code or
+                    documents.</dd>
+            </dl>
+            <p>
+                The graduation will be on <time datetime="2024-06-15T15:00">June 15</time>
+            </p>
+            <p>
+                See more
+                <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>
+                in our gallery.
+            </p>
+            <a href="https://freecatphotoapp.com">
+                <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
+                    alt="A cute orange cat lying on its back." />
+            </a>
+        </section>
+        <section>
+            <h2>Cat Lists</h2>
+            <h3>Things cats love:</h3>
+            <ul>
+                <li>catnip</li>
+                <li>laser pointers</li>
+                <li>lasagna</li>
+            </ul>
+            <!-- Media -->
+            <audio controls loop muted
+                src="https://cdn.freecodecamp.org/curriculum/js-music-player/cruising-for-a-musing.mp3">
+                <source src="audio.ogg" type="audio/ogg" />
+                <source src="audio.wav" type="audio/wav" />
+                <source src="audio.mp3" type="audio/mpeg" />
+            </audio>
+            <video controls loop muted width="400"
+                src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+                poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217">
+                <source src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+                    type="video/mp4" />
+                <source src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.webm"
+                    type="video/webm" />
+                Your browser does not support the video tag.
+            </video>
+            <!-- Embedded frame from other website -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/JZT8R1pkNW4?si=k1R2MUqc_9CxSF9S&amp;start=971"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe title="Map of the Royal Observatory, Greenwich, London" width="300" height="200"
+                style="border: 2px solid black; border-radius: 4px"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&amp;layer=mapnik">
+            </iframe>
+            <iframe src="https://www.netrek.org/beginner/" title="Netrek begginer page" width="900" height="900"
+                style="border: 2px solid black; border-radius: 4px"></iframe>
+            <iframe srcdoc="
                         &lt;!DOCTYPE html&gt;
                         &lt;html&gt;
                             &lt;body&gt;
@@ -117,177 +127,97 @@
                                 &lt;p&gt;This is embedded HTML code&lt;/p&gt;
                             &lt;/body&gt;
                         &lt;/html&gt;
-                    "
-                ></iframe>
-                <input
-                    type="image"
-                    alt="USG Ishimura Logo"
-                    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/10e0ed69-5254-42e4-be98-423b2a106081/dfr4aw9-b6a2fff4-6f33-4b68-9253-6a7abcb39c8f.png/v1/fill/w_894,h_894/usg_ishimura_logo_2023_remake_by_the_brade_dfr4aw9-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MSIsInBhdGgiOiIvZi8xMGUwZWQ2OS01MjU0LTQyZTQtYmU5OC00MjNiMmExMDYwODEvZGZyNGF3OS1iNmEyZmZmNC02ZjMzLTRiNjgtOTI1My02YTdhYmNiMzljOGYucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.voysUyWa11MQiIVYI7gbizvMWwX7M-0FwNXEvpMv4rk"
-                />
-                <figure>
-                    <img
-                        src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg"
-                        alt="A slice of lasagna on a plate."
-                    />
-                    <figcaption>Cats <em>love</em> lasagna.</figcaption>
-                    <svg
-                        width="100"
-                        height="100"
-                        viewBox="0 0 100 100"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <circle
-                            cx="50"
-                            cy="50"
-                            r="45"
-                            stroke="black"
-                            stroke-width="4"
-                            fill="#1500ff"
-                        />
-                        <circle cx="35" cy="40" r="5" fill="gold" />
-                        <circle cx="65" cy="40" r="5" fill="gold" />
-                        <path
-                            d="M35 65 Q50 80 65 65"
-                            stroke="gold"
-                            stroke-width="4"
-                            fill="transparent"
-                        />
-                    </svg>
-                    <!-- Star Icon -->
-                    <svg
-                        width="50"
-                        height="50"
-                        viewBox="0 0 24 24"
-                        fill="hsl(51,100%,50%)"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M12 2L14.9 8.6L22 9.3L17 14.1L18.3 21.2L12 17.8L5.7 21.2L7 14.1L2 9.3L9.1 8.6L12 2Z"
-                        />
-                    </svg>
+                    "></iframe>
+            <input type="image" alt="USG Ishimura Logo"
+                src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/10e0ed69-5254-42e4-be98-423b2a106081/dfr4aw9-b6a2fff4-6f33-4b68-9253-6a7abcb39c8f.png/v1/fill/w_894,h_894/usg_ishimura_logo_2023_remake_by_the_brade_dfr4aw9-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MSIsInBhdGgiOiIvZi8xMGUwZWQ2OS01MjU0LTQyZTQtYmU5OC00MjNiMmExMDYwODEvZGZyNGF3OS1iNmEyZmZmNC02ZjMzLTRiNjgtOTI1My02YTdhYmNiMzljOGYucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.voysUyWa11MQiIVYI7gbizvMWwX7M-0FwNXEvpMv4rk" />
+            <figure>
+                <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg"
+                    alt="A slice of lasagna on a plate." />
+                <figcaption>Cats <em>love</em> lasagna.</figcaption>
+                <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" stroke="black" stroke-width="4" fill="#1500ff" />
+                    <circle cx="35" cy="40" r="5" fill="gold" />
+                    <circle cx="65" cy="40" r="5" fill="gold" />
+                    <path d="M35 65 Q50 80 65 65" stroke="gold" stroke-width="4" fill="transparent" />
+                </svg>
+                <!-- Star Icon -->
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="hsl(51,100%,50%)"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L14.9 8.6L22 9.3L17 14.1L18.3 21.2L12 17.8L5.7 21.2L7 14.1L2 9.3L9.1 8.6L12 2Z" />
+                </svg>
 
-                    <!-- Heart Icon -->
-                    <svg
-                        width="50"
-                        height="50"
-                        viewBox="0 0 24 24"
-                        fill="rgb(220,20,60)"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 6 4 4 6.5 4C8 4 9.5 4.8 10.5 6.09C11.5 4.8 13 4 14.5 4C17 4 19 6 19 8.5C19 12.28 15.6 15.36 10.45 20.04L12 21.35Z"
-                        />
-                    </svg>
+                <!-- Heart Icon -->
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="rgb(220,20,60)"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 6 4 4 6.5 4C8 4 9.5 4.8 10.5 6.09C11.5 4.8 13 4 14.5 4C17 4 19 6 19 8.5C19 12.28 15.6 15.36 10.45 20.04L12 21.35Z" />
+                </svg>
 
-                    <!-- Checkmark Icon -->
-                    <svg
-                        width="50"
-                        height="50"
-                        viewBox="0 0 24 24"
-                        fill="#008000"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M20.29 5.71L9 17L3.71 11.71L5.12 10.29L9 14.17L18.88 4.29L20.29 5.71Z"
-                        />
-                    </svg>
-                </figure>
-                <h3>Top 3 things cats hate:</h3>
-                <ol>
-                    <li>flea treatment</li>
-                    <li>thunder</li>
-                    <li>other cats</li>
-                </ol>
-                <figure>
-                    <img
-                        src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg"
-                        alt="Two tabby kittens sleeping together on a couch."
-                    />
-                    <figcaption>
-                        Cats <strong>hate</strong> other cats.
-                    </figcaption>
-                </figure>
-            </section>
-            <section>
-                <h2>Cat Form</h2>
-                <form action="https://freecatphotoapp.com/submit-cat-photo">
-                    <fieldset>
-                        <legend>Is your cat an indoor or outdoor cat?</legend>
-                        <label
-                            ><input
-                                id="indoor"
-                                type="radio"
-                                name="indoor-outdoor"
-                                value="indoor"
-                                checked
-                            />
-                            Indoor</label
-                        >
-                        <label
-                            ><input
-                                id="outdoor"
-                                type="radio"
-                                name="indoor-outdoor"
-                                value="outdoor"
-                            />
-                            Outdoor</label
-                        >
-                        <label
-                            ><input type="text" disabled /> Disabled input
-                            text</label
-                        >
-                        <label
-                            ><input type="text" readonly /> Read only input
-                            text</label
-                        >
-                    </fieldset>
-                    <fieldset>
-                        <legend>What's your cat's personality?</legend>
-                        <input
-                            id="loving"
-                            type="checkbox"
-                            name="personality"
-                            value="loving"
-                            checked
-                        />
-                        <label for="loving">Loving</label>
-                        <input
-                            id="lazy"
-                            type="checkbox"
-                            name="personality"
-                            value="lazy"
-                        />
-                        <label for="lazy">Lazy</label>
-                        <input
-                            id="energetic"
-                            type="checkbox"
-                            name="personality"
-                            value="energetic"
-                        />
-                        <label for="energetic">Energetic</label>
-                    </fieldset>
-                    <input
-                        type="text"
-                        name="catphotourl"
-                        placeholder="cat photo URL"
-                        required
-                    />
-                    <button type="submit">Submit</button>
-                </form>
-            </section>
-        </main>
+                <!-- Checkmark Icon -->
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="#008000" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.29 5.71L9 17L3.71 11.71L5.12 10.29L9 14.17L18.88 4.29L20.29 5.71Z" />
+                </svg>
+            </figure>
+            <h3>Top 3 things cats hate:</h3>
+            <ol>
+                <li>flea treatment</li>
+                <li>thunder</li>
+                <li>other cats</li>
+            </ol>
+            <figure>
+                <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg"
+                    alt="Two tabby kittens sleeping together on a couch." />
+                <figcaption>
+                    Cats <strong>hate</strong> other cats.
+                </figcaption>
+            </figure>
+        </section>
+        <section>
+            <h2>Cat Form</h2>
+            <form action="https://freecatphotoapp.com/submit-cat-photo">
+                <fieldset>
+                    <legend>Is your cat an indoor or outdoor cat?</legend>
+                    <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked />
+                        Indoor</label>
+                    <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor" />
+                        Outdoor</label>
+                    <label><input type="text" disabled /> Disabled input
+                        text</label>
+                    <label><input type="text" readonly /> Read only input
+                        text</label>
+                </fieldset>
+                <fieldset>
+                    <legend>What's your cat's personality?</legend>
+                    <input id="loving" type="checkbox" name="personality" value="loving" checked />
+                    <label for="loving">Loving</label>
+                    <input id="lazy" type="checkbox" name="personality" value="lazy" />
+                    <label for="lazy">Lazy</label>
+                    <input id="energetic" type="checkbox" name="personality" value="energetic" />
+                    <label for="energetic">Energetic</label>
+                </fieldset>
+                <input type="text" name="catphotourl" placeholder="cat photo URL" required />
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
 
-        <footer>
+    <footer>
+        <address>
+            <h2>Company Name</h2>
             <p>
-                No Copyright -
-                <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp.org</a>
+                1234 Elm Street<br />
+                Springfield, IL 62701<br />
+                United States
             </p>
-            <input
-                title="E-mail"
-                placeholder="Your E-mail"
-                type="email"
-                alt="Your email goes here"
-            />
-        </footer>
-    </body>
+            <p>Phone: <a href="tel:+15555555555">+1 (555) 555-5555</a></p>
+            <p>Email: <a href="mailto:contact@company.com">contact@company.com</a></p>
+        </address>
+        <p>
+            No Copyright -
+            <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp.org</a>
+        </p>
+        <input title="E-mail" placeholder="Your E-mail" type="email" alt="Your email goes here" />
+    </footer>
+</body>
+
 </html>
