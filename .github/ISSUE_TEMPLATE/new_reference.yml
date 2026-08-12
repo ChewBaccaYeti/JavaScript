@@ -1,0 +1,51 @@
+name: New reference entry
+description:
+    Add a topic file, an algorithm pair, or a worked example to the database.
+title: '[ref] '
+labels: ['reference']
+body:
+    - type: dropdown
+      id: kind
+      attributes:
+          label: Kind
+          options:
+              - Language topic (js_practices/)
+              - Algorithm pair (algorithms/, JS + Python)
+              - Data structure (algorithms/data_structures/, + .mmd diagram)
+              - Applied example / exercise
+              - Demo app (js_practices/apps/)
+      validations:
+          required: true
+
+    - type: input
+      id: topic
+      attributes:
+          label: Topic
+          placeholder: 'Array.prototype.groupBy / A* search / WeakMap'
+      validations:
+          required: true
+
+    - type: input
+      id: path
+      attributes:
+          label: Proposed path
+          placeholder: algorithms/graph/a_star.js
+      validations:
+          required: true
+
+    - type: textarea
+      id: scope
+      attributes:
+          label: What it should cover
+          description: Methods, edge cases, complexity, the example run.
+
+    - type: checkboxes
+      id: house-style
+      attributes:
+          label: House style
+          options:
+              - label: Named function per concept + immediate call
+              - label: Bilingual RU/EN comments
+              - label: Big-O in the header comment (algorithms only)
+              - label: Python pair alongside the JS file (algorithms only)
+              - label: Mermaid `.mmd` diagram (data structures only)

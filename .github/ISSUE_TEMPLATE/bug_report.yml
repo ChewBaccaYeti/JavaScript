@@ -1,0 +1,51 @@
+name: Bug report
+description:
+    Something in the sandbox is broken — a reference file, an app, a script.
+title: '[bug] '
+labels: ['bug']
+body:
+    - type: dropdown
+      id: area
+      attributes:
+          label: Area
+          options:
+              - js_practices (language reference)
+              - js_practices/apps (demo app)
+              - algorithms (JS)
+              - algorithms (Python)
+              - nested_projects
+              - tasks
+              - tooling / CI / scripts
+      validations:
+          required: true
+
+    - type: input
+      id: file
+      attributes:
+          label: File
+          description: Path, ideally with a line number.
+          placeholder: algorithms/sorting/quick.js:42
+      validations:
+          required: true
+
+    - type: textarea
+      id: what
+      attributes:
+          label: What happens
+          description: Include the exact command you ran and the exact output.
+          render: shell
+      validations:
+          required: true
+
+    - type: textarea
+      id: expected
+      attributes:
+          label: What should happen
+      validations:
+          required: true
+
+    - type: input
+      id: env
+      attributes:
+          label: Environment
+          placeholder: 'Node 20.11 / Python 3.11 / Windows 11'

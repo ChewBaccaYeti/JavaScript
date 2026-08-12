@@ -1,0 +1,18 @@
+// Prettier is the formatter of record for Markdown here. The rules below
+// disagree with its output, and letting the editor auto-fix them corrupts
+// files — it has already broken a fenced code block in README.md. Everything
+// else stays on.
+{
+    // Prettier indents nested lists to its tabWidth (4), MD007 wants 2.
+    "MD007": false,
+    // Prettier wraps prose at 80 but leaves tables and URLs long.
+    "MD013": false,
+    // Repeated headings are fine across different sections.
+    "MD024": { "siblings_only": true },
+    // Prettier emits "-   item" (marker + tabWidth), MD030 wants "- item".
+    "MD030": false,
+    // Inline HTML is used deliberately (<br/> in Mermaid labels, <i> tags).
+    "MD033": false,
+    // Both fenced and indented blocks appear in the reference files.
+    "MD046": false
+}

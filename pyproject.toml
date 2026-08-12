@@ -28,12 +28,12 @@ ignore_missing_imports = true
 venvPath = "."
 venv = "venv311"
 pythonVersion = "3.11"
-include = ["algorithms", "js_trainee"]
+include = ["algorithms", "js_practices"]
 exclude = ["**/node_modules", "**/__pycache__", "venv311"]
 
 [tool.basedpyright]
 venvPath = "."
 venv = "venv311"
 pythonVersion = "3.11"
-include = ["algorithms", "js_trainee"]
+include = ["algorithms", "js_practices"]
 exclude = ["**/node_modules", "**/__pycache__", "venv311"]

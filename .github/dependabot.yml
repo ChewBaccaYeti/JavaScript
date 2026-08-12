@@ -1,0 +1,78 @@
+version: 2
+
+updates:
+    # Root sandbox dependencies
+    - package-ecosystem: npm
+      directory: /
+      schedule:
+          interval: weekly
+          day: monday
+      open-pull-requests-limit: 5
+      labels: ['dependencies', 'javascript']
+      commit-message:
+          prefix: 'chore(deps)'
+          prefix-development: 'chore(deps-dev)'
+      groups:
+          dev-tooling:
+              patterns:
+                  - '@babel/*'
+                  - 'babel-jest'
+                  - 'jest'
+                  - 'prettier'
+                  - 'eslint'
+                  - 'nodemon'
+                  - 'ts-node'
+                  - 'typescript'
+                  - '@types/*'
+              update-types: ['minor', 'patch']
+          runtime:
+              patterns: ['*']
+              update-types: ['minor', 'patch']
+
+    # Nested projects with their own lockfiles
+    - package-ecosystem: npm
+      directory: /nested_projects/Pipe
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 3
+      labels: ['dependencies', 'nested-projects']
+
+    - package-ecosystem: npm
+      directory: /nested_projects/nodemailer
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 3
+      labels: ['dependencies', 'nested-projects']
+
+    - package-ecosystem: npm
+      directory: /tasks/task_3
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 2
+      labels: ['dependencies', 'tasks']
+
+    - package-ecosystem: npm
+      directory: /tasks/task_4
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 2
+      labels: ['dependencies', 'tasks']
+
+    # Python side of algorithms/
+    - package-ecosystem: pip
+      directory: /
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 3
+      labels: ['dependencies', 'python']
+      commit-message:
+          prefix: 'chore(deps)'
+
+    # Keep the workflows themselves current
+    - package-ecosystem: github-actions
+      directory: /
+      schedule:
+          interval: monthly
+      labels: ['dependencies', 'ci']
+      commit-message:
+          prefix: 'ci(deps)'

@@ -1,0 +1,13 @@
+{
+    // CI type-check scope.
+    //
+    // `nested_projects/CEC/` is an archived snapshot of the app that now lives
+    // in the DS_API repo — its dependencies (react-router-dom, helmet, the
+    // .jsx crew components) are not installed here, so it is excluded rather
+    // than pinned to versions this sandbox does not use.
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "noEmit": true
+    },
+    "include": ["nested_projects/Pipe/**/*.ts", "nested_projects/mock/**/*.ts"]
+}

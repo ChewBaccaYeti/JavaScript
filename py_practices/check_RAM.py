@@ -1,0 +1,23 @@
+import psutil
+
+memory = psutil.virtual_memory()
+
+
+def convert_bytes(size):
+    # Convert bytes to gigabytes
+    gb = size / (1024**3)
+    return gb
+
+
+total_gb = convert_bytes(memory.total)
+available_gb = convert_bytes(memory.available)
+used_gb = convert_bytes(memory.used)
+
+print(f"Total RAM: {total_gb:.3f} GB")
+print(f"Available RAM: {available_gb:.3f} GB")
+print(f"Used RAM: {used_gb:.3f} GB")
+print(f"RAM Usage: {memory.percent}%")
+
+result = [total_gb, available_gb, used_gb, memory.percent]
+with open("check_RAM.txt", "a") as f:
+    print(result, file=f)
