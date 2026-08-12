@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Task Manager - Progressive Learning Project</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>📝 Task Manager</h1>
+
+            <!-- LEVEL 1: Basic input and list -->
+            <section id="level1" class="section">
+                <div class="form-group">
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Enter a new task..."
+                        class="input"
+                    />
+                    <button id="addBtn" class="btn btn-primary">
+                        Add Task
+                    </button>
+                </div>
+
+                <div id="infoBar" class="info-bar">
+                    <span id="taskCount">Total: 0</span>
+                </div>
+
+                <ul id="taskList" class="task-list">
+                    <!-- Tasks will be rendered here -->
+                </ul>
+            </section>
+
+            <!-- LEVEL 2: Filters (added later) -->
+            <section id="level2" class="section" style="display: none">
+                <div class="filter-buttons">
+                    <button id="filterAll" class="btn btn-filter active">
+                        All
+                    </button>
+                    <button id="filterDone" class="btn btn-filter">Done</button>
+                    <button id="filterPending" class="btn btn-filter">
+                        Pending
+                    </button>
+                </div>
+                <div id="advancedStats" class="stats">
+                    <span id="doneCount">Done: 0</span>
+                    <span id="pendingCount">Remaining: 0</span>
+                </div>
+            </section>
+
+            <!-- LEVEL 4: Save/Load controls (added later) -->
+            <section id="level4" class="section" style="display: none">
+                <div class="controls">
+                    <button id="saveBtn" class="btn btn-success">
+                        Save to Storage
+                    </button>
+                    <button id="loadBtn" class="btn btn-info">
+                        Load from Storage
+                    </button>
+                </div>
+                <div id="messageBox" class="message-box">
+                    <!-- Success/error messages appear here -->
+                </div>
+            </section>
+
+            <!-- LEVEL 5: Advanced features (added later) -->
+            <section id="level5" class="section" style="display: none">
+                <div class="advanced-features">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search tasks..."
+                        class="input"
+                        style="display: none"
+                    />
+                    <button
+                        id="exportBtn"
+                        class="btn btn-secondary"
+                        style="display: none"
+                    >
+                        Export as JSON
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Scripts -->
+        <script src="js/level1/app.js"></script>
+    </body>
+</html>
