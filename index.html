@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" />
     <link rel="icon" href="favicon.ico" />
 </head>
 
@@ -199,7 +199,94 @@
                 <button type="submit">Submit</button>
             </form>
         </section>
+
+        <span><<-------------------------------------------------------------------------------------------------------------------------------->></span>
+
+        <form method="POST" action="https://hotel-feedback.freecodecamp.org">
+            <h1>Hotel Feedback Form</h1>
+            <p>Thank you for staying with us. Please provide feedback on your recent stay.</p>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <ul>
+                    <li><label for="full-name">Name (required):</label>
+                        <input type="text" id="full-name" name="name" placeholder="e.g., John Doe" required size="20">
+                    </li>
+                    <li><label for="email">Email address (required):</label>
+                        <input placeholder="example@email.com" required id="email" type="email" name="email"
+                            size="20" />
+                    </li>
+                    <li><label for="age">Age (optional):</label>
+                        <input type="number" name="age" id="age" min="3" max="100" />
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset>
+                <legend>Was this your first time at our hotel?</legend>
+                <input id="yes-option" type="radio" name="hotel-stay" value="yes" />
+                <label for="yes-option">Yes</label>
+                <input id="no-option" type="radio" name="hotel-stay" value="no" />
+                <label for="no-option">No</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    Why did you choose to stay at our hotel? (Check all that apply)
+                </legend>
+                <ul>
+                    <li><input type="checkbox" id="ads" name="choice" value="ads" />
+                        <label for="ads">Social Media Ads</label>
+                    </li>
+                    <li><input type="checkbox" id="recommendation" name="choice" value="recommendation" />
+                        <label for="recommendation">Personal Recommendation</label>
+                    </li>
+                    <li><input type="checkbox" id="location" name="choice" value="location" />
+                        <label for="location">Location</label>
+                    </li>
+                    <li><input checked type="checkbox" id="reputation" name="choice" value="reputation" />
+                        <label for="reputation">Reputation</label>
+                    </li>
+                    <li><input type="checkbox" id="price" name="choice" value="price" />
+                        <label for="price">Price</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset>
+                <legend>Ratings</legend>
+                <div>
+                    <label for="service">How was the service?</label>
+                    <select name="service" id="service">
+                        <option value="poor">Poor</option>
+                        <option value="satisfactory">Satisfactory</option>
+                        <option value="good">Good</option>
+                        <option value="very-good">Very Good</option>
+                        <option selected value="excellent">Excellent</option>
+                    </select>
+                </div>
+
+                <div><label for="food">How was the food?</label>
+                    <select name="food" id="food">
+                        <option value="poor">Poor</option>
+                        <option value="satisfactory">Satisfactory</option>
+                        <option value="good">Good</option>
+                        <option value="very-good">Very Good</option>
+                        <option selected value="excellent">Excellent</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <div class="comments">
+                <label for="comments">Other Comments?</label>
+                <textarea cols="30" rows="10" name="comments" id="comments"></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
     </main>
+
+    <span><<------------------------------------------------------------------------------------------------------------------------------------>></span>
 
     <footer>
         <address>
@@ -212,11 +299,45 @@
             <p>Phone: <a href="tel:+15555555555">+1 (555) 555-5555</a></p>
             <p>Email: <a href="mailto:contact@company.com">contact@company.com</a></p>
         </address>
-        <p>
+        <section>
             No Copyright -
             <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp.org</a>
-        </p>
-        <input title="E-mail" placeholder="Your E-mail" type="email" alt="Your email goes here" />
+            <p>2<sup>2</sup> (2 squared) is 4.</p>
+            <p>Monseigneur is often written as <strong>M<sup>gr</sup></strong>.</p>
+            <p>CO<sub>2</sub></p>
+            <p>To set the text color to blue in CSS, use the following code:
+                <code>color: blue;</code>
+            </p>
+            <pre>
+                <code>
+                body {
+                    color: red;
+                }
+                </code>
+            </pre>
+            <p>
+                You can use the unarticulated annotation element to highlight
+                <u>inccccort</u> <u>spling</u> <u>issses</u>.
+            <p><s>Tomorrow's hike will be meeting at noon.</s></p>
+            <ruby> 明日 <rp>(</rp>
+                <rt>Ashita</rt>
+                <rp>)</rp>
+            </ruby>
+            </p>
+        </section>
+        <form action="https://hotel-feedback.freecodecamp.org" method="POST">
+            <label for="email">Email address*</label>
+            <input required type="email" id="email" name="email" minlength="4" maxlength="64"
+                placeholder="Your e-mail" />
+            <label for="text">Disabled text*</label>
+            <input required disabled type="text" id="text" name="text" minlength="4" maxlength="64"
+                value="Disabled text" />
+            <label for="readonly_input">Readonly input</label>
+            <input readonly type="text" id="readonly_input" name="text" value="readonly input"
+                placeholder="This is placeholder for readonly input" />
+            <button type="reset">Reset form</button>
+            <button type="submit">Submit form</button>
+        </form>
     </footer>
 </body>
 

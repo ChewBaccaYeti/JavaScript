@@ -1,4 +1,5 @@
-# types
+#!/usr/bin/env python
+
 name_str = "Venedykt"
 age_int = 29
 current_hour_float = 3.59
